@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const SalaryCard = ({
+const JobCard = ({
     position,
     img,
     experience,
@@ -26,7 +26,7 @@ const SalaryCard = ({
     );
 }
 
-export default SalaryCard;
+export default JobCard;
 
 const CardWrapper = styled.article`
     display: flex;

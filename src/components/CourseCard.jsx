@@ -11,7 +11,7 @@ const CourseCard = ({
         <CardWrapper>
             <CourseAbout>
                 <CourseDetails>
-                    <b>{`${date.toDateString()}`}</b> {`| ${lessons} уроків`}
+                    <b>{`${date.toLocaleDateString()}`}</b> {`| ${lessons} уроків`}
                 </CourseDetails>
                 <CourseDetails>
                     {`Усього місць: ${places}`}
@@ -26,7 +26,7 @@ const CourseCard = ({
 
 export default CourseCard;
 
-const CardWrapper = styled.div`
+const CardWrapper = styled.article`
     display: flex;
     flex-direction: column;
 
@@ -52,6 +52,7 @@ const CardWrapper = styled.div`
 
 const CourseAbout = styled.div`
     flex: 1 1 auto;
+    margin-bottom: auto;
 `;
 
 const CourseDetails = styled.p`
@@ -77,5 +78,10 @@ const CourseName = styled.p`
     line-height: 128%;
 
     text-transform: uppercase;
+
+    @media(max-width: 724px) {
+        font-size: 26px;
+        line-height: 138%;
+    }
 `;
 
