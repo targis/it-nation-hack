@@ -1,8 +1,15 @@
-import MenuSC from './styled'
+import { MenuIcon, MenuIconWrapper } from './styled'
+import { useState } from 'react'
 
 const Menu = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
   return (
-    <MenuSC>Menu</MenuSC>
+    <MenuIconWrapper onClick={() => setIsMenuOpen(!isMenuOpen)}>
+      <MenuIcon type="button" isMenuOpen={isMenuOpen} >
+        <span></span>
+      </MenuIcon>
+    </MenuIconWrapper>
   )
 }
 
