@@ -1,18 +1,20 @@
 
-import Button from './components/ui/Button';
-import Form from './components/Form';
+// import Button from './components/ui/Button';
+// import Form from './components/Form';
+import About from './components/About';
 
 
 function App() {
   return (
     <>
-      <Button>
+      {/* <Button>
         ЗАПИСАТИСЯ
-      </Button>
-      <Form>
+      </Button> */}
+      {/* <Form>
+      </Form> */}
+      <About>
 
-      </Form>
-
+      </About>
     </>
   );
 }
