@@ -34,7 +34,7 @@ const AboutContainer = styled.section`
     display: flex;
 `;
 
-const AboutTextContainer = styled.section`
+const AboutTextContainer = styled.div`
     display: flex;
     position: relative;
     flex-direction: column;
@@ -48,6 +48,7 @@ const AboutTextContainer = styled.section`
         height: 172px;
         width: 10px;
         position: absolute;
+        
 }
 `;
 
@@ -85,11 +86,11 @@ const AboutSectionText = styled.span`
     color: #333333;
 `;
 
-const AboutImgContainer = styled.section`
+const AboutImgContainer = styled.div`
     display: flex;
     justify-content: center;
-    height: 100%;
-    width: 530px;
+    height: 508px;
+    width: 538px;
     background-image: url(${ImgAboutBg});
     background-repeat: no-repeat;
     background-position: center;
@@ -97,4 +98,6 @@ const AboutImgContainer = styled.section`
 `;
 
 const AboutSectionImg = styled.img`
+    width: 398px;
+    height: 567px;
 `;
