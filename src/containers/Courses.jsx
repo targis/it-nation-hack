@@ -8,14 +8,14 @@ import CourseCard from '../components/CourseCard';
 const Courses = () => {
 
     const courses = [
-        {id: 1, name: 'front-end', date: new Date(), lessons: 12, places: 18},
-        {id: 2, name: 'it project manager', date: new Date(), lessons: 12, places: 18},
-        {id: 3, name: 'ux/ui web design', date: new Date(), lessons: 12, places: 18},
-        {id: 4, name: 'front-end advanced', date: new Date(), lessons: 12, places: 18},
-        {id: 5, name: 'front-end', date: new Date(), lessons: 12, places: 18},
-        {id: 6, name: 'it project manager', date: new Date(), lessons: 12, places: 18},
-        {id: 7, name: 'ux/ui web design', date: new Date(), lessons: 12, places: 18},
-        {id: 8, name: 'front-end advanced', date: new Date(), lessons: 12, places: 18},
+        {id: 1, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18},
+        {id: 2, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18},
+        {id: 3, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18},
+        {id: 4, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18},
+        {id: 5, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18},
+        {id: 6, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18},
+        {id: 7, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18},
+        {id: 8, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18},
     ]
 
     return (
@@ -103,8 +103,11 @@ const HeaderText = styled.span`
 
 const ButtonsArea = styled.div`
     display: flex;
-    margin-right: 10px;
     
+    & > * {
+        margin-right: 10px;
+    }
+
     :last-child {
         margin-right: 0;
     }
