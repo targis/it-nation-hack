@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Container from '../components/ui/Container';
-
 import CourseCard from '../components/CourseCard';
+
+import Button from '../components/ui/Button';
 
 const Courses = () => {
 
@@ -25,9 +26,36 @@ const Courses = () => {
                 <CoursesHeader>
                     <HeaderText><b>On-line</b> навчання</HeaderText>
                     <ButtonsArea>
-                        <button>dasda</button>
-                        <button>dasda</button>
-                        <button>dasda</button>
+                        <Button
+                            height='40px'
+                            width='120px'
+                            margin='0 10px 0 0'
+                            size='14px'
+                        >
+                            online
+                        </Button>
+                        <Button
+                            height='40px'
+                            width='120px'
+                            margin='0 10px 0 0'
+                            size='14px'
+                            color='#333333'
+                            bgcolor='none'
+                            border='1px solid #333333'
+                        >
+                            Київ
+                        </Button>
+                        <Button
+                            height='40px'
+                            width='120px'
+                            margin='0 10px 0 0'
+                            size='14px'
+                            color='#333333'
+                            bgcolor='none'
+                            border='1px solid #333333'
+                        >
+                            Запоріжжя
+                        </Button>
                     </ButtonsArea>
                 </CoursesHeader>    
                 <CardsContainer>
@@ -82,7 +110,7 @@ const CardsContainer = styled.div`
         grid-template-columns: repeat(2, minmax(330px, auto));
     }
     
-    @media(max-width: 724px) {
+    @media(max-width: 754px) {
         grid-template-columns: repeat(1, minmax(300px, 330px));
         grid-auto-rows: 180px;
     }
@@ -100,6 +128,8 @@ const CoursesHeader = styled.div`
 `;
 
 const HeaderText = styled.span`
+    margin-right: 16px;
+
     font-family: 'Rubik';
     font-weight: 500;
     font-size: 26px;

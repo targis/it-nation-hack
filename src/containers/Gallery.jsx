@@ -49,7 +49,7 @@ export default Gallery;
 
 const GalleryContainer = styled.section`
     width: 100%;
-    /* height: fit-content; */
+    margin-bottom: 180px;
 
     display: grid;
     grid-template-columns: repeat(6, minmax(auto, 210px));

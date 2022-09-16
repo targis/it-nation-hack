@@ -8,8 +8,10 @@ import Navbar from './components/Navbar'
 import Offer from './components/Offer'
 import About from './components/About'
 import Courses from './containers/Courses'
-import Gallery from './containers/Gallery'
+import Gallery from './containers/Gallery';
+import Partners from './containers/Partners'
 import Salary from './containers/Jobs';
+import Footer from './containers/Footer'
 
 function App() {
   return (
@@ -17,10 +19,12 @@ function App() {
       <Navbar />
       <Courses />
       <Offer />
+      <Salary />
       <About />
       <Gallery />
-      <Salary />
+      <Partners />
 
+      <Footer />
     </>
   )
 }
