@@ -31,21 +31,21 @@
 }
 
 @font-face {
-  font-family: "IBMPlexMono-Bold";
+  font-family: "IBM Plex Mono";
   src: url("./fonts/IBMPlexMono-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "IBMPlexMono-Medium";
+  font-family: "IBM Plex Mono";
   src: url("./fonts/IBMPlexMono-Medium.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "IBMPlexMono-Regular";
+  font-family: "IBM Plex Mono";
   src: url("./fonts/IBMPlexMono-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
@@ -61,4 +61,10 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
