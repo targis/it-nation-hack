@@ -69,8 +69,23 @@ const CoursesTitle = styled.h3`
 
 const CardsContainer = styled.div`
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-around;
+    grid-template-columns: repeat(4, minmax(330px, auto));
+    grid-auto-rows: 250px;
     grid-gap: 30px;
+
+    @media(max-width: 1474px) {
+        grid-template-columns: repeat(3, minmax(330px, auto));
+    }
+
+    @media(max-width: 1114px) {
+        grid-template-columns: repeat(2, minmax(330px, auto));
+    }
+    
+    @media(max-width: 724px) {
+        grid-template-columns: repeat(1, minmax(300px, 330px));
+        grid-auto-rows: 180px;
+    }
 `;
 
 const CoursesHeader = styled.div`
