@@ -1,10 +1,5 @@
-// import Button from './components/ui/Button'
-// import Form from './components/Form'
 import Navbar from './components/Navbar'
-
-// import Button from './components/ui/Button';
-// import Form from './components/Form';
-
+import Thankyoupage from './components/Thankyoupage/Thankyoupage';
 import Offer from './components/Offer'
 import About from './components/About'
 import Courses from './containers/Courses'
@@ -20,7 +15,7 @@ function App() {
       <About />
       <Gallery />
       <Salary />
-
+      <Thankyoupage />
     </>
   )
 }
