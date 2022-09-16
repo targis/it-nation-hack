@@ -9,12 +9,14 @@ const CourseCard = ({
 }) => {
     return (
         <CardWrapper>
-            <CourseDetails>
-                <b>{`${date.toDateString()}`}</b> {`| ${lessons} уроків`}
-            </CourseDetails>
-            <CourseDetails>
-                {`Усього місць: ${places}`}
-            </CourseDetails>
+            <CourseAbout>
+                <CourseDetails>
+                    <b>{`${date.toDateString()}`}</b> {`| ${lessons} уроків`}
+                </CourseDetails>
+                <CourseDetails>
+                    {`Усього місць: ${places}`}
+                </CourseDetails>
+            </CourseAbout>
             <CourseName>
                 {`{${name}}`}
             </CourseName>
@@ -25,21 +27,31 @@ const CourseCard = ({
 export default CourseCard;
 
 const CardWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+
     width: 100%;
     height: 100%;
     max-width: 330px;
     max-height: 250px;
     padding: 16px;
 
-    display: flex;
-    flex-direction: column;
-
     background: #232F3C;
     border-radius: 8px;
+
+    cursor: pointer;
     
     & > * {
         color: #FFFFFF;
     }
+
+    :hover {
+        background: #55CBDC;
+    }
+`;
+
+const CourseAbout = styled.div`
+    flex: 1 1 auto;
 `;
 
 const CourseDetails = styled.p`
@@ -56,6 +68,8 @@ const CourseDetails = styled.p`
 `;
 
 const CourseName = styled.p`
+    justify-self: flex-end;
+
     font-family: 'Rubik';
     font-style: normal;
     font-weight: 700;

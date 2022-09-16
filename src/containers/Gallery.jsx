@@ -49,6 +49,7 @@ export default Gallery;
 
 const GalleryContainer = styled.section`
     width: 100%;
+    /* height: fit-content; */
 
     display: grid;
     grid-template-columns: repeat(6, minmax(auto, 210px));
@@ -67,5 +68,6 @@ const GalleryContainer = styled.section`
 const Photo = styled.img`
     height: 100%;
     width: 100%;
+    aspect-ratio: 1;
     grid-area: ${({area}) => area || ''};   
 `;
