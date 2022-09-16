@@ -8,14 +8,14 @@ import CourseCard from '../components/CourseCard';
 const Courses = () => {
 
     const courses = [
-        {id: 1, name: 'front-end', date: new Date(), lessons: 12, places: 18},
-        {id: 2, name: 'it project manager', date: new Date(), lessons: 12, places: 18},
-        {id: 3, name: 'ux/ui web design', date: new Date(), lessons: 12, places: 18},
-        {id: 4, name: 'front-end advanced', date: new Date(), lessons: 12, places: 18},
-        {id: 5, name: 'front-end', date: new Date(), lessons: 12, places: 18},
-        {id: 6, name: 'it project manager', date: new Date(), lessons: 12, places: 18},
-        {id: 7, name: 'ux/ui web design', date: new Date(), lessons: 12, places: 18},
-        {id: 8, name: 'front-end advanced', date: new Date(), lessons: 12, places: 18},
+        {id: 1, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18},
+        {id: 2, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18},
+        {id: 3, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18},
+        {id: 4, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18},
+        {id: 5, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18},
+        {id: 6, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18},
+        {id: 7, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18},
+        {id: 8, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18},
     ]
 
     return (
@@ -69,8 +69,23 @@ const CoursesTitle = styled.h3`
 
 const CardsContainer = styled.div`
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-around;
+    grid-template-columns: repeat(4, minmax(330px, auto));
+    grid-auto-rows: 250px;
     grid-gap: 30px;
+
+    @media(max-width: 1474px) {
+        grid-template-columns: repeat(3, minmax(330px, auto));
+    }
+
+    @media(max-width: 1114px) {
+        grid-template-columns: repeat(2, minmax(330px, auto));
+    }
+    
+    @media(max-width: 724px) {
+        grid-template-columns: repeat(1, minmax(300px, 330px));
+        grid-auto-rows: 180px;
+    }
 `;
 
 const CoursesHeader = styled.div`
@@ -103,8 +118,11 @@ const HeaderText = styled.span`
 
 const ButtonsArea = styled.div`
     display: flex;
-    margin-right: 10px;
     
+    & > * {
+        margin-right: 10px;
+    }
+
     :last-child {
         margin-right: 0;
     }
