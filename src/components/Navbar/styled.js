@@ -10,4 +10,15 @@ const Link = styled.a`
   align-self: flex-start;
 `
 
-export { Header, Link }
+const TelLink = styled.a`
+  font-family: Rubik, sans-serif;
+  font-size: 0.875em;
+  font-weight: 700;
+  color: var(--font-color);
+  text-decoration: none;
+  & :hover {
+    color: var(--font-color);
+  }
+`
+
+export { Header, Link, TelLink }
