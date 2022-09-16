@@ -1,12 +1,12 @@
 import { MenuIcon, MenuIconWrapper } from './styled'
-import { useState } from 'react'
 
-const Menu = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+const Menu = ({ isMenuOpen, toggleMenuState }) => {
+
 
   return (
-    <MenuIconWrapper onClick={() => setIsMenuOpen(!isMenuOpen)}>
-      <MenuIcon type="button" isMenuOpen={isMenuOpen} >
+    <MenuIconWrapper>
+      <MenuIcon type="button" isMenuOpen={isMenuOpen} onClick={toggleMenuState} >
         <span></span>
       </MenuIcon>
     </MenuIconWrapper>
