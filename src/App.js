@@ -1,11 +1,20 @@
-import Navbar from './components/Navbar'
+
+import Button from './components/ui/Button';
+import Form from './components/Form';
+
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-    </div>
-  )
+    <>
+      <Button>
+        ЗАПИСАТИСЯ
+      </Button>
+      <Form>
+
+      </Form>
+
+    </>
+  );
 }
 
-export default App
+export default App;
