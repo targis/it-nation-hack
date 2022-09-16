@@ -1,21 +1,19 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 const Button = styled.button`
-padding: 21px 46px;
-background: #EF5B63;
-border-radius: 10px;
-border: none;
-cursor: pointer;
+  padding: 11px 21px;
+  background: #ef5b63;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  text-align: center;
+  text-transform: uppercase;
+`
 
-color: #FFFFFF;
-font-family: 'Rubik';
-font-style: normal;
-font-weight: 700;
-font-size: 18px;
-line-height: 1;
-text-align: center;
-text-transform: uppercase;
-`;
-
-
-export default Button;
+export default Button

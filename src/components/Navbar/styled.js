@@ -21,4 +21,17 @@ const TelLink = styled.a`
   }
 `
 
-export { Header, Link, TelLink }
+const Controls = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  & > * {
+    margin-left: 2em;
+    /* & :first-child {
+      margin-left: 0;
+    } */
+  }
+`
+
+export { Header, Link, TelLink, Controls }

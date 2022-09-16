@@ -1,20 +1,13 @@
-
-import Button from './components/ui/Button';
-import Form from './components/Form';
-
+import Button from './components/ui/Button'
+import Form from './components/Form'
+import Navbar from './components/Navbar'
 
 function App() {
   return (
     <>
-      <Button>
-        ЗАПИСАТИСЯ
-      </Button>
-      <Form>
-
-      </Form>
-
+      <Navbar />
     </>
-  );
+  )
 }
 
-export default App;
+export default App
