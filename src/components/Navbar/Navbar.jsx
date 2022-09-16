@@ -1,8 +1,9 @@
 import SocialLinks from '../SocialLinks'
 import Menu from '../Menu'
+import Button from '../ui/Button'
 import Container from '../ui/Container'
 import Flex from '../ui/Flex'
-import { Header, Link, TelLink } from './styled'
+import { Header, Link, TelLink, Controls } from './styled'
 import Logo from '../../icons/logo.svg'
 
 const Navbar = () => {
@@ -14,13 +15,14 @@ const Navbar = () => {
             <img src={Logo} alt="Logo" />
           </Link>
           <SocialLinks self='center' />
-          <Flex align="center" >
+          <Controls>
             <Flex direction='column'>
               <TelLink href="tel:+38 (073) 126 00 72">+38 (073) 126 00 72</TelLink>
               <TelLink href="tel:+38 (099) 705 14 18">+38 (099) 705 14 18</TelLink>
             </Flex>
+            <Button>Записатися</Button>
             <Menu />
-          </Flex>
+          </Controls>
 
         </Flex>
 
