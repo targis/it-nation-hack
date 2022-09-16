@@ -14,6 +14,9 @@ const Button = styled.button`
   line-height: 18px;
   text-align: center;
   text-transform: uppercase;
+  @media (max-width: 767.98px) {
+    display: ${({ hiddenSm }) => (hiddenSm ? 'none' : 'block')};
+  }
 `
 
 export default Button
