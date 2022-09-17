@@ -8,10 +8,6 @@ import Offer from './components/Offer'
 import About from './components/About'
 import Courses from './containers/Courses'
 import Gallery from './containers/Gallery'
-import Partners from './containers/Partners'
-import Jobs from './containers/Jobs'
-import Contacts from './containers/Contacts'
-import Footer from './containers/Footer'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
