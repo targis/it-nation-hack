@@ -3,19 +3,19 @@ import SocialLinks from '../SocialLinks'
 
 const menuItems = [
   { id: 0, label: 'Про нас', tag: 'about' },
-  { id: 1, label: 'Київ', tag: 'courses' },
-  { id: 2, label: 'Запоріжжя', tag: 'courses' },
-  { id: 3, label: 'On-line курси', tag: 'courses' },
+  { id: 1, label: 'Київ', tag: 'courses', location: 'Київ' },
+  { id: 2, label: 'Запоріжжя', tag: 'courses', location: 'Запоріжжя' },
+  { id: 3, label: 'On-line курси', tag: 'courses', location: 'online' },
   { id: 4, label: 'Безкоштовні уроки', tag: 'offer' },
   { id: 5, label: 'Вакансії', tag: 'jobs' }
 ]
 
-const MenuBody = ({ isMenuOpen, toggleMenuState, onChangeTab, scrollTo }) => {
+const MenuBody = ({ isMenuOpen, toggleMenuState, scrollTo, setActiveLocation }) => {
 
-  const handleClick = (tag, label) => {
+  const handleClick = (tag, location) => {
     toggleMenuState(!isMenuOpen)
     if (tag === 'courses') {
-      onChangeTab(label)
+      setActiveLocation(location)
     }
     scrollTo[tag]()
   }
@@ -24,9 +24,9 @@ const MenuBody = ({ isMenuOpen, toggleMenuState, onChangeTab, scrollTo }) => {
     <Nav isMenuOpen={isMenuOpen}>
       <span></span>
       <Ul>
-        {menuItems.map(({ id, label, tag }) => (
+        {menuItems.map(({ id, label, tag, location }) => (
           <Li key={id}>
-            <Button onClick={() => handleClick(tag, label)}>{label}</Button>
+            <Button onClick={() => handleClick(tag, location)}>{label}</Button>
           </Li>
         ))}
       </Ul>

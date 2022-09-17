@@ -43,13 +43,17 @@ const JobTitle = styled.h3`
 
     font-family: 'Rubik';
     font-weight: 700;
-    font-size: 64px;
+    font-size: calc(24px + 40 * (100vw / 1760));
     line-height: 138%;
 
     letter-spacing: 4px;
     text-transform: uppercase;
 
-    color: #232F3C;  
+    color: #232F3C;
+
+    @media (max-width: 720px) {
+        text-align: center;
+    }
 `;
 
 const JobContainer = styled.div`
@@ -57,4 +61,30 @@ const JobContainer = styled.div`
     grid-template-columns: repeat(3, minmax(auto, 450px));
     grid-template-rows: 420px;  
     grid-gap: 30px;
+
+    margin-bottom: 120px;
+
+    @media (max-width: 1024px) {
+        /* grid-template-rows: 370px;   */
+        justify-content: center;
+        grid-template-columns: repeat(1, 100%);
+        grid-template-rows: 270px;
+        grid-auto-rows: 270px;
+        margin-bottom: 90px;
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 60px;
+    }
+
+    @media (max-width: 360px) {
+        margin-bottom: 30px;
+    }
+
+    /* @media (max-width: 768px) {
+        justify-content: center;
+        grid-template-columns: repeat(1, minmax(auto, 450px));
+        grid-template-rows: 270px;   
+    } */
+
 `;

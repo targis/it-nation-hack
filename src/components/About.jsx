@@ -10,11 +10,13 @@ const About = forwardRef((props, ref) => {
             <AboutContainer>
                 <AboutTextContainer>
                     <AboutSection>POWERCODE ACADEMY</AboutSection>
-                    <AboutSectionParagraph> - це курси від провідних фахівців IT галузі. <br />
-                        Ми навчаємо у Запоріжжі, Києві та Online.
+                    <AboutSectionParagraph> 
+                        - це курси від провідних фахівців IT галузі. <br />
+                        Ми навчаємо у Запоріжжі, Києві та Online. 
                     </AboutSectionParagraph>
-                    <AboutSectionText>Наша місія – надавати високоякісну IT освіту, адаптовану до <br /> сучасних вимог роботодавців. <br />
-                        Наші основні напрямки: Front end, Python, UI/UX design, PM, <br /> QA и др. Розшир свої кар’єрні можливості разом з нами!
+                    <AboutSectionText>
+                        Наша місія – надавати високоякісну IT освіту, адаптовану до сучасних вимог роботодавців. <br />
+                        Наші основні напрямки: Front end, Python, UI/UX design, PM, QA и др. Розшир свої кар’єрні можливості разом з нами!
                     </AboutSectionText>
                 </AboutTextContainer>
                 <AboutImgContainer>
@@ -32,49 +34,64 @@ export default About;
 
 const AboutContainer = styled.section`
     display: flex;
+    margin-bottom: 120px;
+
+    @media (max-width: 1024px) {
+        margin-bottom: 100px;
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 80px;
+    }
+
+    @media (max-width: 360px) {
+        margin-bottom: 60px;
+    }
 `;
 
 const AboutTextContainer = styled.div`
     display: flex;
-    position: relative;
     flex-direction: column;
     justify-content: center;
-    margin-right: 35px;
+    margin-right: 16px;
+    padding-left: 36px;
     width: 100%;
-    ::before{
-        content:"";
-        background-color: #55CBDC;
-        border-radius: 36px;
-        height: 172px;
-        width: 10px;
-        position: absolute;
-        
-}
 `;
 
-
 const AboutSection = styled.h2`
+    position: relative;
     font-family: 'Rubik';
-    font-style: normal;
     font-weight: 700;
-    font-size: 64px;
+    font-size: calc(24px + 40 * (100vw / 1760));;
     line-height: 1.1;
     letter-spacing: 4px;
     text-transform: uppercase;
     color: #232F3C;
     display: flex;
     margin-bottom: 16px;
+
+    ::before {
+        content:"";
+        background-color: #55CBDC;
+        border-radius: 36px;
+        height: 172px;
+        width: 10px;
+        top: 0;
+        left: -36px;
+        position: absolute;    
+    }
 `;
 
 const AboutSectionParagraph = styled.p`
     font-family: 'Rubik';
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: calc(18px + 6 * (100vw / 1760));;
     line-height: 1.7;
     letter-spacing: 1px;
     color: #232F3C;
     margin-bottom: 26px;
+    white-space: nowrap;
 `;
 
 const AboutSectionText = styled.span`
@@ -89,15 +106,20 @@ const AboutSectionText = styled.span`
 const AboutImgContainer = styled.div`
     display: flex;
     justify-content: center;
-    height: 508px;
-    width: 538px;
+    width: 100%;
+    max-width: 540px;
     background-image: url(${ImgAboutBg});
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: bottom;
     background-size: contain;
+
+    @media (max-width: 1024px) {
+        display: none;
+    }
 `;
 
 const AboutSectionImg = styled.img`
     width: 398px;
     height: 567px;
+    object-fit: cover;
 `;

@@ -5,8 +5,9 @@ import Flex from '../ui/Flex'
 
 const Section = styled.section`
   padding: 40px 0;
-  height: calc(100vh - 95px);
-  min-height: 600px;
+  min-height: calc(100vh - 95px);
+  display: flex;
+  align-items: center;
 `
 
 const Col = styled.div`

@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import Container from '../components/ui/Container';
@@ -6,24 +6,24 @@ import CourseCard from '../components/CourseCard';
 
 import Button from '../components/ui/Button';
 
-const Courses = forwardRef((props, ref) => {
+const Courses = forwardRef(({ activeLocation, setActiveLocation }, ref) => {
 
-    const [activeLocation, setActiveLocation] = useState(null);
+    // const [activeLocation, setActiveLocation] = useState(null);
     const isActiveLocation = (loc) => loc === activeLocation
 
     const courses = [
-        { id: 1, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online' },
-        { id: 2, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ' },
-        { id: 3, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя' },
-        { id: 4, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online' },
-        { id: 5, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ' },
-        { id: 6, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя' },
-        { id: 7, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online' },
-        { id: 8, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ' },
-        { id: 9, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя' },
-        { id: 10, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online' },
-        { id: 11, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ' },
-        { id: 12, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя' },
+        { id: 1, name: 'front-end', date: new Date(2022, 10, 5), lessons: 28, places: 18, location: 'online', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
+        { id: 2, name: 'it project manager', date: new Date(2022, 4, 10), lessons: 25, places: 18, location: 'Київ', url: 'https://powercode.academy/uk/online-courses/course-project-management/'},
+        { id: 3, name: 'ux/ui web design', date: new Date(2022, 9, 28), lessons: 28, places: 18, location: 'Запоріжжя', url: 'https://powercode.academy/uk/online-courses/course-web-design/'},
+        { id: 4, name: 'front-end advanced', date: new Date(2022, 10, 5), lessons: 28, places: 18, location: 'online', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
+        { id: 5, name: 'front-end', date: new Date(2022, 10, 5), lessons: 12, places: 28, location: 'Київ', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
+        { id: 6, name: 'it project manager', date: new Date(2022, 4, 10), lessons: 25, places: 18, location: 'Запоріжжя', url: 'https://powercode.academy/uk/online-courses/course-project-management/'},
+        { id: 7, name: 'ux/ui web design', date: new Date(2022, 9, 28), lessons: 28, places: 18, location: 'online', url: 'https://powercode.academy/uk/online-courses/course-web-design/'},
+        { id: 8, name: 'front-end advanced', date: new Date(2022, 10, 5), lessons: 28, places: 18, location: 'Київ', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
+        { id: 9, name: 'front-end', date: new Date(2022, 10, 5), lessons: 12, places: 28, location: 'Запоріжжя', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
+        { id: 10, name: 'it project manager', date: new Date(2022, 4, 10), lessons: 25, places: 18, location: 'online', url: 'https://powercode.academy/uk/online-courses/course-project-management/'},
+        { id: 11, name: 'ux/ui web design', date: new Date(2022, 9, 28), lessons: 28, places: 18, location: 'Київ', url: 'https://powercode.academy/uk/online-courses/course-web-design/'},
+        { id: 12, name: 'front-end advanced', date: new Date(2022, 10, 5), lessons: 28, places: 18, location: 'Запоріжжя', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
     ]
 
     const locations = Array.from(new Set(courses.map(course => course.location)));
@@ -35,25 +35,6 @@ const Courses = forwardRef((props, ref) => {
                 <CoursesHeader>
                     <HeaderText><b>On-line</b> навчання</HeaderText>
                     <ButtonsArea>
-                        {/* <Button
-                            height='40px'
-                            width='120px'
-                            margin='0 10px 0 0'
-                            size='14px'
-                        >
-                            online
-                        </Button>
-                        <Button
-                            height='40px'
-                            width='120px'
-                            margin='0 10px 0 0'
-                            size='14px'
-                            color='#333333'
-                            bgcolor='none'
-                            border='1px solid #333333'
-                        >
-                            Київ
-                        </Button> */}
                         {locations.map((location, i) => (
                             <CourseButton
                                 key={location}
@@ -75,6 +56,7 @@ const Courses = forwardRef((props, ref) => {
                                 lessons={course?.lessons}
                                 places={course?.places}
                                 location={course?.location}
+                                url={course?.url}
                             />
                         ))
                         : courses.filter(course => course.location === activeLocation).map(course => (
@@ -102,34 +84,17 @@ const Wrapper = styled.section`
 
 const CoursesTitle = styled.h3`
     margin-bottom: 16px;
-
     font-family: 'Rubik';
     font-style: normal;
     font-weight: 700;
-    font-size: 64px;
+    font-size: calc(24px + 40 * (100vw / 1760));
     line-height: 138%;
-
     letter-spacing: 4px;
     text-transform: uppercase;
-
-    color: #232F3C;  
-`;
-
-const CourseButton = styled(Button)`
-    height: 40px;
-    width: 120px;
-    margin: 0 10px 0 0;
-    font-size: 14px;
-    color: #333333;
-    background: ${({ isActiveLocation }) => isActiveLocation ? '#EF5B63' : 'none'};
-    color: ${({ isActiveLocation }) => isActiveLocation ? '#FFFFFF' : 'inherit'}; 
-    border: ${({ isActiveLocation }) => isActiveLocation ? 'none' : '1px solid #333333'};
-
-    /* :focus {
-        color: #FFFFFF;
-        background: #EF5B63;
-        border: none;
-    } */
+    color: #232F3C;
+    @media (max-width: 740px) {
+        text-align: center;
+    }    
 `;
 
 const CardsContainer = styled.div`
@@ -139,17 +104,24 @@ const CardsContainer = styled.div`
     grid-auto-rows: 250px;
     grid-gap: 30px;
 
+    margin-bottom: 120px;
+
     @media(max-width: 1474px) {
         grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 75px;
     }
 
     @media(max-width: 1114px) {
         grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 50px;
+        grid-gap: 20px;
     }
     
     @media(max-width: 754px) {
         grid-template-columns: repeat(1, minmax(300px, 1fr));
         grid-auto-rows: 180px;
+        grid-gap: 10px;
+        margin-bottom: 20px;
     }
 `;
 
@@ -162,6 +134,10 @@ const CoursesHeader = styled.div`
 
     margin-bottom: 36px;
 
+    @media (max-width: 740px) {
+        flex-direction: column-reverse;
+        margin-bottom: 30px;
+    }
 `;
 
 const HeaderText = styled.span`
@@ -169,7 +145,7 @@ const HeaderText = styled.span`
 
     font-family: 'Rubik';
     font-weight: 500;
-    font-size: 26px;
+    font-size: calc(18px + 6 * (100vw / 1410));
     line-height: 185%;
 
     letter-spacing: 2px;
@@ -184,13 +160,27 @@ const HeaderText = styled.span`
 `;
 
 const ButtonsArea = styled.div`
-    display: flex;
-    
-    & > * {
-        margin-right: 10px;
-    }
+    display: grid;
+    grid-template-columns: repeat(3, minmax(calc(33.3% - 52px), 120px));
+    grid-column-gap: 10px;
 
     :last-child {
         margin-right: 0;
     }
+
+    @media (max-width: 740px) {
+        margin-bottom: 30px;
+    }
+`;
+
+const CourseButton = styled(Button)`
+    height: 40px;
+    width: 120px;
+    margin: 0 10px 0 0;
+    padding: 0;
+    font-size: 14px;
+    color: #333333;
+    background: ${({ isActiveLocation }) => isActiveLocation ? '#EF5B63' : 'none'};
+    color: ${({ isActiveLocation }) => isActiveLocation ? '#FFFFFF' : 'inherit'}; 
+    border: ${({ isActiveLocation }) => isActiveLocation ? 'none' : '1px solid #333333'};
 `;
