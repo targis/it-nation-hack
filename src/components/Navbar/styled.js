@@ -8,7 +8,7 @@ const Header = styled.header`
 
 const TelLink = styled.a`
   font-family: Rubik, sans-serif;
-  font-size: 0.875em;
+  font-size: 1em;
   font-weight: 700;
   color: var(--font-color);
   text-decoration: none;

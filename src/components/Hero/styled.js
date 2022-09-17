@@ -5,8 +5,9 @@ import Flex from '../ui/Flex'
 
 const Section = styled.section`
   padding: 40px 0;
-  height: calc(100vh - 95px);
-  min-height: 600px;
+  min-height: calc(100vh - 95px);
+  display: flex;
+  align-items: center;
 `
 
 const Col = styled.div`
@@ -14,7 +15,7 @@ const Col = styled.div`
   & + & {
     margin-left: 32px;
     @media (max-width: 991px) {
-      margin-left: 16px;
+      margin-left: 0;
       order: -1;
       max-width: 500px;
     }
@@ -118,6 +119,9 @@ const FlexMd = styled(Flex)`
   @media (max-width: 991px) {
     flex-direction: column;
     text-align: center;
+  }
+  @media (max-width: 576px) {
+    justify-content: center;
   }
 `
 

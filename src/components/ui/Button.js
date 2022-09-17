@@ -4,7 +4,6 @@ const Button = styled.button`
   display: ${({ display }) => display || 'flex'};
   justify-content: center;
   align-items: center;
-
   height: ${({ height }) => height || 'auto'};
   width: ${({ width }) => width || 'auto'};
   padding: ${({ padding }) => padding || '11px 21px'};
@@ -27,4 +26,5 @@ const Button = styled.button`
 
 
 export default Button
+
 
