@@ -32,7 +32,7 @@ const Li = styled.li`
   padding: 18px 0;
 `
 
-const Link = styled.a`
+const Button = styled.button`
   font-family: 'Rubik';
   font-style: normal;
   font-weight: 700;
@@ -42,10 +42,12 @@ const Link = styled.a`
   text-transform: uppercase;
   color: #232f3c;
   transition: all 0.25s ease;
+  background: none;
+  border: none;
   &:hover {
     color: #ef5b63;
     padding-left: 1em;
   }
 `
 
-export { Nav, Ul, Li, Link }
+export { Nav, Ul, Li, Button }

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, forwardRef } from 'react';
 import styled from 'styled-components';
 
 import Container from '../components/ui/Container';
@@ -6,7 +6,7 @@ import CourseCard from '../components/CourseCard';
 
 import Button from '../components/ui/Button';
 
-const Courses = () => {
+const Courses = forwardRef((props, ref) => {
 
     const [activeLocation, setActiveLocation] = useState(null);
     const isActiveLocation = (loc) => loc === activeLocation
@@ -29,7 +29,7 @@ const Courses = () => {
     const locations = Array.from(new Set(courses.map(course => course.location)));
 
     return (
-        <Wrapper>
+        <Wrapper ref={ref}>
             <Container>
                 <CoursesTitle>Наші курси</CoursesTitle>
                 <CoursesHeader>
@@ -92,7 +92,7 @@ const Courses = () => {
             </Container>
         </Wrapper>
     );
-}
+})
 
 export default Courses;
 
