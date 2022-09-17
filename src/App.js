@@ -10,7 +10,8 @@ import About from './components/About'
 import Courses from './containers/Courses'
 import Gallery from './containers/Gallery';
 import Partners from './containers/Partners'
-import Salary from './containers/Jobs';
+import Jobs from './containers/Jobs';
+import Contacts from './containers/Contacts';
 import Footer from './containers/Footer'
 
 function App() {
@@ -19,11 +20,11 @@ function App() {
       <Navbar />
       <Courses />
       <Offer />
-      <Salary />
+      <Jobs />
       <About />
       <Gallery />
       <Partners />
-
+      <Contacts />
       <Footer />
     </>
   )

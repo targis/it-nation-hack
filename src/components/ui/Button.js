@@ -4,6 +4,7 @@ const Button = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+
     height: ${({ height }) => height || 'auto'};
     width: ${({ width }) => width || 'auto'};
     padding: ${({ padding }) => padding || null};
@@ -17,7 +18,7 @@ const Button = styled.button`
     font-family: 'Rubik';
     font-weight: ${({ weight }) => weight || 700};
     font-size: ${({ size }) => size || '18px'};
-    line-height: 1;
+    line-height: 100%;
     text-align: center;
     text-transform: uppercase;
 `;
