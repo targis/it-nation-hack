@@ -17,12 +17,12 @@ const About = () => {
                         Наші основні напрямки: Front end, Python, UI/UX design, PM, <br /> QA и др. Розшир свої кар’єрні можливості разом з нами!
                     </AboutSectionText>
                 </AboutTextContainer>
-        <AboutImgContainer>
+                <AboutImgContainer>
                     <AboutSectionImg
                         src={ImgAbout}
                         alt = ""
                     />
-        </AboutImgContainer>
+                </AboutImgContainer>
             </AboutContainer>
         </Container>
     )
