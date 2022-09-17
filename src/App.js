@@ -9,12 +9,12 @@ import Salary from './containers/Jobs';
 function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar />
       <Courses />
       <Offer />
       <About />
       <Gallery />
-      <Salary />
+      <Salary /> */}
       <Thankyoupage />
     </>
   )
