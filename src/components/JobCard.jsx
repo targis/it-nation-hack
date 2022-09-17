@@ -138,6 +138,22 @@ const Salary = styled.p`
 const Image = styled.img`
     position: absolute;
     top: 30px;
-    left: 115px;
+    right: 0;
+    transform: translateX(30%);
     z-index: -1;
+
+    @media (max-width: 1024px) {
+        top: 20px;
+        padding: 25px 20px 20px;
+    }
+
+    @media (max-width: 768px) {
+        top: 10px;
+        padding: 20px 20px 20px;
+    }
+
+    @media (max-width: 360px) {
+        top: 0;
+        padding: 15px 20px 20px;
+    }
 `;

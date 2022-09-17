@@ -62,11 +62,23 @@ const JobContainer = styled.div`
     grid-template-rows: 420px;  
     grid-gap: 30px;
 
+    margin-bottom: 120px;
+
     @media (max-width: 1024px) {
         /* grid-template-rows: 370px;   */
         justify-content: center;
-        grid-template-columns: repeat(1, minmax(auto, 450px));
-        grid-template-rows: 270px; 
+        grid-template-columns: repeat(1, 100%);
+        grid-template-rows: 270px;
+        grid-auto-rows: 270px;
+        margin-bottom: 90px;
+    }
+
+    @media (max-width: 768px) {
+        margin-bottom: 60px;
+    }
+
+    @media (max-width: 360px) {
+        margin-bottom: 30px;
     }
 
     /* @media (max-width: 768px) {
