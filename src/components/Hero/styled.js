@@ -4,10 +4,14 @@ import Button from '../ui/Button'
 import Flex from '../ui/Flex'
 
 const Section = styled.section`
+  position: relative;
   padding: 40px 0;
   min-height: calc(100vh - 95px);
   display: flex;
   align-items: center;
+  @media (max-width: 991px) {
+    padding-top: 0;
+  }
 `
 
 const Col = styled.div`
@@ -20,7 +24,7 @@ const Col = styled.div`
       max-width: 500px;
       z-index: -1;
     }
-    @media (max-width: 576px) {
+    @media (max-width: 991px) {
       position: absolute;
       z-index: -1;
       filter: blur(27px);
@@ -64,6 +68,13 @@ const Header = styled.h1`
   @media (max-width: 576px) {
     font-size: 38px;
     margin-bottom: 45px;
+  }
+`
+
+const ButtonSC = styled(Button)`
+  @media (max-width: 1040px) {
+    padding-left: 34px;
+    padding-right: 34px;
   }
 `
 
@@ -120,6 +131,7 @@ const FlexMd = styled(Flex)`
   @media (max-width: 991px) {
     flex-direction: column;
     text-align: center;
+    justify-content: center;
   }
   @media (max-width: 576px) {
     justify-content: center;
@@ -164,4 +176,5 @@ export {
   ButtonSecondary,
   HeroImageSC,
   FlexMd,
+  ButtonSC,
 }
