@@ -38,6 +38,27 @@ const PartnersContainer = styled.section`
     @media (max-width: 1080px) {
         margin-bottom: 50%;
     }
+    @media (max-width: 797px) {
+        margin-bottom: 60%;
+    }
+    @media (max-width: 690px) {
+        margin-bottom: 70%;
+    }
+    @media (max-width: 620px) {
+        margin-bottom: 80%;
+    }
+    @media (max-width: 560px) {
+        margin-bottom: 90%;
+    }
+    @media (max-width: 475px) {
+        margin-bottom: 100%;
+    }
+    @media (max-width: 440px) {
+        margin-bottom: 120%;
+    }
+    @media (max-width: 385px) {
+        margin-bottom: 150%;
+    }
 `;
 
 const Inscription = styled.h2`
@@ -45,7 +66,7 @@ const Inscription = styled.h2`
     font-family: 'Rubik';
     font-weight: 700;
     font-size: calc(24px + 142 * (100vw / 1760));
-    line-height: 60%;
+    line-height: 100%;
 
     letter-spacing: 3px;
     text-transform: uppercase;
