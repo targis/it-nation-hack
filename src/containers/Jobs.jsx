@@ -43,7 +43,7 @@ const JobTitle = styled.h3`
 
     font-family: 'Rubik';
     font-weight: 700;
-    font-size: calc(24px + 40 * (100vw / 1410));;
+    font-size: calc(24px + 40 * (100vw / 1760));
     line-height: 138%;
 
     letter-spacing: 4px;

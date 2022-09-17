@@ -77,7 +77,7 @@ const CourseName = styled.p`
     font-family: 'Rubik';
     font-style: normal;
     font-weight: 700;
-    font-size: calc(26px + 10 * (100vw / 1410));;
+    font-size: calc(26px + 10 * (100vw / 1760));;
     line-height: 128%;
 
     text-transform: uppercase;
