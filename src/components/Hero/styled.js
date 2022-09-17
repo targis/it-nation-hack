@@ -18,6 +18,13 @@ const Col = styled.div`
       order: -1;
       max-width: 500px;
     }
+    @media (max-width: 576px) {
+      position: absolute;
+      z-index: -1;
+      filter: blur(27px);
+      opacity: 30;
+      transition: all 0.25s ease;
+    }
   }
   @media (max-width: 991px) {
     width: 100%;
@@ -31,6 +38,9 @@ const Description = styled.p`
   line-height: 1.6;
   color: #333333;
   margin-bottom: 0.69em;
+  @media (max-width: 576px) {
+    font-size: 18px;
+  }
 `
 
 const Header = styled.h1`
@@ -48,6 +58,10 @@ const Header = styled.h1`
   }
   @media (max-width: 991px) {
     font-size: 60px;
+  }
+  @media (max-width: 576px) {
+    font-size: 38px;
+    margin-bottom: 45px;
   }
 `
 
@@ -86,6 +100,18 @@ const ButtonSecondary = styled(Button)`
     margin-top: 1.5em;
     margin-left: 0;
   } */
+  @media (max-width: 576px) {
+    display: flex;
+    margin: 0 auto;
+    margin-top: 1.75em;
+    padding-top: 45px;
+    padding-right: 21px;
+    &::after {
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
 `
 
 const FlexMd = styled(Flex)`
