@@ -31,6 +31,7 @@ const PartnersContainer = styled.section`
     display: flex;
     justify-content: center;
     position: relative;
+    /* height: 100%; */
     width: 100%;
     margin-bottom: 105px;
 `;
@@ -38,7 +39,8 @@ const PartnersContainer = styled.section`
 const Inscription = styled.h2`
     font-family: 'Rubik';
     font-weight: 700;
-    font-size: 146px;
+    /* font-size: 146px; */
+    font-size: calc(24px + 142 * (100vw / 1410));
     line-height: 60%;
 
     letter-spacing: 3px;
@@ -57,4 +59,8 @@ const Logos = styled.div`
     left: 50%;
     transform: translate(-50%, -50%);
     height: 58px;
+    
+    @media (max-width: 970px) {
+        grid-template-columns: 1fr;
+    }
 `;

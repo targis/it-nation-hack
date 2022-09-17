@@ -100,6 +100,7 @@ const CourseButton = styled(Button)`
     height: 40px;
     width: 120px;
     margin: 0 10px 0 0;
+    padding: 0;
     font-size: 14px;
     color: #333333;
     background: ${({ isActiveLocation }) => isActiveLocation ? '#EF5B63' : 'none'};
@@ -173,10 +174,6 @@ const ButtonsArea = styled.div`
     display: grid;
     grid-template-columns: repeat(3, minmax(calc(33.3% - 52px), 120px));
     grid-column-gap: 10px;
-    
-    /* & > * {
-        margin-right: 10px;
-    } */
 
     :last-child {
         margin-right: 0;
@@ -184,22 +181,5 @@ const ButtonsArea = styled.div`
 
     @media (max-width: 740px) {
         margin-bottom: 30px;
-    }
-`;
-
-const CourseButton = styled(Button)`
-    height: 40px;
-    width: 100%;
-    margin: 0 10px 0 0;
-    padding: 0;
-    font-size: 14px;
-    color: #333333;
-    background: none;
-    border: 1px solid #333333;
-
-    :focus {
-        color: #FFFFFF;
-        background: #EF5B63;
-        border: none;
     }
 `;
