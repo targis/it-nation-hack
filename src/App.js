@@ -1,5 +1,4 @@
 import { useState, useRef } from 'react'
-
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
 import Offer from './components/Offer'
@@ -77,6 +76,7 @@ function App() {
       <Partners />
       <Contacts ref={contactsRef} />
       <Footer />
+      <Form />
     </>
   )
 }

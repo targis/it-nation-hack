@@ -14,10 +14,10 @@ const Partners = () => {
             <PartnersContainer>
                 <Inscription>Наші партнери</Inscription>
                 <Logos>
-                    <img src={ITnation} alt="" />
-                    <img src={Diia} alt="" />
-                    <img src={Ease} alt="" />
-                    <img src={Powercode} alt="" />
+                    <a href='https://www.instagram.com/it_nation_2.0/'><img src={ITnation} alt="" /></a>
+                    <a href='https://thedigital.gov.ua/'><img src={Diia} alt="" /></a>
+                    <a href='https://it-ease.com/ru/'><img src={Ease} alt="" /></a>
+                    <a href='https://powercode.academy/uk/'><img src={Powercode} alt="" /></a>
                 </Logos>
             </PartnersContainer>
 
