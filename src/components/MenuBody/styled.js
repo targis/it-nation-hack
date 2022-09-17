@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 
 const Nav = styled.nav`
+  text-align: left;
   position: absolute;
   top: 50%;
   left: ${({ isMenuOpen }) => (isMenuOpen ? '0' : '-100%')};
   transform: translateY(-50%);
   opacity: ${({ isMenuOpen }) => (isMenuOpen ? '100' : '0')};
   transition: all 0.25s ease;
+  z-index: 10;
 `
 
 const Ul = styled.ul`
