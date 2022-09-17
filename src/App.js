@@ -1,4 +1,10 @@
 import { useState, useRef, useEffect } from 'react'
+import styled from 'styled-components';
+
+import { ThemeProvider } from 'styled-components';
+import darkTheme from './themes/darkTheme';
+import lightTheme from './themes/lightTheme';
+
 import Button from './components/ui/Button'
 import Form from './components/Form'
 import Hero from './components/Hero'
@@ -14,9 +20,27 @@ import Contacts from './containers/Contacts'
 import Footer from './containers/Footer'
 
 function App() {
+
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const toggleMenuState = () => {
     setIsMenuOpen(!isMenuOpen)
+  }
+
+  const [theme, setTheme] = useState('light');
+
+  useEffect(() => {
+
+    const currentTheme = sessionStorage.getItem('theme')
+
+    if (currentTheme) {
+      setTheme(currentTheme)
+    } 
+  }, []);
+
+
+  const toogleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+    sessionStorage.setItem('theme', theme === 'light' ? 'dark' : 'light');
   }
 
   const coursesRef = useRef(null)
@@ -52,33 +76,44 @@ function App() {
   const [activeLocation, setActiveLocation] = useState(null)
 
   return (
-    <>
-      <Navbar
-        toggleMenuState={toggleMenuState}
-        isMenuOpen={isMenuOpen}
-        scrollTo={scrollTo}
-        coursesRef={coursesRef}
-      />
-      <Hero
-        setActiveLocation={setActiveLocation}
-        scrollTo={scrollTo}
-        toggleMenuState={toggleMenuState}
-        isMenuOpen={isMenuOpen}
-      />
-      <Courses
-        activeLocation={activeLocation}
-        setActiveLocation={setActiveLocation}
-        ref={coursesRef}
-      />
-      <Offer ref={offerRef} />
-      <Jobs ref={jobsRef} />
-      <About ref={aboutRef} />
-      <Gallery />
-      <Partners />
-      <Contacts ref={contactsRef} />
-      <Footer />
-    </>
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      {/* <Wrapper> */}
+        <Navbar
+          toggleMenuState={toggleMenuState}
+          isMenuOpen={isMenuOpen}
+          scrollTo={scrollTo}
+          coursesRef={coursesRef}
+          theme={theme}
+          toogleTheme={toogleTheme}
+        />
+        <Hero
+          setActiveLocation={setActiveLocation}
+          scrollTo={scrollTo}
+          toggleMenuState={toggleMenuState}
+          isMenuOpen={isMenuOpen}
+        />
+        <Courses
+          activeLocation={activeLocation}
+          setActiveLocation={setActiveLocation}
+          ref={coursesRef}
+        />
+        <Offer ref={offerRef} />
+        <Jobs ref={jobsRef} />
+        <About ref={aboutRef} />
+        <Gallery />
+        <Partners />
+        <Contacts ref={contactsRef} />
+        <Footer />
+      {/* </Wrapper> */}
+    </ThemeProvider>
   )
 }
 
-export default App
+export default App;
+
+// const Wrapper = styled.div`
+//   background-color: ${({ theme }) => theme.colors.bgcolor};
+//   * {
+//     color: ${({ theme }) => theme.colors.text };
+//   }
+// `

@@ -7,7 +7,16 @@ import { Header, TelLink, Controls } from './styled'
 import Logo from '../Logo'
 import PowercodeLogo from '../../icons/logo.svg'
 
-const Navbar = ({ isMenuOpen, toggleMenuState, scrollTo }) => {
+import { IoMoonOutline, IoMoonSharp } from 'react-icons/io5';
+import { BsSun } from 'react-icons/bs';
+
+const Navbar = ({ 
+  isMenuOpen, 
+  toggleMenuState, 
+  scrollTo,
+  theme,
+  toogleTheme
+}) => {
   return (
     <Header>
       <Container>
@@ -20,6 +29,7 @@ const Navbar = ({ isMenuOpen, toggleMenuState, scrollTo }) => {
               <TelLink href="tel:+38 (099) 705 14 18">+38 (099) 705 14 18</TelLink>
             </Flex>
             <Button display={'inline-block'} hiddenSm={true} size={'14px'} lheight={'18px'} onClick={scrollTo.contacts}>Записатися</Button>
+            {theme === 'light' ? <IoMoonOutline onClick={() => toogleTheme()}/> : <BsSun onClick={() => toogleTheme()}/>}
             <Menu toggleMenuState={toggleMenuState} isMenuOpen={isMenuOpen} />
           </Controls>
 
