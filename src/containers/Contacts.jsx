@@ -14,8 +14,8 @@ import Question from '../icons/form/question.svg';
 const Contacts = () => {
     return (
 
-            <Container>
-                <ContactsWrapper>
+        <Container id='contacts'>
+            <ContactsWrapper>
                 <ContactsContainer>
                     <ButtonsArea>
                         <Button
@@ -55,7 +55,7 @@ const Contacts = () => {
                                 powercodeacademy@gmail.com
                             </ContactItem>
                         </ContactList>
-                        
+
                     </ContactInformation>
 
                     <SocialLinks />
@@ -69,8 +69,8 @@ const Contacts = () => {
                     <Form />
                 </FormContainer>
 
-                </ContactsWrapper>
-            </Container>
+            </ContactsWrapper>
+        </Container>
 
 
     );
