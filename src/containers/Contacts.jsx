@@ -84,12 +84,15 @@ const Contacts = forwardRef((props, ref) => {
 export default Contacts;
 
 const ContactsWrapper = styled.section`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     position: relative;
     /* height: 495px; */
     width: 100%;
     /* padding: 45px; */
     margin-bottom: 70px;
-    background-color: yellowgreen;
+    /* background-color: yellowgreen; */
     border-radius: 20px;
 
     @media (max-width: 1170px) {
@@ -150,6 +153,9 @@ const ContactItem = styled.li`
 
     color: #FFFFFF;
 
+    overflow: hidden;
+    text-overflow: ellipsis;
+
     & > img {
         margin-right: 16px;
     }
@@ -166,7 +172,7 @@ const FormContainer = styled.div`
     right: 0;
     transform: translate(-32px, -50%);
 
-    width: 509px;
+    width: 510px;
     padding: 26px 36px;
 
     background: #232F3C;
@@ -174,6 +180,7 @@ const FormContainer = styled.div`
     
     @media (max-width: 1170px) {
         width: 100%;
+        max-width: 510px;
         position: static;
         transform: none;
         margin-bottom: 30px;
@@ -225,6 +232,4 @@ const FormText = styled.p`
     line-height: 150%;
 
     color: #FFFFFF; 
-    overflow: hidden;
-    text-overflow: ellipsis;
 `;
