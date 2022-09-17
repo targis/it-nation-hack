@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import Container from '../components/ui/Container';
@@ -8,20 +8,20 @@ import Junior from '../imgs/junior.png';
 import Middle from '../imgs/middle.png';
 import Senior from '../imgs/senior.png';
 
-const Salary = () => {
+const Salary = forwardRef((props, ref) => {
 
     const jobs = [
-        {id: 1, position: 'Junior', img: Junior, experience: 6, time: 'місяців', salary: 400, color: '#4FCC97'},
-        {id: 2, position: 'Middle', img: Middle, experience: 2, time: 'років', salary: 1100, color: '#55CBDC'},
-        {id: 3, position: 'Senior', img: Senior, experience: 6, time: 'місяців', salary: 2400, color: '#EF5B63'}
+        { id: 1, position: 'Junior', img: Junior, experience: 6, time: 'місяців', salary: 400, color: '#4FCC97' },
+        { id: 2, position: 'Middle', img: Middle, experience: 2, time: 'років', salary: 1100, color: '#55CBDC' },
+        { id: 3, position: 'Senior', img: Senior, experience: 4, time: 'років', salary: 2400, color: '#EF5B63' }
     ]
 
     return (
-        <Container>
+        <Container ref={ref}>
             <JobTitle>Зарплати IT фахівців</JobTitle>
             <JobContainer>
                 {jobs.map(job => (
-                    <JobCard 
+                    <JobCard
                         key={job.id}
                         position={job?.position}
                         img={job?.img}
@@ -34,7 +34,7 @@ const Salary = () => {
             </JobContainer>
         </Container>
     );
-}
+})
 
 export default Salary;
 

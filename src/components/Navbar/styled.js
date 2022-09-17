@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const Header = styled.header`
   display: flex;
   /* margin-top: 22px; */
-  padding: 1.375em 0.5em;
+  padding: 1.375em 0;
 `
 
 const TelLink = styled.a`

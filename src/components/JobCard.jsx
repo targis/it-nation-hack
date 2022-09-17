@@ -91,5 +91,5 @@ const Image = styled.img`
     position: absolute;
     top: 30px;
     left: 115px;
-
+    z-index: -1;
 `;

@@ -1,18 +1,18 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 import Container from "./ui/Container";
-import OfferBgGreen from "../imgs/offer_bg_green.png"; 
+import OfferBgGreen from "../imgs/offer_bg_green.png";
 import Button from "./ui/Button";
 import OfferImg from "../imgs/laptop.png"
 
 
-const Offer = () => {
+const Offer = forwardRef((props, ref) => {
     return (
-        <Container>
+        <Container ref={ref}>
             <OfferContainer>
                 <OfferTextContainer>
                     <OfferTitle>
-                          НЕ можеш обрати <b>свій курс?</b>
+                        НЕ можеш обрати <b>свій курс?</b>
                     </OfferTitle>
                     <Offertext>
                         Наші фахівці допоможуть із вибором курсу, який підходить саме Вам! Залиште контакти та безкоштовно отримайте інформацію щодо курсу.
@@ -20,13 +20,13 @@ const Offer = () => {
                     <Button>ЗАПИСАТИСЯ</Button>
                 </OfferTextContainer>
                 <OfferImages
-                        src={OfferImg}
-                        alt = ""
-                    />
+                    src={OfferImg}
+                    alt=""
+                />
             </OfferContainer>
         </Container>
     )
-}
+})
 
 export default Offer;
 
