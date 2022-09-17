@@ -13,7 +13,7 @@ const Salary = () => {
     const jobs = [
         {id: 1, position: 'Junior', img: Junior, experience: 6, time: 'місяців', salary: 400, color: '#4FCC97'},
         {id: 2, position: 'Middle', img: Middle, experience: 2, time: 'років', salary: 1100, color: '#55CBDC'},
-        {id: 3, position: 'Senior', img: Senior, experience: 6, time: 'місяців', salary: 2400, color: '#EF5B63'}
+        {id: 3, position: 'Senior', img: Senior, experience: 4, time: 'років', salary: 2400, color: '#EF5B63'}
     ]
 
     return (
