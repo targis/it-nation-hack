@@ -36,7 +36,6 @@ const CardWrapper = styled.article`
 
     width: 100%;
     height: 100%;
-    /* max-width: 330px; */
     max-height: 250px;
     padding: 16px;
 
@@ -78,13 +77,12 @@ const CourseName = styled.p`
     font-family: 'Rubik';
     font-style: normal;
     font-weight: 700;
-    font-size: 36px;
+    font-size: calc(26px + 10 * (100vw / 1410));;
     line-height: 128%;
 
     text-transform: uppercase;
 
     @media(max-width: 724px) {
-        font-size: 26px;
         line-height: 138%;
     }
 `;

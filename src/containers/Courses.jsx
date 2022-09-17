@@ -35,25 +35,6 @@ const Courses = forwardRef((props, ref) => {
                 <CoursesHeader>
                     <HeaderText><b>On-line</b> навчання</HeaderText>
                     <ButtonsArea>
-                        {/* <Button
-                            height='40px'
-                            width='120px'
-                            margin='0 10px 0 0'
-                            size='14px'
-                        >
-                            online
-                        </Button>
-                        <Button
-                            height='40px'
-                            width='120px'
-                            margin='0 10px 0 0'
-                            size='14px'
-                            color='#333333'
-                            bgcolor='none'
-                            border='1px solid #333333'
-                        >
-                            Київ
-                        </Button> */}
                         {locations.map((location, i) => (
                             <CourseButton
                                 key={location}
@@ -102,34 +83,29 @@ const Wrapper = styled.section`
 
 const CoursesTitle = styled.h3`
     margin-bottom: 16px;
-
     font-family: 'Rubik';
     font-style: normal;
     font-weight: 700;
-    font-size: 64px;
+    font-size: calc(24px + 40 * (100vw / 1410));
     line-height: 138%;
-
     letter-spacing: 4px;
     text-transform: uppercase;
-
-    color: #232F3C;  
+    color: #232F3C;
+    @media (max-width: 740px) {
+        text-align: center;
+    }    
 `;
 
 const CourseButton = styled(Button)`
     height: 40px;
     width: 120px;
     margin: 0 10px 0 0;
+    padding: 0;
     font-size: 14px;
     color: #333333;
     background: ${({ isActiveLocation }) => isActiveLocation ? '#EF5B63' : 'none'};
     color: ${({ isActiveLocation }) => isActiveLocation ? '#FFFFFF' : 'inherit'}; 
     border: ${({ isActiveLocation }) => isActiveLocation ? 'none' : '1px solid #333333'};
-
-    /* :focus {
-        color: #FFFFFF;
-        background: #EF5B63;
-        border: none;
-    } */
 `;
 
 const CardsContainer = styled.div`
@@ -139,17 +115,24 @@ const CardsContainer = styled.div`
     grid-auto-rows: 250px;
     grid-gap: 30px;
 
+    margin-bottom: 120px;
+
     @media(max-width: 1474px) {
         grid-template-columns: repeat(3, 1fr);
+        margin-bottom: 75px;
     }
 
     @media(max-width: 1114px) {
         grid-template-columns: repeat(2, 1fr);
+        margin-bottom: 50px;
+        grid-gap: 20px;
     }
     
     @media(max-width: 754px) {
         grid-template-columns: repeat(1, minmax(300px, 1fr));
         grid-auto-rows: 180px;
+        grid-gap: 10px;
+        margin-bottom: 20px;
     }
 `;
 
@@ -162,6 +145,10 @@ const CoursesHeader = styled.div`
 
     margin-bottom: 36px;
 
+    @media (max-width: 740px) {
+        flex-direction: column-reverse;
+        margin-bottom: 30px;
+    }
 `;
 
 const HeaderText = styled.span`
@@ -169,7 +156,7 @@ const HeaderText = styled.span`
 
     font-family: 'Rubik';
     font-weight: 500;
-    font-size: 26px;
+    font-size: calc(18px + 6 * (100vw / 1410));
     line-height: 185%;
 
     letter-spacing: 2px;
@@ -184,13 +171,15 @@ const HeaderText = styled.span`
 `;
 
 const ButtonsArea = styled.div`
-    display: flex;
-    
-    & > * {
-        margin-right: 10px;
-    }
+    display: grid;
+    grid-template-columns: repeat(3, minmax(calc(33.3% - 52px), 120px));
+    grid-column-gap: 10px;
 
     :last-child {
         margin-right: 0;
+    }
+
+    @media (max-width: 740px) {
+        margin-bottom: 30px;
     }
 `;
