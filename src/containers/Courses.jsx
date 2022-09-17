@@ -16,11 +16,11 @@ const Courses = forwardRef(({ activeLocation, setActiveLocation }, ref) => {
         { id: 2, name: 'it project manager', date: new Date(2022, 4, 10), lessons: 25, places: 18, location: 'Київ', url: 'https://powercode.academy/uk/online-courses/course-project-management/'},
         { id: 3, name: 'ux/ui web design', date: new Date(2022, 9, 28), lessons: 28, places: 18, location: 'Запоріжжя', url: 'https://powercode.academy/uk/online-courses/course-web-design/'},
         { id: 4, name: 'front-end advanced', date: new Date(2022, 10, 5), lessons: 28, places: 18, location: 'online', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
-        { id: 5, name: 'front-end', date: new Date(2022, 10, 5), lessons: 12, places: 28, location: 'Київ', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
+        { id: 5, name: 'front-end', date: new Date(2022, 10, 5), lessons: 28, places: 28, location: 'Київ', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
         { id: 6, name: 'it project manager', date: new Date(2022, 4, 10), lessons: 25, places: 18, location: 'Запоріжжя', url: 'https://powercode.academy/uk/online-courses/course-project-management/'},
         { id: 7, name: 'ux/ui web design', date: new Date(2022, 9, 28), lessons: 28, places: 18, location: 'online', url: 'https://powercode.academy/uk/online-courses/course-web-design/'},
         { id: 8, name: 'front-end advanced', date: new Date(2022, 10, 5), lessons: 28, places: 18, location: 'Київ', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
-        { id: 9, name: 'front-end', date: new Date(2022, 10, 5), lessons: 12, places: 28, location: 'Запоріжжя', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
+        { id: 9, name: 'front-end', date: new Date(2022, 10, 5), lessons: 28, places: 28, location: 'Запоріжжя', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
         { id: 10, name: 'it project manager', date: new Date(2022, 4, 10), lessons: 25, places: 18, location: 'online', url: 'https://powercode.academy/uk/online-courses/course-project-management/'},
         { id: 11, name: 'ux/ui web design', date: new Date(2022, 9, 28), lessons: 28, places: 18, location: 'Київ', url: 'https://powercode.academy/uk/online-courses/course-web-design/'},
         { id: 12, name: 'front-end advanced', date: new Date(2022, 10, 5), lessons: 28, places: 18, location: 'Запоріжжя', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
@@ -67,6 +67,7 @@ const Courses = forwardRef(({ activeLocation, setActiveLocation }, ref) => {
                                 lessons={course?.lessons}
                                 places={course?.places}
                                 location={course?.location}
+                                url={course?.url}
                             />
                         ))
                     }

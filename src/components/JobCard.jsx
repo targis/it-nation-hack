@@ -32,6 +32,7 @@ const CardWrapper = styled.article`
     display: flex;
     flex-direction: column;
     position: relative;
+    z-index: 1;
 
     height: 100%;
     width: 100%;
@@ -140,7 +141,7 @@ const Image = styled.img`
     top: 30px;
     right: 0;
     transform: translateX(30%);
-    z-index: -1;
+    z-index: 2;
 
     @media (max-width: 1024px) {
         top: 20px;
