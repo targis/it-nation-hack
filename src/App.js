@@ -32,6 +32,8 @@ function App() {
   const handleJobsScroll = () =>
     jobsRef?.current.scrollIntoView({ behavior: 'smooth' })
 
+  const [activeLocation, setActiveLocation] = useState(null)
+
   return (
     <>
       <Navbar
@@ -46,6 +48,7 @@ function App() {
         coursesRef={coursesRef}
       />
       <Hero
+        setActiveLocation={setActiveLocation}
         scrollTo={{
           courses: handleCoursesScroll,
           about: handleAboutScroll,
@@ -55,7 +58,11 @@ function App() {
         toggleMenuState={toggleMenuState}
         isMenuOpen={isMenuOpen}
       />
-      <Courses ref={coursesRef} />
+      <Courses
+        activeLocation={activeLocation}
+        setActiveLocation={setActiveLocation}
+        ref={coursesRef}
+      />
       <Offer ref={offerRef} />
       <Jobs ref={jobsRef} />
       <About ref={aboutRef} />

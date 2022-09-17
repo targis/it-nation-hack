@@ -8,7 +8,7 @@ import MenuBody from '../MenuBody'
 
 import PlayIcon from '../../icons/video.svg'
 
-const Hero = ({ isMenuOpen, toggleMenuState, scrollTo }) => {
+const Hero = ({ isMenuOpen, toggleMenuState, scrollTo, setActiveLocation }) => {
 
   return (
     <Section>
@@ -25,7 +25,7 @@ const Hero = ({ isMenuOpen, toggleMenuState, scrollTo }) => {
               <Button display={'inline-block'} onClick={scrollTo.courses}>Записатися</Button>
               <ButtonSecondary bgimage={PlayIcon}>Дивитись відео</ButtonSecondary>
             </HeroContent>
-            <MenuBody isMenuOpen={isMenuOpen} scrollTo={scrollTo} toggleMenuState={toggleMenuState} />
+            <MenuBody isMenuOpen={isMenuOpen} scrollTo={scrollTo} toggleMenuState={toggleMenuState} setActiveLocation={setActiveLocation} />
           </Col>
           <Col>
             <HeroImage isMenuOpen={isMenuOpen} />

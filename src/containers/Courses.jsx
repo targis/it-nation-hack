@@ -6,9 +6,9 @@ import CourseCard from '../components/CourseCard';
 
 import Button from '../components/ui/Button';
 
-const Courses = forwardRef((props, ref) => {
+const Courses = forwardRef(({ activeLocation, setActiveLocation }, ref) => {
 
-    const [activeLocation, setActiveLocation] = useState(null);
+    // const [activeLocation, setActiveLocation] = useState(null);
     const isActiveLocation = (loc) => loc === activeLocation
 
     const courses = [
