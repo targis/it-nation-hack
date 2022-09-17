@@ -15,7 +15,7 @@ const Partners = () => {
                 <Inscription>Наші партнери</Inscription>
                 <Logos>
                     <a href='https://www.facebook.com/ITnation-20-102337935602457'><img src={ITnation} alt="" /></a>
-                    <a href='https://thedigital.gov.ua/'><img src={Diia} alt="" /></a>
+                    <a href='https://diia.gov.ua/'><img src={Diia} alt="" /></a>
                     <a href='https://it-ease.com/ru/'><img src={Ease} alt="" /></a>
                     <a href='https://powercode.academy/uk/'><img src={Powercode} alt="" /></a>
                 </Logos>
