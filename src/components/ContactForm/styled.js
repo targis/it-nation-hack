@@ -6,13 +6,17 @@ const Form = styled.form`
   width: 100%;
 `
 
-// const ContactFormContainer = styled.form`
-//     display: flex;
-//     flex-direction: column;
-//     width: 100%;
-//     /* box-sizing: border-box; */
-
-// `;
+const FormContainer = styled.div`
+  width: 100%;
+  max-width: 509px;
+  padding: 26px 36px;
+  background: ${({ light }) => (light ? 'none' : '#232f3c')};
+  border-radius: 20px;
+  @media (max-width: 576px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+`
 
 const TitleForm = styled.h3`
   font-family: 'Rubik';
@@ -24,6 +28,9 @@ const TitleForm = styled.h3`
   text-transform: uppercase;
   color: #333333;
   white-space: nowrap;
+  @media (max-width: 576px) {
+    font-size: 34px;
+  }
 
   & > b {
     font-weight: 700;
@@ -37,21 +44,6 @@ const TitleTextModal = styled.p`
   font-size: 16px;
   line-height: 1.5;
   color: #333333;
-`
-
-const FormContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translate(-32px, -50%);
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  width: 509px;
-  padding: 26px 36px;
-
-  background: #232f3c;
-  border-radius: 20px;
 `
 
 const FormHeader = styled.div`
@@ -72,7 +64,7 @@ const FormHeaderText = styled.h4`
   text-transform: uppercase;
 
   color: #ffffff;
-
+  color: ${({ light }) => (light ? '#333' : '#fff')};
   & > b {
     font-weight: 700;
   }
@@ -86,7 +78,7 @@ const FormText = styled.p`
   font-size: 16px;
   line-height: 150%;
 
-  color: #ffffff;
+  color: ${({ light }) => (light ? '#333' : '#fff')};
 `
 
 const InputSC = styled.input`

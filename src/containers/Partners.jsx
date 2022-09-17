@@ -5,9 +5,9 @@ import Container from '../components/ui/Container';
 
 import ITnation from '../icons/Logo_IT_nation.svg';
 import Diya from '../icons/Diya.svg';
+import Gerb from '../../src/icons/gerb.svg';
 import Ease from '../icons/ease.svg';
 import Powercode from '../icons/powercode_client.svg';
-import Gerb from '../icons/gerb.svg';
 
 const Partners = () => {
     return (
@@ -19,7 +19,7 @@ const Partners = () => {
                     <a href='https://diia.gov.ua/'><img src={Diya} alt="" /></a>
                     <a href='https://thedigital.gov.ua/'><img src={Gerb} alt="" /></a>
                     <a href='https://it-ease.com/ru/'><img src={Ease} alt="" /></a>
-                    <a href='https://powercode.academy/uk/'><img src={Powercode} alt="" /></a>
+                    <a class='power' href='https://powercode.academy/uk/'><img src={Powercode} alt="" /></a>
                 </Logos>
             </PartnersContainer>
 
@@ -33,36 +33,72 @@ const PartnersContainer = styled.section`
     display: flex;
     justify-content: center;
     position: relative;
-    /* height: 100%; */
     width: 100%;
-    margin-bottom: 105px;
+    margin-bottom: 15%;
+    @media (max-width: 1080px) {
+        margin-bottom: 50%;
+    }
 `;
 
 const Inscription = styled.h2`
+    text-align: center;
     font-family: 'Rubik';
     font-weight: 700;
-    /* font-size: 146px; */
     font-size: calc(24px + 142 * (100vw / 1760));
     line-height: 60%;
 
     letter-spacing: 3px;
     text-transform: uppercase;
 
-    color: #F5F6F9;  
+    color: #F5F6F9; 
+    @media (max-width: 1008px) {
+        line-height: 100%;  
+    }
+    @media (max-width: 797px) {
+        font-family: 'Rubik';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 32px;
+        text-align: center;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: #232F3C;
+        padding-bottom: 25%;
+    } 
 `;
 
 const Logos = styled.div`
     display: grid;
     place-items: center;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     grid-gap: 40px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     height: 58px;
+    @media (max-width: 1080px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
     
     @media (max-width: 970px) {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 2fr;
+        grid-gap: 20px;
+        & > a.power {
+            grid-column-start: 1;
+            grid-column-end:3;
+        }
+    }
+    @media (max-width: 797px) {
+        display: grid;
         grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        & > a.power {
+            grid-column-start: 1;
+            grid-column-end:1;
+        }
     }
 `;

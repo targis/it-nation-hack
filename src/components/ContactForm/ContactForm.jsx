@@ -13,6 +13,7 @@ import Input from "./Input";
 import Button from "../ui/Button";
 import Question from '../../icons/form/question.svg';
 import { object, string } from 'yup'
+import Spinner from '../Spinner'
 
 const initialValues = {
 	name: '',
@@ -38,15 +39,18 @@ const validationSchema = object({
 
 
 
-const ContactForm = () => {
+const ContactForm = ({ formTitle = 'Залишилися питання?', light }) => {
+	const titleLast = formTitle.split(' ').at(-1)
+	const titleFirst = `${formTitle.split(' ').slice(0, -1).join(' ')}`
+
 	return (
 
-		<FormContainer>
+		<FormContainer light={light}>
 			<FormHeader>
-				<FormHeaderText>Залишилися <b>питання?</b></FormHeaderText>
-				<img src={Question} alt="" />
+				<FormHeaderText light={light}>{titleFirst} <b>{titleLast}</b></FormHeaderText>
+				{!light && (<img src={Question} alt="" />)}
 			</FormHeader>
-			<FormText>Заповни форму і наш спеціаліст передзвонить тобі, щоб розповісти про деталі курсу і відповісти на питання, що тебе цікавлять.</FormText>
+			<FormText light={light}>Заповни форму і наш спеціаліст передзвонить тобі, щоб розповісти про деталі курсу і відповісти на питання, що тебе цікавлять.</FormText>
 			<Formik
 				initialValues={initialValues}
 				validationSchema={validationSchema}
@@ -54,7 +58,7 @@ const ContactForm = () => {
 					setTimeout(() => {
 						alert(JSON.stringify(values, null, 2));
 						setSubmitting(false);
-					}, 400)
+					}, 1000)
 				}}
 			>
 				{({ handleSubmit, isSubmitting }) => (
@@ -63,6 +67,7 @@ const ContactForm = () => {
 							name='name'
 							type="text"
 							placeholder="Ім'я"
+							disabledChars={/\d/gi}
 						/>
 						<Input
 							name='email'
@@ -73,6 +78,7 @@ const ContactForm = () => {
 							name='tel'
 							type="phone"
 							placeholder="Телефон"
+							disabledChars={/[^\d]/gi}
 						/>
 						<Button
 							type="submit"
@@ -80,7 +86,7 @@ const ContactForm = () => {
 							padding="21px 0"
 							disabled={isSubmitting}
 						>
-							Відправити
+							{isSubmitting ? (<Spinner size={'25px'} color={'#fff'} />) : 'Відправити'}
 						</Button>
 					</Form>
 				)}
