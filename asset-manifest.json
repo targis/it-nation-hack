@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/it-nation-hack/static/css/main.f716a50d.css",
-    "main.js": "/it-nation-hack/static/js/main.c80ab574.js",
+    "main.js": "/it-nation-hack/static/js/main.ef67be1f.js",
     "static/js/787.b92cbb86.chunk.js": "/it-nation-hack/static/js/787.b92cbb86.chunk.js",
     "static/media/girl_student.png": "/it-nation-hack/static/media/girl_student.500cbc2614cc1acadb2d.png",
     "static/media/8.jpg": "/it-nation-hack/static/media/8.c63133dd3add9ba0ec9b.jpg",
@@ -20,14 +20,14 @@
     "static/media/9.jpg": "/it-nation-hack/static/media/9.3b8c5794d3a97e368e30.jpg",
     "static/media/IBMPlexMono-Bold.woff2": "/it-nation-hack/static/media/IBMPlexMono-Bold.620b7b169c34b271a5f1.woff2",
     "static/media/IBMPlexMono-Medium.woff2": "/it-nation-hack/static/media/IBMPlexMono-Medium.e212c588c0a556ff8916.woff2",
+    "static/media/senior.png": "/it-nation-hack/static/media/senior.8a90c78c587d10ea8884.png",
     "static/media/IBMPlexMono-Regular.woff2": "/it-nation-hack/static/media/IBMPlexMono-Regular.255d8b9e69d1556eade4.woff2",
     "static/media/laptop.png": "/it-nation-hack/static/media/laptop.817413199fcfe8c133a5.png",
+    "static/media/middle.png": "/it-nation-hack/static/media/middle.904d7671004a8edc4780.png",
+    "static/media/junior.png": "/it-nation-hack/static/media/junior.b7981a5697f3954db744.png",
     "static/media/fone_girl_student.png": "/it-nation-hack/static/media/fone_girl_student.e26d67bc68972fd03631.png",
     "static/media/boy-modal 2.png": "/it-nation-hack/static/media/boy-modal 2.b190303cc09a23eb3142.png",
     "static/media/Logo_IT_nation.svg": "/it-nation-hack/static/media/Logo_IT_nation.b1e7a58092e9afadc29815d93eec7d16.svg",
-    "static/media/senior.png": "/it-nation-hack/static/media/senior.67801424b88dbfbe224d.png",
-    "static/media/junior.png": "/it-nation-hack/static/media/junior.a8a6cc417839a90f7093.png",
-    "static/media/middle.png": "/it-nation-hack/static/media/middle.56ae7c2e73f2e23ffdfa.png",
     "static/media/powercode_client.svg": "/it-nation-hack/static/media/powercode_client.b70cfa42f15d44244e2d720b624e3dbf.svg",
     "static/media/time-modal.png": "/it-nation-hack/static/media/time-modal.523a1141ed3c630835c0.png",
     "static/media/logo.svg": "/it-nation-hack/static/media/logo.f58158f06edc826ffdf1e85e490fbccd.svg",
@@ -47,11 +47,11 @@
     "static/media/video.svg": "/it-nation-hack/static/media/video.aff4f5002b188ecf842425cce166dc53.svg",
     "static/media/email.svg": "/it-nation-hack/static/media/email.21275709ef4d759a4e259d9ad09e4df8.svg",
     "main.f716a50d.css.map": "/it-nation-hack/static/css/main.f716a50d.css.map",
-    "main.c80ab574.js.map": "/it-nation-hack/static/js/main.c80ab574.js.map",
+    "main.ef67be1f.js.map": "/it-nation-hack/static/js/main.ef67be1f.js.map",
     "787.b92cbb86.chunk.js.map": "/it-nation-hack/static/js/787.b92cbb86.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f716a50d.css",
-    "static/js/main.c80ab574.js"
+    "static/js/main.ef67be1f.js"
   ]
 }
