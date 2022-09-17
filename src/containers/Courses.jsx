@@ -98,20 +98,20 @@ const CoursesTitle = styled.h3`
 const CardsContainer = styled.div`
     display: grid;
     justify-content: space-around;
-    grid-template-columns: repeat(4, minmax(330px, auto));
+    grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 250px;
     grid-gap: 30px;
 
     @media(max-width: 1474px) {
-        grid-template-columns: repeat(3, minmax(330px, auto));
+        grid-template-columns: repeat(3, 1fr);
     }
 
     @media(max-width: 1114px) {
-        grid-template-columns: repeat(2, minmax(330px, auto));
+        grid-template-columns: repeat(2, 1fr);
     }
     
     @media(max-width: 754px) {
-        grid-template-columns: repeat(1, minmax(300px, 330px));
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
         grid-auto-rows: 180px;
     }
 `;

@@ -92,7 +92,8 @@ const ContactsContainer = styled.div`
     display: flex;
     flex-direction: column;
     height: 100%;
-    width: 450px;  
+    width: 100%;
+    max-width: 450px;  
     background-color: grey;
 `;
 
