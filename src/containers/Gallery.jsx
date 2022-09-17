@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Container from '../components/ui/Container';
+import Carousel from '../components/Carousel';
 
 import Img1 from '../imgs/gallery/1.jpg';
 import Img2 from '../imgs/gallery/2.jpg';
@@ -41,6 +42,14 @@ const Gallery = () => {
                     />
                 ))}
             </GalleryContainer>
+            <Carousel>
+                {photos.map(photo => 
+                    <img 
+                        src={photo} alt=''
+                        style={{height: '332px', width: '332px'}}
+                    />
+                )}
+            </Carousel>
         </Container>
     );
 }
