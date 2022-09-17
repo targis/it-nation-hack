@@ -1,9 +1,8 @@
 import Container from '../ui/Container'
 import Button from '../ui/Button'
-import { HeroContent, Section, Col, Description, Header, ButtonSecondary } from './styled'
+import { FlexMd, HeroContent, Section, Col, Description, Header, ButtonSecondary } from './styled'
 // import  HeroImageSrc  from '../../imgs/girl.png'
 import HeroImage from './HeroImage'
-import Flex from '../ui/Flex'
 import MenuBody from '../MenuBody'
 
 import PlayIcon from '../../icons/video.svg'
@@ -12,7 +11,7 @@ const Hero = ({ isMenuOpen }) => {
   return (
     <Section>
       <Container>
-        <Flex direction={'row'} align={'center'}>
+        <FlexMd direction={'row'} align={'center'}>
           <Col>
             <HeroContent isMenuOpen={isMenuOpen} >
               <Description>
@@ -21,7 +20,7 @@ const Hero = ({ isMenuOpen }) => {
               <Header>
                 Powercode Academy
               </Header>
-              <Button>Записатися</Button>
+              <Button display={'inline-block'}>Записатися</Button>
               <ButtonSecondary bgimage={PlayIcon}>Дивитись відео</ButtonSecondary>
             </HeroContent>
             <MenuBody isMenuOpen={isMenuOpen} />
@@ -33,7 +32,7 @@ const Hero = ({ isMenuOpen }) => {
 
 
           </Col>
-        </Flex>
+        </FlexMd>
       </Container>
     </Section>
   )
