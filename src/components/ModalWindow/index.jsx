@@ -9,8 +9,7 @@ const ModalWindow = ({active, setActive, children}) => {
             <ModalContent height="400px" width="500px"
                           transform={active ? "scale(1)" : "scale(0.5)"} 
                           onClick={(e => e.stopPropagation())}>
-                {children}
-                
+                {children}  
             </ModalContent>
         </ModalBackground>
     )

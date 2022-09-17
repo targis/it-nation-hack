@@ -5,7 +5,8 @@ const CourseCard = ({
     name,
     date,
     lessons,
-    places
+    places,
+    location
 }) => {
     return (
         <CardWrapper>
@@ -15,6 +16,9 @@ const CourseCard = ({
                 </CourseDetails>
                 <CourseDetails>
                     {`Усього місць: ${places}`}
+                </CourseDetails>
+                <CourseDetails>
+                    {location}
                 </CourseDetails>
             </CourseAbout>
             <CourseName>
