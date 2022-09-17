@@ -34,8 +34,6 @@ const Offer = forwardRef(({ scrollTo }, ref) => {
                         alt=""
                     />
                 </OfferImageContainer>
-
-
             </OfferContainer>
         </Container>
     )
