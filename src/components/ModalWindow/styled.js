@@ -19,7 +19,8 @@ const ModalBackground = styled.div`
 const ModalContent = styled.div`
   max-width: 100%;
   border-radius: 12px;
-  background-color: white;
+  /* background-color: white; */
+  background-color: ${({ isVideo }) => (isVideo ? 'transparent' : '#fff')};
   transition: all 0.25s ease;
   position: relative;
   z-index: 9999;

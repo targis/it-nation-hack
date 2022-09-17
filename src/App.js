@@ -11,12 +11,15 @@ import Gallery from './containers/Gallery'
 import Footer from './containers/Footer'
 import ModalWindow from './components/ModalWindow'
 import ContactForm from './components/ContactForm'
+import Video from './containers/Video'
 
 // import Thankyoupage from './components/Thankyoupage/Thankyoupage'
 
 function App() {
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isModalFormOpen, setIsModalFormOpen] = useState(false)
+  const [isModalFormVideo, setIsModalVideoOpen] = useState(false)
   // const [isMenuOpen, setIsMenuOpen] = useState(false)
   const toggleMenuState = () => {
     setIsMenuOpen(!isMenuOpen)
@@ -73,7 +76,8 @@ function App() {
         scrollTo={scrollTo}
         toggleMenuState={setIsMenuOpen}
         isMenuOpen={isMenuOpen}
-        handleModal={setIsModalFormOpen}
+        setIsModalFormOpen={setIsModalFormOpen}
+        setIsModalVideoOpen={setIsModalVideoOpen}
       />
       <Courses
         activeLocation={activeLocation}
@@ -93,6 +97,13 @@ function App() {
         isModalForm={true}
       >
         <ContactForm light={true} />
+      </ModalWindow>
+      <ModalWindow
+        active={isModalFormVideo}
+        setIsVideoPlaying={setIsVideoPlaying}
+        setActive={setIsModalVideoOpen}
+      >
+        <Video isVideoPlaying={isModalFormVideo} />
       </ModalWindow>
     </>
   )

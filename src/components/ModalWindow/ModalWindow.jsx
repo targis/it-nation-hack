@@ -15,7 +15,8 @@ const ModalWindow = ({ active, setActive, children, isModalForm }) => {
       onClick={() => setActive(false)}>
       <ModalContent
         transform={active ? "scale(1)" : "scale(0.5)"}
-        onClick={(e => e.stopPropagation())}>
+        onClick={(e => e.stopPropagation())}
+      >
 
         <Section>
 
