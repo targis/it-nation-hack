@@ -32,7 +32,7 @@ const CardWrapper = styled.article`
 
     width: 100%;
     height: 100%;
-    max-width: 330px;
+    /* max-width: 330px; */
     max-height: 250px;
     padding: 16px;
 
