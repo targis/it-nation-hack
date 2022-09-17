@@ -9,12 +9,16 @@ import SocialLinks from '../components/SocialLinks';
 import Pointer from '../icons/contacts/pointer.svg';
 import Call from '../icons/contacts/call.svg';
 import Email from '../icons/contacts/email.svg';
+import Green from '../imgs/map green box.png'
 
 
 const Contacts = forwardRef((props, ref) => {
     return (
 
         <Container ref={ref}>
+            <GreenSnot>
+                <img src={Green} alt="" />
+            </GreenSnot>
             <ContactsWrapper>
 
                 <FormContainer>
@@ -97,6 +101,14 @@ const Contacts = forwardRef((props, ref) => {
 })
 
 export default Contacts;
+
+const GreenSnot = styled.div`
+    z-index: -1;
+    position: absolute;
+    bottom: 320px;
+    right: 90px;
+    transform: rotate(1deg);
+`;
 
 const ContactsWrapper = styled.section`
     display: flex;
