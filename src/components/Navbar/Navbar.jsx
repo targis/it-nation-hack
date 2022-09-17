@@ -1,3 +1,4 @@
+import { forwardRef } from 'react'
 import SocialLinks from '../SocialLinks'
 import Menu from '../Menu'
 import Button from '../ui/Button'
@@ -10,15 +11,11 @@ import PowercodeLogo from '../../icons/logo.svg'
 import { IoMoonOutline, IoMoonSharp } from 'react-icons/io5';
 import { BsSun } from 'react-icons/bs';
 
-const Navbar = ({ 
-  isMenuOpen, 
-  toggleMenuState, 
-  scrollTo,
-  theme,
-  toogleTheme
-}) => {
+const Navbar = forwardRef(({ isMenuOpen, toggleMenuState, handleModal, theme,
+  toogleTheme }, ref) => {
+
   return (
-    <Header>
+    <Header ref={ref}>
       <Container>
         <Flex width='100%' direction="row" align="center" justify='space-between'>
           <Logo source={PowercodeLogo} to='#' />
@@ -28,8 +25,10 @@ const Navbar = ({
               <TelLink href="tel:+38 (073) 126 00 72">+38 (073) 126 00 72</TelLink>
               <TelLink href="tel:+38 (099) 705 14 18">+38 (099) 705 14 18</TelLink>
             </Flex>
-            <Button display={'inline-block'} hiddenSm={true} size={'14px'} lheight={'18px'} onClick={scrollTo.contacts}>Записатися</Button>
-            {theme === 'light' ? <IoMoonOutline onClick={() => toogleTheme()}/> : <BsSun onClick={() => toogleTheme()}/>}
+
+            <Button display={'inline-block'} hiddenSm={true} size={'14px'} lheight={'1'} padding={'14px 21px'} onClick={handleModal}>Записатися</Button>
+            {theme === 'light' ? <IoMoonOutline onClick={() => toogleTheme()} /> : <BsSun onClick={() => toogleTheme()} />}
+
             <Menu toggleMenuState={toggleMenuState} isMenuOpen={isMenuOpen} />
           </Controls>
 
@@ -38,7 +37,7 @@ const Navbar = ({
       </Container>
     </Header>
   )
-}
+})
 
 export default Navbar
 

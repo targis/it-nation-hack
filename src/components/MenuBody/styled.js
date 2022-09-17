@@ -13,7 +13,7 @@ const Nav = styled.nav`
   transform: translateY(-50%);
   opacity: ${({ isMenuOpen }) => (isMenuOpen ? '100' : '0')};
   transition: all 0.25s ease;
-  z-index: 10;
+  /* z-index: 10; */
   @media (max-width: 991px) {
     justify-content: space-between;
   }
