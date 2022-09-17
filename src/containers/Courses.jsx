@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 import Container from '../components/ui/Container';
@@ -8,16 +8,24 @@ import Button from '../components/ui/Button';
 
 const Courses = () => {
 
+    const [location, setLocation] = useState(null);
+
     const courses = [
-        {id: 1, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18},
-        {id: 2, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18},
-        {id: 3, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18},
-        {id: 4, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18},
-        {id: 5, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18},
-        {id: 6, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18},
-        {id: 7, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18},
-        {id: 8, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18},
+        {id: 1, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online'},
+        {id: 2, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ'},
+        {id: 3, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя'},
+        {id: 4, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online'},
+        {id: 5, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ'},
+        {id: 6, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя'},
+        {id: 7, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online'},
+        {id: 8, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ'},
+        {id: 9, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя'},
+        {id: 10, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online'},
+        {id: 11, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ'},
+        {id: 12, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя'},
     ]
+
+    const locations = Array.from(new Set(courses.map(course => course.location)));
 
     return (
         <Wrapper>
@@ -26,7 +34,7 @@ const Courses = () => {
                 <CoursesHeader>
                     <HeaderText><b>On-line</b> навчання</HeaderText>
                     <ButtonsArea>
-                        <Button
+                        {/* <Button
                             height='40px'
                             width='120px'
                             margin='0 10px 0 0'
@@ -44,30 +52,40 @@ const Courses = () => {
                             border='1px solid #333333'
                         >
                             Київ
-                        </Button>
-                        <Button
-                            height='40px'
-                            width='120px'
-                            margin='0 10px 0 0'
-                            size='14px'
-                            color='#333333'
-                            bgcolor='none'
-                            border='1px solid #333333'
-                        >
-                            Запоріжжя
-                        </Button>
+                        </Button> */}
+                        {locations.map(location => (
+                            <CourseButton
+                                key={location}
+                                onClick={() => setLocation(location)}
+                            >
+                                {location}
+                            </CourseButton>
+                        ))}
                     </ButtonsArea>
                 </CoursesHeader>    
                 <CardsContainer>
-                    {courses.map(course => (
-                        <CourseCard 
-                            key={course.id}
-                            name={course?.name}
-                            date={course?.date}
-                            lessons={course?.lessons}
-                            places={course?.places}
-                        />
-                    ))}
+                    {!location
+                        ? courses.map(course => (
+                            <CourseCard 
+                                key={course.id}
+                                name={course?.name}
+                                date={course?.date}
+                                lessons={course?.lessons}
+                                places={course?.places}
+                                location={course?.location}
+                            />
+                        ))
+                        : courses.filter(course => course.location === location).map(course =>(
+                            <CourseCard 
+                                key={course.id}
+                                name={course?.name}
+                                date={course?.date}
+                                lessons={course?.lessons}
+                                places={course?.places}
+                                location={course?.location}
+                            />
+                        ))
+                    }
                 </CardsContainer>
             </Container>
         </Wrapper>
@@ -95,23 +113,39 @@ const CoursesTitle = styled.h3`
     color: #232F3C;  
 `;
 
+const CourseButton = styled(Button)`
+    height: 40px;
+    width: 120px;
+    margin: 0 10px 0 0;
+    font-size: 14px;
+    color: #333333;
+    background: none;
+    border: 1px solid #333333;
+
+    :focus {
+        color: #FFFFFF;
+        background: #EF5B63;
+        border: none;
+    }
+`;
+
 const CardsContainer = styled.div`
     display: grid;
     justify-content: space-around;
-    grid-template-columns: repeat(4, minmax(330px, auto));
+    grid-template-columns: repeat(4, 1fr);
     grid-auto-rows: 250px;
     grid-gap: 30px;
 
     @media(max-width: 1474px) {
-        grid-template-columns: repeat(3, minmax(330px, auto));
+        grid-template-columns: repeat(3, 1fr);
     }
 
     @media(max-width: 1114px) {
-        grid-template-columns: repeat(2, minmax(330px, auto));
+        grid-template-columns: repeat(2, 1fr);
     }
     
     @media(max-width: 754px) {
-        grid-template-columns: repeat(1, minmax(300px, 330px));
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
         grid-auto-rows: 180px;
     }
 `;
