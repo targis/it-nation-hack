@@ -17,7 +17,7 @@ const Nav = styled.nav`
   @media (max-width: 991px) {
     justify-content: space-between;
   }
-  @media (max-width: 567px) {
+  @media (max-width: 576px) {
     padding-left: 16px;
   }
 `
@@ -30,6 +30,9 @@ const Ul = styled.ul`
 `
 const Li = styled.li`
   padding: 18px 0;
+  @media (max-width: 767.98px) {
+    padding: 9px 0;
+  }
 `
 
 const Button = styled.button`
@@ -37,7 +40,7 @@ const Button = styled.button`
   font-style: normal;
   font-weight: 700;
   font-size: 44px;
-  line-height: 52px;
+  line-height: 1.18em;
   letter-spacing: 4px;
   text-transform: uppercase;
   color: #232f3c;
@@ -52,8 +55,12 @@ const Button = styled.button`
       padding-left: 0;
     }
   }
+  @media (max-width: 991px) {
+    font-size: 32px;
+    line-height: 1.18em;
+  }
   @media (max-width: 576px) {
-    font-size: 9vw;
+    font-size: 24px;
     line-height: 1.18em;
   }
 `

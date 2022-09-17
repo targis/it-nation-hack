@@ -1,7 +1,6 @@
 
 import Container from '../ui/Container'
-import Button from '../ui/Button'
-import { FlexMd, HeroContent, Section, Col, Description, Header, ButtonSecondary } from './styled'
+import { ButtonSC, FlexMd, HeroContent, Section, Col, Description, Header, ButtonSecondary } from './styled'
 // import  HeroImageSrc  from '../../imgs/girl.png'
 import HeroImage from './HeroImage'
 import MenuBody from '../MenuBody'
@@ -12,7 +11,7 @@ const Hero = ({ isMenuOpen, toggleMenuState, scrollTo, setActiveLocation, setIsM
 
   return (
     <Section>
-      <Container>
+      <Container position={'static'}>
         <FlexMd direction={'row'} align={'center'}>
           <Col>
             <HeroContent isMenuOpen={isMenuOpen} >
@@ -22,7 +21,7 @@ const Hero = ({ isMenuOpen, toggleMenuState, scrollTo, setActiveLocation, setIsM
               <Header>
                 Powercode Academy
               </Header>
-              <Button padding={'21px 47px'} display={'inline-block'} onClick={() => setIsModalFormOpen(true)}>Записатися</Button>
+              <ButtonSC padding={'21px 47px'} display={'inline-block'} onClick={() => setIsModalFormOpen(true)}>Записатися</ButtonSC>
               <ButtonSecondary onClick={() => setIsModalVideoOpen(true)} bgimage={PlayIcon}>Дивитись відео</ButtonSecondary>
             </HeroContent>
             <MenuBody isMenuOpen={isMenuOpen} scrollTo={scrollTo} toggleMenuState={toggleMenuState} setActiveLocation={setActiveLocation} />
