@@ -17,7 +17,7 @@ const Button = styled.button`
   font-family: 'Rubik';
   font-weight: ${({ weight }) => weight || 700};
   font-size: ${({ size }) => size || '18px'};
-  line-height: ${({ lh }) => lh || '100%'};
+  line-height: ${({ lheight }) => lheight || '100%'};
   text-align: center;
   text-transform: uppercase;
   @media (max-width: 767.98px) {

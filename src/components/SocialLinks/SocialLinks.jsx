@@ -6,11 +6,11 @@ import Telegram from '../../icons/telegram.svg'
 import Instagram from '../../icons/instagram.svg'
 
 
-const SocialLinks = ({ self, hiddenMd }) => {
+const SocialLinks = ({ self, hiddenMd, visibleXs, size, mb }) => {
   return (
-    <Ul self={self} hiddenMd={hiddenMd} >
+    <Ul self={self} hiddenMd={hiddenMd} visibleXs={visibleXs} mb={mb} >
       {socialLinks.map(({ name, icon, link }) => (
-        <Li key={name}>
+        <Li key={name} size={size}>
           <a href={link} target="_blank" rel="noreferrer">
             <img src={icon} alt={name} />
           </a>

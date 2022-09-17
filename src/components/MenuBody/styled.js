@@ -1,6 +1,11 @@
 import styled from 'styled-components'
 
 const Nav = styled.nav`
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 32px;
   text-align: left;
   position: absolute;
   top: 50%;
@@ -9,6 +14,10 @@ const Nav = styled.nav`
   opacity: ${({ isMenuOpen }) => (isMenuOpen ? '100' : '0')};
   transition: all 0.25s ease;
   z-index: 10;
+
+  @media (max-width: 540px) {
+    padding-left: 16px;
+  }
 `
 
 const Ul = styled.ul`
@@ -16,10 +25,6 @@ const Ul = styled.ul`
   padding: 0;
   display: flex;
   flex-direction: column;
-  margin-left: 32px;
-  @media (max-width: 540px) {
-    margin-left: 16px;
-  }
 `
 const Li = styled.li`
   padding: 18px 0;
@@ -40,4 +45,5 @@ const Link = styled.a`
     padding-left: 1em;
   }
 `
+
 export { Nav, Ul, Li, Link }

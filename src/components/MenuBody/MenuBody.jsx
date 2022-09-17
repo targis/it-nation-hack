@@ -1,4 +1,5 @@
 import { Nav, Ul, Li, Link } from './styled'
+import SocialLinks from '../SocialLinks'
 
 const menuItems = [
   { id: 0, label: 'Про нас', to: '#', type: 'scroll' },
@@ -13,6 +14,7 @@ const MenuBody = ({ isMenuOpen, onChangeTab }) => {
 
   return (
     <Nav isMenuOpen={isMenuOpen}>
+      <span></span>
       <Ul>
         {menuItems.map(({ id, label, type, to }) => (
           <Li key={id}>
@@ -24,6 +26,7 @@ const MenuBody = ({ isMenuOpen, onChangeTab }) => {
           </Li>
         ))}
       </Ul>
+      <SocialLinks size={'25px'} visibleXs={true} self={'end'} mb={'2em'} />
     </Nav>
 
 
