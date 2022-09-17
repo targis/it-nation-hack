@@ -14,9 +14,7 @@ const Offer = forwardRef((props, ref) => {
             <OfferContainer>
                 <OfferTextContainer>
                     <OfferTitle>
-
                           Не можеш обрати <b>свій курс?</b>
-
                     </OfferTitle>
                     <OfferText>
                         Наші фахівці допоможуть із вибором курсу, який підходить саме Вам! Залиште контакти та безкоштовно отримайте інформацію щодо курсу.
@@ -25,7 +23,7 @@ const Offer = forwardRef((props, ref) => {
                         padding='21px 46px'
                         size='18px'
                     >
-                            записаться
+                            запитати
                     </Button>
                 </OfferTextContainer>
 
