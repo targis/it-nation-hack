@@ -1,4 +1,4 @@
-import React, { useState, forwardRef } from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import Container from '../components/ui/Container';

@@ -1,13 +1,17 @@
-import { useState, useRef, useEffect } from 'react'
-import Button from './components/ui/Button'
+import { useState, useRef } from 'react'
 
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
-import Thankyoupage from './components/Thankyoupage/Thankyoupage'
 import Offer from './components/Offer'
+import Jobs from './containers/Jobs'
+import Partners from './containers/Partners'
+import Contacts from './containers/Contacts'
 import About from './components/About'
 import Courses from './containers/Courses'
 import Gallery from './containers/Gallery'
+import Footer from './containers/Footer'
+
+// import Thankyoupage from './components/Thankyoupage/Thankyoupage'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
