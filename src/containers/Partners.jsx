@@ -45,7 +45,7 @@ const Inscription = styled.h2`
     font-family: 'Rubik';
     font-weight: 700;
     font-size: calc(24px + 142 * (100vw / 1760));
-    line-height: 60%;
+    line-height: 100%;
 
     letter-spacing: 3px;
     text-transform: uppercase;
