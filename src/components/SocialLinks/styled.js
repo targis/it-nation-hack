@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const Ul = styled.ul`
   display: flex;
-  height: 100%;
+  height: max-content;
   align-items: center;
   list-style-type: none;
   margin: 0;
