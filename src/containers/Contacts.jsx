@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import Container from '../components/ui/Container';
@@ -11,11 +11,11 @@ import Call from '../icons/contacts/call.svg';
 import Email from '../icons/contacts/email.svg';
 import Question from '../icons/form/question.svg';
 
-const Contacts = () => {
+const Contacts = forwardRef((props, ref) => {
     return (
 
-            <Container>
-                <ContactsWrapper>
+        <Container ref={ref}>
+            <ContactsWrapper>
                 <ContactsContainer>
                     <ButtonsArea>
                         <Button
@@ -55,7 +55,7 @@ const Contacts = () => {
                                 powercodeacademy@gmail.com
                             </ContactItem>
                         </ContactList>
-                        
+
                     </ContactInformation>
 
                     <SocialLinks />
@@ -69,12 +69,12 @@ const Contacts = () => {
                     <Form />
                 </FormContainer>
 
-                </ContactsWrapper>
-            </Container>
+            </ContactsWrapper>
+        </Container>
 
 
     );
-}
+})
 
 export default Contacts;
 
