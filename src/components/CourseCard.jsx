@@ -6,10 +6,11 @@ const CourseCard = ({
     date,
     lessons,
     places,
-    location
+    location,
+    url
 }) => {
     return (
-        <CardWrapper>
+        <CardWrapper href={url} target='_blank'>
             <CourseAbout>
                 <CourseDetails>
                     <b>{`${date.toLocaleDateString()}`}</b> {`| ${lessons} уроків`}
@@ -30,7 +31,7 @@ const CourseCard = ({
 
 export default CourseCard;
 
-const CardWrapper = styled.article`
+const CardWrapper = styled.a`
     display: flex;
     flex-direction: column;
 

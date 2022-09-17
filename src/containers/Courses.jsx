@@ -12,18 +12,18 @@ const Courses = forwardRef(({ activeLocation, setActiveLocation }, ref) => {
     const isActiveLocation = (loc) => loc === activeLocation
 
     const courses = [
-        { id: 1, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online' },
-        { id: 2, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ' },
-        { id: 3, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя' },
-        { id: 4, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online' },
-        { id: 5, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ' },
-        { id: 6, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя' },
-        { id: 7, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online' },
-        { id: 8, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ' },
-        { id: 9, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя' },
-        { id: 10, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online' },
-        { id: 11, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ' },
-        { id: 12, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя' },
+        { id: 1, name: 'front-end', date: new Date(2022, 10, 5), lessons: 28, places: 18, location: 'online', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
+        { id: 2, name: 'it project manager', date: new Date(2022, 4, 10), lessons: 25, places: 18, location: 'Київ', url: 'https://powercode.academy/uk/online-courses/course-project-management/'},
+        { id: 3, name: 'ux/ui web design', date: new Date(2022, 9, 28), lessons: 28, places: 18, location: 'Запоріжжя', url: 'https://powercode.academy/uk/online-courses/course-web-design/'},
+        { id: 4, name: 'front-end advanced', date: new Date(2022, 10, 5), lessons: 28, places: 18, location: 'online', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
+        { id: 5, name: 'front-end', date: new Date(2022, 10, 5), lessons: 12, places: 28, location: 'Київ', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
+        { id: 6, name: 'it project manager', date: new Date(2022, 4, 10), lessons: 25, places: 18, location: 'Запоріжжя', url: 'https://powercode.academy/uk/online-courses/course-project-management/'},
+        { id: 7, name: 'ux/ui web design', date: new Date(2022, 9, 28), lessons: 28, places: 18, location: 'online', url: 'https://powercode.academy/uk/online-courses/course-web-design/'},
+        { id: 8, name: 'front-end advanced', date: new Date(2022, 10, 5), lessons: 28, places: 18, location: 'Київ', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
+        { id: 9, name: 'front-end', date: new Date(2022, 10, 5), lessons: 12, places: 28, location: 'Запоріжжя', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
+        { id: 10, name: 'it project manager', date: new Date(2022, 4, 10), lessons: 25, places: 18, location: 'online', url: 'https://powercode.academy/uk/online-courses/course-project-management/'},
+        { id: 11, name: 'ux/ui web design', date: new Date(2022, 9, 28), lessons: 28, places: 18, location: 'Київ', url: 'https://powercode.academy/uk/online-courses/course-web-design/'},
+        { id: 12, name: 'front-end advanced', date: new Date(2022, 10, 5), lessons: 28, places: 18, location: 'Запоріжжя', url: 'https://powercode.academy/uk/online-courses/course-frontend/'},
     ]
 
     const locations = Array.from(new Set(courses.map(course => course.location)));
@@ -56,6 +56,7 @@ const Courses = forwardRef(({ activeLocation, setActiveLocation }, ref) => {
                                 lessons={course?.lessons}
                                 places={course?.places}
                                 location={course?.location}
+                                url={course?.url}
                             />
                         ))
                         : courses.filter(course => course.location === activeLocation).map(course => (
@@ -86,7 +87,7 @@ const CoursesTitle = styled.h3`
     font-family: 'Rubik';
     font-style: normal;
     font-weight: 700;
-    font-size: calc(24px + 40 * (100vw / 1410));
+    font-size: calc(24px + 40 * (100vw / 1760));
     line-height: 138%;
     letter-spacing: 4px;
     text-transform: uppercase;
@@ -94,18 +95,6 @@ const CoursesTitle = styled.h3`
     @media (max-width: 740px) {
         text-align: center;
     }    
-`;
-
-const CourseButton = styled(Button)`
-    height: 40px;
-    width: 120px;
-    margin: 0 10px 0 0;
-    padding: 0;
-    font-size: 14px;
-    color: #333333;
-    background: ${({ isActiveLocation }) => isActiveLocation ? '#EF5B63' : 'none'};
-    color: ${({ isActiveLocation }) => isActiveLocation ? '#FFFFFF' : 'inherit'}; 
-    border: ${({ isActiveLocation }) => isActiveLocation ? 'none' : '1px solid #333333'};
 `;
 
 const CardsContainer = styled.div`
@@ -182,4 +171,16 @@ const ButtonsArea = styled.div`
     @media (max-width: 740px) {
         margin-bottom: 30px;
     }
+`;
+
+const CourseButton = styled(Button)`
+    height: 40px;
+    width: 120px;
+    margin: 0 10px 0 0;
+    padding: 0;
+    font-size: 14px;
+    color: #333333;
+    background: ${({ isActiveLocation }) => isActiveLocation ? '#EF5B63' : 'none'};
+    color: ${({ isActiveLocation }) => isActiveLocation ? '#FFFFFF' : 'inherit'}; 
+    border: ${({ isActiveLocation }) => isActiveLocation ? 'none' : '1px solid #333333'};
 `;
