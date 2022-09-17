@@ -59,7 +59,7 @@ const Section = styled.div`
     position: relative;
 `;
 const SectionHead = styled.div`
-    margin-top: 2%;
+    margin-top: 10%;
 `;
 const SectionHeadItemLeft = styled.div`
     position: absolute;
