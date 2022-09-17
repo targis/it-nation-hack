@@ -5,17 +5,19 @@ import About from './components/About'
 import Courses from './containers/Courses'
 import Gallery from './containers/Gallery'
 import Salary from './containers/Jobs';
+import Form from './components/Form/Form';
 
 function App() {
   return (
     <>
-      <Navbar />
+      {/* <Navbar />
       <Courses />
       <Offer />
       <About />
       <Gallery />
       <Salary />
-      <Thankyoupage />
+      <Thankyoupage /> */}
+      <Form />
     </>
   )
 }
