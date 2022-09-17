@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 import Button from '../ui/Button'
+import Flex from '../ui/Flex'
 
 const Section = styled.section`
   padding: 40px 0;
@@ -9,16 +10,27 @@ const Section = styled.section`
 `
 
 const Col = styled.div`
-  /* position: relative; */
+  width: calc(50% - 32px);
+  & + & {
+    margin-left: 32px;
+    @media (max-width: 991px) {
+      margin-left: 16px;
+      order: -1;
+      max-width: 500px;
+    }
+  }
+  @media (max-width: 991px) {
+    width: 100%;
+  }
 `
 
 const Description = styled.p`
   font-family: 'IBM Plex Mono';
   font-weight: 400;
   font-size: 26px;
-  line-height: 48px;
+  line-height: 1.6;
   color: #333333;
-  margin-bottom: 0.27em;
+  margin-bottom: 0.69em;
 `
 
 const Header = styled.h1`
@@ -27,10 +39,16 @@ const Header = styled.h1`
   font-style: normal;
   font-weight: 700;
   font-size: 80px;
-  line-height: 96px;
+  line-height: 1.2em;
   letter-spacing: 5px;
   text-transform: uppercase;
   color: var(--font-color);
+  @media (max-width: 1200px) {
+    font-size: 60px;
+  }
+  @media (max-width: 991px) {
+    font-size: 60px;
+  }
 `
 
 const ButtonSecondary = styled(Button)`
@@ -38,7 +56,7 @@ const ButtonSecondary = styled(Button)`
   display: inline-block;
   margin-left: 0.625em;
   /* padding: 0.6em 64px 1.25em 0.6em; */
-  padding-right: 64px;
+  padding-right: 58px;
   font-family: 'IBM Plex Mono';
   font-style: normal;
   font-weight: 700;
@@ -63,6 +81,18 @@ const ButtonSecondary = styled(Button)`
       bgimage ? `url('${bgimage}')` : 'none'};
     transform: translateY(-50%);
   }
+  /* @media (max-width: 991px) {
+    display: block;
+    margin-top: 1.5em;
+    margin-left: 0;
+  } */
+`
+
+const FlexMd = styled(Flex)`
+  @media (max-width: 991px) {
+    flex-direction: column;
+    text-align: center;
+  }
 `
 
 const HeroImage = styled.div`
@@ -77,6 +107,16 @@ const HeroContent = styled.div`
 `
 
 const HeroImageSC = styled.div`
+  @media (max-width: 991px) {
+    filter: ${({ isMenuOpen }) => (isMenuOpen ? 'blur(27px)' : 'none')};
+    opacity: ${({ isMenuOpen }) => (isMenuOpen ? '30' : '100')};
+    transition: all 0.25s ease;
+  }
+
+  svg {
+    max-width: 100%;
+    height: auto;
+  }
   .bg path {
     fill: ${({ isMenuOpen }) => (isMenuOpen ? '#4FCC97' : '#55CBDC')};
     transition: all 0.25s ease;
@@ -92,4 +132,5 @@ export {
   Header,
   ButtonSecondary,
   HeroImageSC,
+  FlexMd,
 }
