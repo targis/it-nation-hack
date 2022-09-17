@@ -4,9 +4,10 @@ import styled from 'styled-components';
 import Container from '../components/ui/Container';
 
 import ITnation from '../icons/Logo_IT_nation.svg';
-import Diia from '../icons/diia.svg';
+import Diya from '../icons/Diya.svg';
 import Ease from '../icons/ease.svg';
 import Powercode from '../icons/powercode_client.svg';
+import Gerb from '../icons/gerb.svg';
 
 const Partners = () => {
     return (
@@ -15,7 +16,8 @@ const Partners = () => {
                 <Inscription>Наші партнери</Inscription>
                 <Logos>
                     <a href='https://www.facebook.com/ITnation-20-102337935602457'><img src={ITnation} alt="" /></a>
-                    <a href='https://diia.gov.ua/'><img src={Diia} alt="" /></a>
+                    <a href='https://diia.gov.ua/'><img src={Diya} alt="" /></a>
+                    <a href='https://thedigital.gov.ua/'><img src={Gerb} alt="" /></a>
                     <a href='https://it-ease.com/ru/'><img src={Ease} alt="" /></a>
                     <a href='https://powercode.academy/uk/'><img src={Powercode} alt="" /></a>
                 </Logos>
