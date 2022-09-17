@@ -7,7 +7,7 @@ const Input = (props) => {
   return (
     <FormControl>
       <label>
-        <span>{props.name}</span>
+        {/* <span>{props.name}</span> */}
         <InputSC {...field} {...props} />
       </label>
       {
