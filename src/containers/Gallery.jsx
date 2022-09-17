@@ -34,7 +34,7 @@ const Gallery = () => {
         <Container>
             <GalleryContainer>
                 {photos.map((photo, i) => (
-                    <Photo 
+                    <Photo
                         key={i}
                         src={photo}
                         alt=''
@@ -43,10 +43,10 @@ const Gallery = () => {
                 ))}
             </GalleryContainer>
             <Carousel>
-                {photos.map(photo => 
-                    <img 
+                {photos.map((photo, i) =>
+                    <img key={i}
                         src={photo} alt=''
-                        style={{height: '332px', width: '332px'}}
+                        style={{ height: '332px', width: '332px' }}
                     />
                 )}
             </Carousel>
@@ -110,7 +110,7 @@ const Photo = styled.img`
     object-fit: cover;
     
     border-radius: 10px;
-    grid-area: ${({area}) => area || ''};   
+    grid-area: ${({ area }) => area || ''};   
 
     @media (max-width: 1024px) {
         aspect-ratio: 1;

@@ -19,7 +19,7 @@ const Partners = () => {
                     <a href='https://diia.gov.ua/'><img src={Diya} alt="" /></a>
                     <a href='https://thedigital.gov.ua/'><img src={Gerb} alt="" /></a>
                     <a href='https://it-ease.com/ru/'><img src={Ease} alt="" /></a>
-                    <a class='power' href='https://powercode.academy/uk/'><img src={Powercode} alt="" /></a>
+                    <a className='power' href='https://powercode.academy/uk/'><img src={Powercode} alt="" /></a>
                 </Logos>
             </PartnersContainer>
 

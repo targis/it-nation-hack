@@ -18,13 +18,17 @@ const Contacts = forwardRef((props, ref) => {
             <ContactsWrapper>
 
                 <FormContainer>
+                    <ContactForm />
+                </FormContainer>
+
+                {/* <FormContainer>
                     <FormHeader>
                         <FormHeaderText>Залишилися <b>питання?</b></FormHeaderText>
                         <FormHeaderIcon src={Question} alt="" />
                     </FormHeader>
                     <FormText>Заповни форму і наш спеціаліст передзвонить тобі, щоб розповісти про деталі курсу і відповісти на питання, що тебе цікавлять.</FormText>
                     <Form />
-                </FormContainer>
+                </FormContainer> */}
 
                 <ContactsContainer>
                     <ButtonsArea>
