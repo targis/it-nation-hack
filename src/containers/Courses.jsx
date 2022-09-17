@@ -8,21 +8,22 @@ import Button from '../components/ui/Button';
 
 const Courses = () => {
 
-    const [location, setLocation] = useState(null);
+    const [activeLocation, setActiveLocation] = useState(null);
+    const isActiveLocation = (loc) => loc === activeLocation
 
     const courses = [
-        {id: 1, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online'},
-        {id: 2, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ'},
-        {id: 3, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя'},
-        {id: 4, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online'},
-        {id: 5, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ'},
-        {id: 6, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя'},
-        {id: 7, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online'},
-        {id: 8, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ'},
-        {id: 9, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя'},
-        {id: 10, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online'},
-        {id: 11, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ'},
-        {id: 12, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя'},
+        { id: 1, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online' },
+        { id: 2, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ' },
+        { id: 3, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя' },
+        { id: 4, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online' },
+        { id: 5, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ' },
+        { id: 6, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя' },
+        { id: 7, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online' },
+        { id: 8, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ' },
+        { id: 9, name: 'front-end', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя' },
+        { id: 10, name: 'it project manager', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'online' },
+        { id: 11, name: 'ux/ui web design', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Київ' },
+        { id: 12, name: 'front-end advanced', date: new Date(2019, 1, 31), lessons: 12, places: 18, location: 'Запоріжжя' },
     ]
 
     const locations = Array.from(new Set(courses.map(course => course.location)));
@@ -53,20 +54,21 @@ const Courses = () => {
                         >
                             Київ
                         </Button> */}
-                        {locations.map(location => (
+                        {locations.map((location, i) => (
                             <CourseButton
                                 key={location}
-                                onClick={() => setLocation(location)}
+                                onClick={() => setActiveLocation(location)}
+                                isActiveLocation={isActiveLocation(location)}
                             >
                                 {location}
                             </CourseButton>
                         ))}
                     </ButtonsArea>
-                </CoursesHeader>    
+                </CoursesHeader>
                 <CardsContainer>
-                    {!location
+                    {!activeLocation
                         ? courses.map(course => (
-                            <CourseCard 
+                            <CourseCard
                                 key={course.id}
                                 name={course?.name}
                                 date={course?.date}
@@ -75,8 +77,8 @@ const Courses = () => {
                                 location={course?.location}
                             />
                         ))
-                        : courses.filter(course => course.location === location).map(course =>(
-                            <CourseCard 
+                        : courses.filter(course => course.location === activeLocation).map(course => (
+                            <CourseCard
                                 key={course.id}
                                 name={course?.name}
                                 date={course?.date}
@@ -119,14 +121,15 @@ const CourseButton = styled(Button)`
     margin: 0 10px 0 0;
     font-size: 14px;
     color: #333333;
-    background: none;
-    border: 1px solid #333333;
+    background: ${({ isActiveLocation }) => isActiveLocation ? '#EF5B63' : 'none'};
+    color: ${({ isActiveLocation }) => isActiveLocation ? '#FFFFFF' : 'inherit'}; 
+    border: ${({ isActiveLocation }) => isActiveLocation ? 'none' : '1px solid #333333'};
 
-    :focus {
+    /* :focus {
         color: #FFFFFF;
         background: #EF5B63;
         border: none;
-    }
+    } */
 `;
 
 const CardsContainer = styled.div`
