@@ -52,8 +52,8 @@ const GalleryContainer = styled.section`
     margin-bottom: 180px;
 
     display: grid;
-    grid-template-columns: repeat(6, minmax(auto, 210px));
-    grid-template-rows: repeat(3, minmax(auto, 210px)); 
+    grid-template-columns: repeat(6, auto);
+    grid-template-rows: repeat(3, auto); 
 
     grid-template-areas: 
         "img1 img1 img2 img3 img4 img4"
@@ -63,11 +63,43 @@ const GalleryContainer = styled.section`
     grid-gap: 30px;
 
     box-sizing: border-box;
+
+    @media (max-width: 1024px) {
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: repeat(6, auto); 
+        grid-template-areas: 
+            "img1 img2 img2"
+            "img3 img2 img2"
+            "img3 img4 img5"
+            "img6 img6 img7"
+            "img6 img6 img8"
+            "img9 img10 img8";
+        
+        grid-gap: 30px;
+    }
+
+    @media (max-width: 768px) {
+        grid-template-columns: repeat(2, auto);
+        grid-template-rows: repeat(7, auto); 
+        grid-template-areas: 
+            "img1 img2"
+            "img1 img3"
+            "img4 img4"
+            "img5 img7"
+            "img6 img7"
+            "img8 img8"
+            "img9 img10";
+        
+        grid-gap: 30px;
+    }
 `;
 
 const Photo = styled.img`
-    height: 100%;
     width: 100%;
+    height: 100%;
+
+    object-fit: cover;
     aspect-ratio: 1;
+    border-radius: 10px;
     grid-area: ${({area}) => area || ''};   
 `;
