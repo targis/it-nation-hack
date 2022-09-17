@@ -107,11 +107,13 @@ const HeroContent = styled.div`
 `
 
 const HeroImageSC = styled.div`
-  filter: ${({ isMenuOpen }) => (isMenuOpen ? 'blur(27px)' : 'none')};
-  opacity: ${({ isMenuOpen }) => (isMenuOpen ? '30' : '100')};
-  transition: all 0.25s ease;
-  /* z-index: -1; */
-  s svg {
+  @media (max-width: 991px) {
+    filter: ${({ isMenuOpen }) => (isMenuOpen ? 'blur(27px)' : 'none')};
+    opacity: ${({ isMenuOpen }) => (isMenuOpen ? '30' : '100')};
+    transition: all 0.25s ease;
+  }
+
+  svg {
     max-width: 100%;
     height: auto;
   }
