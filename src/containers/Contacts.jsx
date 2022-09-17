@@ -2,14 +2,14 @@ import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import Container from '../components/ui/Container';
-import Form from '../components/Form';
+import ContactForm from '../components/ContactForm/ContactForm';
 import Button from '../components/ui/Button';
 import SocialLinks from '../components/SocialLinks';
 
 import Pointer from '../icons/contacts/pointer.svg';
 import Call from '../icons/contacts/call.svg';
 import Email from '../icons/contacts/email.svg';
-import Question from '../icons/form/question.svg';
+
 
 const Contacts = forwardRef((props, ref) => {
     return (
@@ -72,7 +72,18 @@ const Contacts = forwardRef((props, ref) => {
 
                     <SocialLinks />
                 </ContactsContainer>
+                <FormContainer>
+                    <ContactForm />
+                </FormContainer>
 
+                {/* <FormContainer>
+                    <FormHeader>
+                        <FormHeaderText>Залишилися <b>питання?</b></FormHeaderText>
+                        <img src={Question} alt="" />
+                    </FormHeader>
+                    <FormText>Заповни форму і наш спеціаліст передзвонить тобі, щоб розповісти про деталі курсу і відповісти на питання, що тебе цікавлять.</FormText>
+                    <Form />
+                </FormContainer> */}
 
             </ContactsWrapper>
         </Container>
@@ -167,37 +178,32 @@ const ContactItem = styled.li`
 `;
 
 const FormContainer = styled.div`
-    position: absolute;
-    top: 50%;
-    right: 0;
-    transform: translate(-32px, -50%);
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-32px, -50%);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  width: 509px;
+  padding: 26px 36px;
 
-    width: 510px;
-    padding: 26px 36px;
+  background: #232f3c;
+  border-radius: 20px;
+`
 
-    background: #232F3C;
-    border-radius: 20px;
-    
-    @media (max-width: 1170px) {
-        width: 100%;
-        max-width: 510px;
-        position: static;
-        transform: none;
-        margin-bottom: 30px;
-    }
+// const FormContainer = styled.div`
+//     position: absolute;
+//     top: 50%;
+//     right: 0;
+//     transform: translate(-32px, -50%);
 
-    @media (max-width: 768px) {
-        padding: 25px 20px 30px;
-    }
-`;
+//     width: 509px;
+//     padding: 26px 36px;
 
-const FormHeader = styled.div`
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    margin-bottom: 16px;
-`;
+//     background: #232F3C;
+//     border-radius: 20px;
+// `;
 
 const FormHeaderIcon = styled.img`
     
@@ -213,23 +219,32 @@ const FormHeaderText = styled.h4`
     font-size: calc(24px + 20 * (100vw / 1760));
     line-height: 132%;
 
-    letter-spacing: 4px;
-    text-transform: uppercase;
+//     margin-bottom: 16px;
+// `;
 
-    color: #FFFFFF;    
+// const FormHeaderText = styled.h4`
+//     font-family: 'Rubik';
+//     font-weight: 300;
+//     font-size: 44px;
+//     line-height: 132%;
 
-    & > b {
-        font-weight: 700;
-    }
-`;
+//     letter-spacing: 4px;
+//     text-transform: uppercase;
 
-const FormText = styled.p`
-    margin-bottom: 26px;
+//     color: #FFFFFF;
 
-    font-family: 'IBM Plex Mono';
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 150%;
+//     & > b {
+//         font-weight: 700;
+//     }
+// `;
 
-    color: #FFFFFF; 
-`;
+// const FormText = styled.p`
+//     margin-bottom: 26px;
+
+//     font-family: 'IBM Plex Mono';
+//     font-weight: 400;
+//     font-size: 16px;
+//     line-height: 150%;
+
+//     color: #FFFFFF;
+// `;

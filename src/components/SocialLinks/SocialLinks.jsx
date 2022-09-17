@@ -25,18 +25,18 @@ export default SocialLinks
 
 const socialLinks = [
   {
-    name: 'linkedin', icon: Linkedin, link: 'https://www.linkedin.com/'
+    name: 'linkedin', icon: Linkedin, link: 'https://www.linkedin.com/company/powercodeacademy/'
   },
   {
-    name: 'facebook', icon: Facebook, link: 'https://www.facebook.com/'
+    name: 'facebook', icon: Facebook, link: 'https://www.facebook.com/powercodeacademy/'
   },
   {
-    name: 'youtube', icon: Youtube, link: 'https://www.youtube.com/'
+    name: 'youtube', icon: Youtube, link: 'https://www.youtube.com/channel/UC1oTeYSdBUsEZey2YVVgnxQ'
   },
   {
-    name: 'telegram', icon: Telegram, link: 'https://telegram.org/'
+    name: 'telegram', icon: Telegram, link: 'https://t.me/powercodeconference'
   },
   {
-    name: 'instagram', icon: Instagram, link: 'https://www.instagram.com/'
+    name: 'instagram', icon: Instagram, link: 'https://www.instagram.com/powercodeacademy/'
   },
 ]

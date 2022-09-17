@@ -7,7 +7,7 @@ import OfferImg from "../imgs/laptop.png"
 
 
 
-const Offer = forwardRef((props, ref) => {
+const Offer = forwardRef(({ scrollTo }, ref) => {
 
     return (
         <Container ref={ref}>
@@ -22,15 +22,16 @@ const Offer = forwardRef((props, ref) => {
                     <Button
                         padding='21px 46px'
                         size='18px'
+                        onClick={scrollTo.contacts}
                     >
-                            запитати
+                        запитати
                     </Button>
                 </OfferTextContainer>
 
                 <OfferImageContainer>
                     <OfferImages
-                            src={OfferImg}
-                            alt = ""
+                        src={OfferImg}
+                        alt=""
                     />
                 </OfferImageContainer>
             </OfferContainer>

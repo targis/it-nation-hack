@@ -8,7 +8,7 @@ import MenuBody from '../MenuBody'
 
 import PlayIcon from '../../icons/video.svg'
 
-const Hero = ({ isMenuOpen, toggleMenuState, scrollTo, setActiveLocation }) => {
+const Hero = ({ isMenuOpen, toggleMenuState, scrollTo, setActiveLocation, setIsModalFormOpen, setIsModalVideoOpen }) => {
 
   return (
     <Section>
@@ -22,8 +22,8 @@ const Hero = ({ isMenuOpen, toggleMenuState, scrollTo, setActiveLocation }) => {
               <Header>
                 Powercode Academy
               </Header>
-              <Button display={'inline-block'} onClick={scrollTo.contacts}>Записатися</Button>
-              <ButtonSecondary bgimage={PlayIcon}>Дивитись відео</ButtonSecondary>
+              <Button padding={'21px 47px'} display={'inline-block'} onClick={() => setIsModalFormOpen(true)}>Записатися</Button>
+              <ButtonSecondary onClick={() => setIsModalVideoOpen(true)} bgimage={PlayIcon}>Дивитись відео</ButtonSecondary>
             </HeroContent>
             <MenuBody isMenuOpen={isMenuOpen} scrollTo={scrollTo} toggleMenuState={toggleMenuState} setActiveLocation={setActiveLocation} />
           </Col>
