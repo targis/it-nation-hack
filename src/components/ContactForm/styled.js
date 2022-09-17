@@ -10,8 +10,12 @@ const FormContainer = styled.div`
   width: 100%;
   max-width: 509px;
   padding: 26px 36px;
-  background: #232f3c;
+  background: ${({ light }) => (light ? 'none' : '#232f3c')};
   border-radius: 20px;
+  @media (max-width: 576px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 `
 
 const TitleForm = styled.h3`
@@ -24,6 +28,9 @@ const TitleForm = styled.h3`
   text-transform: uppercase;
   color: #333333;
   white-space: nowrap;
+  @media (max-width: 576px) {
+    font-size: 34px;
+  }
 
   & > b {
     font-weight: 700;
@@ -57,7 +64,7 @@ const FormHeaderText = styled.h4`
   text-transform: uppercase;
 
   color: #ffffff;
-
+  color: ${({ light }) => (light ? '#333' : '#fff')};
   & > b {
     font-weight: 700;
   }
@@ -71,7 +78,7 @@ const FormText = styled.p`
   font-size: 16px;
   line-height: 150%;
 
-  color: #ffffff;
+  color: ${({ light }) => (light ? '#333' : '#fff')};
 `
 
 const InputSC = styled.input`

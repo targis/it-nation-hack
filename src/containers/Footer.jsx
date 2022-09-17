@@ -4,14 +4,14 @@ import styled from 'styled-components';
 import Container from '../components/ui/Container';
 import Arrow from '../icons/arrow.svg';
 
-const Footer = () => {
+const Footer = ({ scrollTo }) => {
     return (
         <Container>
             <FooterContainer>
                 <Text>
                     © Powered by POWERCODE
                 </Text>
-                <Button>
+                <Button omClick={scrollTo.top}>
                     <img src={Arrow} alt="" />
                 </Button>
             </FooterContainer>

@@ -39,15 +39,18 @@ const validationSchema = object({
 
 
 
-const ContactForm = () => {
+const ContactForm = ({ formTitle = 'Залишилися питання?', light }) => {
+	const titleLast = formTitle.split(' ').at(-1)
+	const titleFirst = `${formTitle.split(' ').slice(0, -1).join(' ')}`
+
 	return (
 
-		<FormContainer>
+		<FormContainer light={light}>
 			<FormHeader>
-				<FormHeaderText>Залишилися <b>питання?</b></FormHeaderText>
-				<img src={Question} alt="" />
+				<FormHeaderText light={light}>{titleFirst} <b>{titleLast}</b></FormHeaderText>
+				{!light && (<img src={Question} alt="" />)}
 			</FormHeader>
-			<FormText>Заповни форму і наш спеціаліст передзвонить тобі, щоб розповісти про деталі курсу і відповісти на питання, що тебе цікавлять.</FormText>
+			<FormText light={light}>Заповни форму і наш спеціаліст передзвонить тобі, щоб розповісти про деталі курсу і відповісти на питання, що тебе цікавлять.</FormText>
 			<Formik
 				initialValues={initialValues}
 				validationSchema={validationSchema}
