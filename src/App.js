@@ -22,6 +22,7 @@ function App() {
     setIsMenuOpen(!isMenuOpen)
   }
 
+  const navbarRef = useRef(null)
   const coursesRef = useRef(null)
   const aboutRef = useRef(null)
   const offerRef = useRef(null)
@@ -29,6 +30,10 @@ function App() {
   const contactsRef = useRef(null)
 
   const scrollTo = {
+    top: () =>
+      navbarRef?.current.scrollIntoView({
+        behavior: 'smooth',
+      }),
     courses: () =>
       coursesRef?.current.scrollIntoView({
         behavior: 'smooth',
@@ -57,6 +62,7 @@ function App() {
   return (
     <>
       <Navbar
+        ref={navbarRef}
         toggleMenuState={toggleMenuState}
         isMenuOpen={isMenuOpen}
         handleModal={setIsModalFormOpen}
@@ -67,21 +73,26 @@ function App() {
         scrollTo={scrollTo}
         toggleMenuState={setIsMenuOpen}
         isMenuOpen={isMenuOpen}
+        handleModal={setIsModalFormOpen}
       />
       <Courses
         activeLocation={activeLocation}
         setActiveLocation={setActiveLocation}
         ref={coursesRef}
       />
-      <Offer ref={offerRef} />
+      <Offer scrollTo={scrollTo} ref={offerRef} />
       <Jobs ref={jobsRef} />
       <About ref={aboutRef} />
       <Gallery />
       <Partners />
       <Contacts ref={contactsRef} />
-      <Footer />
-      <ModalWindow active={isModalFormOpen} setActive={setIsModalFormOpen}>
-        <ContactForm />
+      <Footer scrollTo={scrollTo} />
+      <ModalWindow
+        active={isModalFormOpen}
+        setActive={setIsModalFormOpen}
+        isModalForm={true}
+      >
+        <ContactForm light={true} />
       </ModalWindow>
     </>
   )

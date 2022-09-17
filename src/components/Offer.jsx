@@ -7,14 +7,14 @@ import OfferImg from "../imgs/laptop.png"
 
 
 
-const Offer = forwardRef((props, ref) => {
+const Offer = forwardRef(({ scrollTo }, ref) => {
 
     return (
         <Container ref={ref}>
             <OfferContainer>
                 <OfferTextContainer>
                     <OfferTitle>
-                          Не можеш обрати <b>свій курс?</b>
+                        Не можеш обрати <b>свій курс?</b>
                     </OfferTitle>
                     <OfferText>
                         Наші фахівці допоможуть із вибором курсу, який підходить саме Вам! Залиште контакти та безкоштовно отримайте інформацію щодо курсу.
@@ -22,15 +22,16 @@ const Offer = forwardRef((props, ref) => {
                     <Button
                         padding='21px 46px'
                         size='18px'
+                        onClick={scrollTo.contacts}
                     >
-                            запитати
+                        запитати
                     </Button>
                 </OfferTextContainer>
 
                 <OfferImageContainer>
                     <OfferImages
-                            src={OfferImg}
-                            alt = ""
+                        src={OfferImg}
+                        alt=""
                     />
                 </OfferImageContainer>
 

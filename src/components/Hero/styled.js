@@ -18,6 +18,7 @@ const Col = styled.div`
       margin-left: 0;
       order: -1;
       max-width: 500px;
+      z-index: -1;
     }
     @media (max-width: 576px) {
       position: absolute;
