@@ -44,9 +44,17 @@ const Button = styled.button`
   transition: all 0.25s ease;
   background: none;
   border: none;
+  text-align: left;
   &:hover {
     color: #ef5b63;
     padding-left: 1em;
+    @media (max-width: 576px) {
+      padding-left: 0;
+    }
+  }
+  @media (max-width: 576px) {
+    font-size: 9vw;
+    line-height: 1.18em;
   }
 `
 
