@@ -99,7 +99,11 @@ const Photo = styled.img`
     height: 100%;
 
     object-fit: cover;
-    aspect-ratio: 1;
+    
     border-radius: 10px;
     grid-area: ${({area}) => area || ''};   
+
+    @media (max-width: 1024px) {
+        aspect-ratio: 1;
+    }
 `;

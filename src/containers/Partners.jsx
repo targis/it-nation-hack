@@ -40,7 +40,7 @@ const Inscription = styled.h2`
     font-family: 'Rubik';
     font-weight: 700;
     /* font-size: 146px; */
-    font-size: calc(24px + 142 * (100vw / 1410));
+    font-size: calc(24px + 142 * (100vw / 1760));
     line-height: 60%;
 
     letter-spacing: 3px;
