@@ -13,6 +13,7 @@ import Input from "./Input";
 import Button from "../ui/Button";
 import Question from '../../icons/form/question.svg';
 import { object, string } from 'yup'
+import Spinner from '../Spinner'
 
 const initialValues = {
 	name: '',
@@ -54,7 +55,7 @@ const ContactForm = () => {
 					setTimeout(() => {
 						alert(JSON.stringify(values, null, 2));
 						setSubmitting(false);
-					}, 400)
+					}, 1000)
 				}}
 			>
 				{({ handleSubmit, isSubmitting }) => (
@@ -82,7 +83,7 @@ const ContactForm = () => {
 							padding="21px 0"
 							disabled={isSubmitting}
 						>
-							Відправити
+							{isSubmitting ? (<Spinner size={'25px'} color={'#fff'} />) : 'Відправити'}
 						</Button>
 					</Form>
 				)}
