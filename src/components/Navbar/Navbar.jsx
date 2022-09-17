@@ -7,7 +7,7 @@ import { Header, TelLink, Controls } from './styled'
 import Logo from '../Logo'
 import PowercodeLogo from '../../icons/logo.svg'
 
-const Navbar = () => {
+const Navbar = ({ isMenuOpen, toggleMenuState }) => {
   return (
     <Header>
       <Container>
@@ -20,7 +20,7 @@ const Navbar = () => {
               <TelLink href="tel:+38 (099) 705 14 18">+38 (099) 705 14 18</TelLink>
             </Flex>
             <Button hiddenSm={true}>Записатися</Button>
-            <Menu />
+            <Menu toggleMenuState={toggleMenuState} isMenuOpen={isMenuOpen} />
           </Controls>
 
         </Flex>
