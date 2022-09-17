@@ -15,6 +15,7 @@ import Footer from './containers/Footer'
 import ModalWindow from './components/ModalWindow'
 import ContactForm from './components/ContactForm'
 import Video from './containers/Video'
+import styled from 'styled-components'
 
 // import Thankyoupage from './components/Thankyoupage/Thankyoupage'
 
@@ -27,6 +28,7 @@ function App() {
   const toggleMenuState = () => {
     setIsMenuOpen(!isMenuOpen)
   }
+  const isFixedBody = isModalFormOpen || isModalFormVideo
 
   const [theme, setTheme] = useState('light')
 
@@ -81,7 +83,6 @@ function App() {
 
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
-      {/* <Wrapper> */}
       <Navbar
         ref={navbarRef}
         toggleMenuState={toggleMenuState}
@@ -91,50 +92,49 @@ function App() {
         theme={theme}
         toogleTheme={toogleTheme}
       />
-      <Hero
-        setActiveLocation={setActiveLocation}
-        scrollTo={scrollTo}
-        toggleMenuState={setIsMenuOpen}
-        isMenuOpen={isMenuOpen}
-        setIsModalFormOpen={setIsModalFormOpen}
-        setIsModalVideoOpen={setIsModalVideoOpen}
-      />
-      <Courses
-        activeLocation={activeLocation}
-        setActiveLocation={setActiveLocation}
-        ref={coursesRef}
-      />
-      <Offer scrollTo={scrollTo} ref={offerRef} />
-      <Jobs ref={jobsRef} />
-      <About ref={aboutRef} />
-      <Gallery />
-      <Partners />
-      <Contacts ref={contactsRef} />
-      <Footer scrollTo={scrollTo} />
-      <ModalWindow
-        active={isModalFormOpen}
-        setActive={setIsModalFormOpen}
-        isModalForm={true}
-      >
-        <ContactForm light={true} />
-      </ModalWindow>
-      <ModalWindow
-        active={isModalFormVideo}
-        setIsVideoPlaying={setIsVideoPlaying}
-        setActive={setIsModalVideoOpen}
-      >
-        <Video isVideoPlaying={isModalFormVideo} />
-      </ModalWindow>
-      {/* </Wrapper> */}
+      <Wrapper fixed={isFixedBody}>
+        <Hero
+          setActiveLocation={setActiveLocation}
+          scrollTo={scrollTo}
+          toggleMenuState={setIsMenuOpen}
+          isMenuOpen={isMenuOpen}
+          setIsModalFormOpen={setIsModalFormOpen}
+          setIsModalVideoOpen={setIsModalVideoOpen}
+        />
+        <Courses
+          activeLocation={activeLocation}
+          setActiveLocation={setActiveLocation}
+          ref={coursesRef}
+        />
+        <Offer scrollTo={scrollTo} ref={offerRef} />
+        <Jobs ref={jobsRef} />
+        <About ref={aboutRef} />
+        <Gallery />
+        <Partners />
+        <Contacts ref={contactsRef} />
+        <Footer scrollTo={scrollTo} />
+        <ModalWindow
+          active={isModalFormOpen}
+          setActive={setIsModalFormOpen}
+          isModalForm={true}
+        >
+          <ContactForm light={true} />
+        </ModalWindow>
+        <ModalWindow
+          active={isModalFormVideo}
+          setIsVideoPlaying={setIsVideoPlaying}
+          setActive={setIsModalVideoOpen}
+        >
+          <Video isVideoPlaying={isModalFormVideo} />
+        </ModalWindow>
+      </Wrapper>
     </ThemeProvider>
   )
 }
 
 export default App
 
-// const Wrapper = styled.div`
-//   background-color: ${({ theme }) => theme.colors.bgcolor};
-//   * {
-//     color: ${({ theme }) => theme.colors.text };
-//   }
-// `
+const Wrapper = styled.div`
+  position: ${({ fixed }) => (fixed ? 'fixed' : 'static')};
+  overflow: ${({ fixed }) => (fixed ? 'hidden' : 'auto')};
+`

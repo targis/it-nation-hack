@@ -17,24 +17,30 @@ const ModalBackground = styled.div`
 `
 
 const ModalContent = styled.div`
-  max-width: 100%;
-  border-radius: 12px;
+  /* border-radius: 12px; */
   /* background-color: white; */
   background-color: ${({ isVideo }) => (isVideo ? 'transparent' : '#fff')};
   transition: all 0.25s ease;
   position: relative;
+  overflow: auto;
+  min-height: 100%;
+  height: 100vh;
+  width: 100vw;
   z-index: 9999;
+  align-items: center;
 
   transform: ${({ transform }) => (transform ? transform : 'scale(0.5)')};
   display: ${({ display }) => (display ? display : 'flex')};
-  height: ${({ height }) => (height ? height : 'auto')};
-  width: ${({ width }) => (width ? width : 'auto')};
+  height: ${({ height }) => (height ? height : '100%')};
+  width: ${({ width }) => (width ? width : '100vw')};
   gap: ${({ gap }) => (gap ? gap : '0px')};
   padding: ${({ padding }) => (padding ? padding : '30px')};
   margin: ${({ margin }) => (margin ? margin : '0px')};
   flex-wrap: ${({ wrap }) => (wrap ? wrap : 'no wrap')};
   @media (max-width: 576px) {
-    padding: 16px;
+    padding: 16px 0;
+    max-width: 100%;
+    max-height: 100%;
   }
 `
 

@@ -83,6 +83,9 @@ const SectionBody = styled.div`
     display: flex;
     justify-content: center;
     padding-top: 2em;
+    align-items: center;
+    /* padding-bottom: 2em; */
+    height: 100%;
     @media (max-width: 1140px) {
         display: flex;
         align-items: center;

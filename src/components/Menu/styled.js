@@ -7,7 +7,7 @@ const MenuIconWrapper = styled.div`
   padding: 13px 11px;
   align-items: center;
   border: 1px solid #173c5c;
-  border-radius: 4px;
+  border-radius: 9px;
   line-height: 1.218;
 `
 
