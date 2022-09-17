@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
 import Button from './components/ui/Button'
-import Form from './components/Form'
+
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
 import Thankyoupage from './components/Thankyoupage/Thankyoupage'
