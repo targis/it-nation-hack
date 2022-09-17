@@ -7,20 +7,20 @@ import { Header, TelLink, Controls } from './styled'
 import Logo from '../Logo'
 import PowercodeLogo from '../../icons/logo.svg'
 
-const Navbar = () => {
+const Navbar = ({ isMenuOpen, toggleMenuState, scrollTo }) => {
   return (
     <Header>
       <Container>
         <Flex width='100%' direction="row" align="center" justify='space-between'>
           <Logo source={PowercodeLogo} to='#' />
-          <SocialLinks self='center' hiddenMd={true} />
+          <SocialLinks self={'center'} hiddenMd={true} />
           <Controls>
-            <Flex direction='column'>
+            <Flex direction={'column'}>
               <TelLink href="tel:+38 (073) 126 00 72">+38 (073) 126 00 72</TelLink>
               <TelLink href="tel:+38 (099) 705 14 18">+38 (099) 705 14 18</TelLink>
             </Flex>
-            <Button hiddenSm={true}>Записатися</Button>
-            <Menu />
+            <Button display={'inline-block'} hiddenSm={true} size={'14px'} lheight={'18px'} onClick={scrollTo.courses}>Записатися</Button>
+            <Menu toggleMenuState={toggleMenuState} isMenuOpen={isMenuOpen} />
           </Controls>
 
         </Flex>

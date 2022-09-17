@@ -7,22 +7,28 @@ import Button from "./ui/Button";
 const Form = () => {
     return (
         <FormContainer>
-            <TitleForm>
+            {/* <TitleForm>
                 Залишити <b>ЗАЯВКУ</b>
             </TitleForm>
             <TitleTextModal>
                 Заповни форму і наш спеціаліст передзвонить тобі, <br/> щоб розповісти про деталі курсу і відповісти на <br/> питання, що тебе цікавлять.
-            </TitleTextModal>
+            </TitleTextModal> */}
             <Input
-        placeholder="Ім'я"
-      />
-      <Input
-        placeholder="E-mail"
-      />
-      <Input
-        placeholder="Телефон"
+                type="text"
+                placeholder="Ім'я"
             />
-            <Button>
+            <Input
+                type="email"
+                placeholder="E-mail"
+            />
+            <Input
+                type="phone"
+                placeholder="Телефон"
+            />
+            <Button
+                margin="26px 0 0 0"
+                padding="21px 0"
+            >
                 Відправити 
             </Button>
         </FormContainer>
@@ -34,8 +40,8 @@ export default Form;
 const FormContainer = styled.form`
     display: flex;
     flex-direction: column;
-    width: 480px;
-    box-sizing: border-box;
+    width: 100%;
+    /* box-sizing: border-box; */
     
 `;
 

@@ -1,32 +1,32 @@
-import React from "react";
+import React, { forwardRef } from "react";
 import styled from "styled-components";
 import Container from "./ui/Container";
-import ImgAbout from "../imgs/girl_student.png";    
-import ImgAboutBg from "../imgs/fone_girl_student.png"    
+import ImgAbout from "../imgs/girl_student.png";
+import ImgAboutBg from "../imgs/fone_girl_student.png"
 
-const About = () => {
+const About = forwardRef((props, ref) => {
     return (
-        <Container>
+        <Container ref={ref}>
             <AboutContainer>
                 <AboutTextContainer>
                     <AboutSection>POWERCODE ACADEMY</AboutSection>
-                        <AboutSectionParagraph> - це курси від провідних фахівців IT галузі. <br />
-                                                    Ми навчаємо у Запоріжжі, Києві та Online. 
-                        </AboutSectionParagraph>
+                    <AboutSectionParagraph> - це курси від провідних фахівців IT галузі. <br />
+                        Ми навчаємо у Запоріжжі, Києві та Online.
+                    </AboutSectionParagraph>
                     <AboutSectionText>Наша місія – надавати високоякісну IT освіту, адаптовану до <br /> сучасних вимог роботодавців. <br />
                         Наші основні напрямки: Front end, Python, UI/UX design, PM, <br /> QA и др. Розшир свої кар’єрні можливості разом з нами!
                     </AboutSectionText>
                 </AboutTextContainer>
-        <AboutImgContainer>
+                <AboutImgContainer>
                     <AboutSectionImg
                         src={ImgAbout}
-                        alt = ""
+                        alt=""
                     />
-        </AboutImgContainer>
+                </AboutImgContainer>
             </AboutContainer>
         </Container>
     )
-}
+})
 
 export default About;
 
