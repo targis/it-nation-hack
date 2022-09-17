@@ -23,14 +23,31 @@ function App() {
   const aboutRef = useRef(null)
   const offerRef = useRef(null)
   const jobsRef = useRef(null)
-  const handleCoursesScroll = () =>
-    coursesRef?.current.scrollIntoView({ behavior: 'smooth' })
-  const handleAboutScroll = () =>
-    aboutRef?.current.scrollIntoView({ behavior: 'smooth' })
-  const handleOfferScroll = () =>
-    offerRef?.current.scrollIntoView({ behavior: 'smooth' })
-  const handleJobsScroll = () =>
-    jobsRef?.current.scrollIntoView({ behavior: 'smooth' })
+  const contactsRef = useRef(null)
+
+  const scrollTo = {
+    courses: () =>
+      coursesRef?.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      }),
+    about: () =>
+      aboutRef?.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      }),
+    offer: () =>
+      offerRef?.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      }),
+    jobs: () =>
+      jobsRef?.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'center',
+      }),
+    contacts: () => contactsRef?.current.scrollIntoView({ behavior: 'smooth' }),
+  }
 
   const [activeLocation, setActiveLocation] = useState(null)
 
@@ -39,22 +56,12 @@ function App() {
       <Navbar
         toggleMenuState={toggleMenuState}
         isMenuOpen={isMenuOpen}
-        scrollTo={{
-          courses: handleCoursesScroll,
-          about: handleAboutScroll,
-          offer: handleOfferScroll,
-          jobs: handleJobsScroll,
-        }}
+        scrollTo={scrollTo}
         coursesRef={coursesRef}
       />
       <Hero
         setActiveLocation={setActiveLocation}
-        scrollTo={{
-          courses: handleCoursesScroll,
-          about: handleAboutScroll,
-          offer: handleOfferScroll,
-          jobs: handleJobsScroll,
-        }}
+        scrollTo={scrollTo}
         toggleMenuState={toggleMenuState}
         isMenuOpen={isMenuOpen}
       />
@@ -68,7 +75,7 @@ function App() {
       <About ref={aboutRef} />
       <Gallery />
       <Partners />
-      <Contacts />
+      <Contacts ref={contactsRef} />
       <Footer />
     </>
   )

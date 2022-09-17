@@ -22,7 +22,7 @@ const Hero = ({ isMenuOpen, toggleMenuState, scrollTo, setActiveLocation }) => {
               <Header>
                 Powercode Academy
               </Header>
-              <Button display={'inline-block'} onClick={scrollTo.courses}>Записатися</Button>
+              <Button display={'inline-block'} onClick={scrollTo.contacts}>Записатися</Button>
               <ButtonSecondary bgimage={PlayIcon}>Дивитись відео</ButtonSecondary>
             </HeroContent>
             <MenuBody isMenuOpen={isMenuOpen} scrollTo={scrollTo} toggleMenuState={toggleMenuState} setActiveLocation={setActiveLocation} />

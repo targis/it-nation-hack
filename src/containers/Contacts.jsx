@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 
 import Container from '../components/ui/Container';
@@ -11,10 +11,10 @@ import Call from '../icons/contacts/call.svg';
 import Email from '../icons/contacts/email.svg';
 import Question from '../icons/form/question.svg';
 
-const Contacts = () => {
+const Contacts = forwardRef((props, ref) => {
     return (
 
-        <Container id='contacts'>
+        <Container ref={ref}>
             <ContactsWrapper>
                 <ContactsContainer>
                     <ButtonsArea>
@@ -74,7 +74,7 @@ const Contacts = () => {
 
 
     );
-}
+})
 
 export default Contacts;
 

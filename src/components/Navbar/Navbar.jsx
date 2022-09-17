@@ -19,7 +19,7 @@ const Navbar = ({ isMenuOpen, toggleMenuState, scrollTo }) => {
               <TelLink href="tel:+38 (073) 126 00 72">+38 (073) 126 00 72</TelLink>
               <TelLink href="tel:+38 (099) 705 14 18">+38 (099) 705 14 18</TelLink>
             </Flex>
-            <Button display={'inline-block'} hiddenSm={true} size={'14px'} lheight={'18px'} onClick={scrollTo.courses}>Записатися</Button>
+            <Button display={'inline-block'} hiddenSm={true} size={'14px'} lheight={'18px'} onClick={scrollTo.contacts}>Записатися</Button>
             <Menu toggleMenuState={toggleMenuState} isMenuOpen={isMenuOpen} />
           </Controls>
 
