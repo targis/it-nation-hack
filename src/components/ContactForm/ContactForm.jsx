@@ -63,6 +63,7 @@ const ContactForm = () => {
 							name='name'
 							type="text"
 							placeholder="Ім'я"
+							disabledChars={/\d/gi}
 						/>
 						<Input
 							name='email'
@@ -73,6 +74,7 @@ const ContactForm = () => {
 							name='tel'
 							type="phone"
 							placeholder="Телефон"
+							disabledChars={/[^\d]/gi}
 						/>
 						<Button
 							type="submit"

@@ -60,8 +60,10 @@ const Contacts = forwardRef((props, ref) => {
 
                     <SocialLinks />
                 </ContactsContainer>
+                <FormContainer>
+                    <ContactForm />
+                </FormContainer>
 
-                <ContactForm />
                 {/* <FormContainer>
                     <FormHeader>
                         <FormHeaderText>Залишилися <b>питання?</b></FormHeaderText>
@@ -132,6 +134,21 @@ const ContactItem = styled.li`
         margin-right: 16px;
     }
 `;
+
+const FormContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(-32px, -50%);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  width: 509px;
+  padding: 26px 36px;
+
+  background: #232f3c;
+  border-radius: 20px;
+`
 
 // const FormContainer = styled.div`
 //     position: absolute;

@@ -6,13 +6,13 @@ const Form = styled.form`
   width: 100%;
 `
 
-// const ContactFormContainer = styled.form`
-//     display: flex;
-//     flex-direction: column;
-//     width: 100%;
-//     /* box-sizing: border-box; */
-
-// `;
+const FormContainer = styled.div`
+  width: 100%;
+  max-width: 509px;
+  padding: 26px 36px;
+  background: #232f3c;
+  border-radius: 20px;
+`
 
 const TitleForm = styled.h3`
   font-family: 'Rubik';
@@ -37,21 +37,6 @@ const TitleTextModal = styled.p`
   font-size: 16px;
   line-height: 1.5;
   color: #333333;
-`
-
-const FormContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translate(-32px, -50%);
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  width: 509px;
-  padding: 26px 36px;
-
-  background: #232f3c;
-  border-radius: 20px;
 `
 
 const FormHeader = styled.div`

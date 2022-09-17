@@ -10,11 +10,15 @@ import About from './components/About'
 import Courses from './containers/Courses'
 import Gallery from './containers/Gallery'
 import Footer from './containers/Footer'
+import ModalWindow from './components/ModalWindow'
+import ContactForm from './components/ContactForm'
 
 // import Thankyoupage from './components/Thankyoupage/Thankyoupage'
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [isModalFormOpen, setIsModalFormOpen] = useState(false)
+  // const [isMenuOpen, setIsMenuOpen] = useState(false)
   const toggleMenuState = () => {
     setIsMenuOpen(!isMenuOpen)
   }
@@ -56,13 +60,13 @@ function App() {
       <Navbar
         toggleMenuState={toggleMenuState}
         isMenuOpen={isMenuOpen}
-        scrollTo={scrollTo}
+        handleModal={setIsModalFormOpen}
         coursesRef={coursesRef}
       />
       <Hero
         setActiveLocation={setActiveLocation}
         scrollTo={scrollTo}
-        toggleMenuState={toggleMenuState}
+        toggleMenuState={setIsMenuOpen}
         isMenuOpen={isMenuOpen}
       />
       <Courses
@@ -77,6 +81,9 @@ function App() {
       <Partners />
       <Contacts ref={contactsRef} />
       <Footer />
+      <ModalWindow active={isModalFormOpen} setActive={setIsModalFormOpen}>
+        <ContactForm />
+      </ModalWindow>
     </>
   )
 }
