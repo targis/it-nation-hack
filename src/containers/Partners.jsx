@@ -16,11 +16,11 @@ const Partners = () => {
             <PartnersContainer bg={PartnersBg}>
                 <Inscription>Наші партнери</Inscription>
                 <Logos>
-                    <A href='https://www.facebook.com/ITnation-20-102337935602457'><img src={ITnation} alt="" /></A>
-                    <A href='https://diia.gov.ua/'><img src={Diya} alt="" /></A>
-                    <A href='https://thedigital.gov.ua/'><img src={Gerb} alt="" /></A>
-                    <A href='https://it-ease.com/ru/'><img src={Ease} alt="" /></A>
-                    <A className='power' href='https://powercode.academy/uk/'><img src={Powercode} alt="" /></A>
+                    <A href='https://www.facebook.com/ITnation-20-102337935602457' target="_blank"><img src={ITnation} alt="" /></A>
+                    <A href='https://diia.gov.ua/' target="_blank"><img src={Diya} alt="" /></A>
+                    <A href='https://thedigital.gov.ua/' target="_blank"><img src={Gerb} alt="" /></A>
+                    <A href='https://it-ease.com/ru/' target="_blank"><img src={Ease} alt="" /></A>
+                    <A className='power' href='https://powercode.academy/uk/' target="_blank"><img src={Powercode} alt="" /></A>
                 </Logos>
             </PartnersContainer>
 
