@@ -120,7 +120,8 @@ const ContactsWrapper = styled.section`
     /* height: 495px; */
     width: 100%;
     /* padding: 45px; */
-    margin-bottom: 70px;
+    margin-top: 80px;
+    margin-bottom: 80px;
     /* background-color: yellowgreen; */
     border-radius: 20px;
 
