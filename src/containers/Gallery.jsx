@@ -44,9 +44,8 @@ const Gallery = () => {
             </GalleryContainer>
             <Carousel>
                 {photos.map((photo, i) =>
-                    <img key={i}
+                    <Slide key={i}
                         src={photo} alt=''
-                        style={{ height: '332px', width: '332px' }}
                     />
                 )}
             </Carousel>
@@ -84,7 +83,8 @@ const GalleryContainer = styled.section`
             "img6 img6 img8"
             "img9 img10 img8";
         
-        grid-gap: 30px;
+        grid-gap: 25px;
+        margin-bottom: 120px;
     }
 
     @media (max-width: 768px) {
@@ -99,7 +99,12 @@ const GalleryContainer = styled.section`
             "img8 img8"
             "img9 img10";
         
-        grid-gap: 30px;
+        grid-gap: 20px;
+        margin-bottom: 60px;
+    }
+
+    @media (max-width: 380px) {
+        display: none;
     }
 `;
 
@@ -115,4 +120,11 @@ const Photo = styled.img`
     @media (max-width: 1024px) {
         aspect-ratio: 1;
     }
+`;
+
+const Slide = styled.img`
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 360px;  
 `;

@@ -46,11 +46,16 @@ export const SlideItem = styled.div`
 `;
 
 export const Container = styled.div`
+    /* display: */
     position: relative;
-    background-color: white;
+    /* background-color: white; */
     border: none;
     overflow-x: hidden;
     margin-bottom: 26px;
+    max-height: 360px;
+    max-width: 360px;
+    aspect-ratio: 1;
+
 
     width: ${({ width }) => (width ? width : "auto")};
     height: ${({ height }) => (height ? height : "auto")};
@@ -61,12 +66,18 @@ export const ContainerItem = styled.div`
     justify-content: center;
     align-items: center;
 
-    width: ${({ width }) => (width ? width : "auto")};
-    height: ${({ height }) => (height ? height : "auto")};
+    width: ${({ width }) => (width ? width : "100%")};
+    height: ${({ height }) => (height ? height : "100%")};
+
+    max-height: 360px;
+    max-width: 360px;
 `;
 
 export const CarouselTrack = styled.div`
     display: flex;
+    flex: 1 1 auto;
+    height: 100%;
+    max-height: 360px;
     width: max-content;
     transition: 0.2s linear transform;
 
