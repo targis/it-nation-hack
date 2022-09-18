@@ -34,31 +34,8 @@ const PartnersContainer = styled.section`
     justify-content: center;
     position: relative;
     width: 100%;
-    margin-bottom: 15%;
-    @media (max-width: 1080px) {
-        margin-bottom: 50%;
-    }
-    @media (max-width: 797px) {
-        margin-bottom: 60%;
-    }
-    @media (max-width: 690px) {
-        margin-bottom: 70%;
-    }
-    @media (max-width: 620px) {
-        margin-bottom: 80%;
-    }
-    @media (max-width: 560px) {
-        margin-bottom: 90%;
-    }
-    @media (max-width: 475px) {
-        margin-bottom: 100%;
-    }
-    @media (max-width: 440px) {
-        margin-bottom: 120%;
-    }
-    @media (max-width: 385px) {
-        margin-bottom: 150%;
-    }
+    margin-bottom: 40px;
+
 `;
 
 const Inscription = styled.h2`

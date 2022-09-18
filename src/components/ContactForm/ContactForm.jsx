@@ -7,6 +7,7 @@ import {
 	FormHeader,
 	FormHeaderText,
 	FormText,
+	Img
 } from "./styled";
 import { Formik } from 'formik'
 import Input from "./Input";
@@ -48,7 +49,7 @@ const ContactForm = ({ formTitle = 'Залишилися питання?', light
 		<FormContainer light={light}>
 			<FormHeader>
 				<FormHeaderText light={light}>{titleFirst} <b>{titleLast}</b></FormHeaderText>
-				{!light && (<img src={Question} alt="" />)}
+				{!light && (<Img src={Question} alt="" />)}
 			</FormHeader>
 			<FormText light={light}>Заповни форму і наш спеціаліст передзвонить тобі, щоб розповісти про деталі курсу і відповісти на питання, що тебе цікавлять.</FormText>
 			<Formik

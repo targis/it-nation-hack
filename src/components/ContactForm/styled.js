@@ -68,6 +68,9 @@ const FormHeaderText = styled.h4`
   & > b {
     font-weight: 700;
   }
+  @media (max-width: 400px) {
+    font-size: 27px;
+  }
 `
 
 const FormText = styled.p`
@@ -118,6 +121,12 @@ const Label = styled.label`
   }
 `
 
+const Img = styled.img`
+  @media (max-width: 576px) {
+    display: none;
+  }
+`
+
 export {
   Form,
   TitleForm,
@@ -130,4 +139,5 @@ export {
   Error,
   FormControl,
   Label,
+  Img,
 }
