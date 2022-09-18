@@ -79,8 +79,18 @@ const Courses = forwardRef(({ activeLocation, setActiveLocation }, ref) => {
 
 export default Courses;
 
-const Wrapper = styled.section`
+const Btn = styled.section`
+    position: fixed;
+    right: 0px;
+    top: 300px;
+    height: 48px;
+    width: 48px;
+    background-color: #FFFFFF;
+    border-radius: 50%;
+`;
 
+const Wrapper = styled.section`
+    
 `;
 
 const CoursesTitle = styled.h3`

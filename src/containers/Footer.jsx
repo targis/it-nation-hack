@@ -65,7 +65,7 @@ const Text = styled.span`
 const Button = styled.button`
     height: 48px;
     width: 48px;
-
     background-color: #FFFFFF;
     border-radius: 50%;
+   
 `;
