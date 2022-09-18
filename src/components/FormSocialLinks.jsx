@@ -8,6 +8,7 @@ import Telegram from '../icons/form/telegram.svg';
 import Instagram from '../icons/form/instagram.svg';
 
 
+
 const FormSocialLinks = ({ ...props }) => {
 
   const socialNetworks = [
@@ -41,6 +42,7 @@ const FormSocialLinks = ({ ...props }) => {
       ))}
     </SocialLinks>
   );
+
 }
 
 
@@ -52,8 +54,10 @@ const SocialLinks = styled.div`
     justify-content: ${({ justify }) => justify || 'center'};
     align-items: ${({ align }) => align || 'center'};
 
+
     height: ${({ height }) => height || 'auto'};
     width: ${({ width }) => width || 'auto'};
+
 
     :last-child {
         margin-right: 0;
