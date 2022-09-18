@@ -74,10 +74,13 @@ const Button = styled.button`
     width: 48px;
     background-color: #FFFFFF;
     border-radius: 50%;
+    transition: all .3s linear ;
     
     &:hover {
-        box-shadow: 3px 3px 5px
+        box-shadow: 0px 0px 5px 4px rgba(230, 28, 58,0.2);
+        /* box-shadow: 3px 3px 5px
                     
-                    #EF5B63;
+                    #EF5B63; */
+        transition: all .3s linear ;
     }
 `;
