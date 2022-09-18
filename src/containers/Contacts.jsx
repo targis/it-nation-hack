@@ -10,6 +10,8 @@ import Pointer from '../icons/contacts/pointer.svg';
 import Call from '../icons/contacts/call.svg';
 import Email from '../icons/contacts/email.svg';
 import Green from '../imgs/map green box.svg'
+import MapK from '../imgs/mapK.jpg'
+import MapZP from '../imgs/mapZP.jpg'
 
 
 const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) => {
@@ -50,6 +52,7 @@ const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) =>
                     <ButtonsArea>
                         {contacts && contacts.map(({ label }) => (
                             <ButtonTab
+                                key={label}
                                 height='40px'
                                 width='120px'
                                 margin='0 10px 0 0'
