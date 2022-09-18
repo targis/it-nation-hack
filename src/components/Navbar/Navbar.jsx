@@ -26,7 +26,7 @@ const Navbar = ({ isMenuOpen, toggleMenuState, handleModal, theme,
             </Flex>
 
             <Button display={'inline-block'} hiddenSm={true} size={'14px'} lheight={'1'} padding={'14px 21px'} onClick={handleModal}>Записатися</Button>
-            {theme === 'light' ? <IoMoonOutline onClick={() => toogleTheme()} /> : <BsSun onClick={() => toogleTheme()} />}
+            {/* {theme === 'light' ? <IoMoonOutline onClick={() => toogleTheme()} /> : <BsSun onClick={() => toogleTheme()} />} */}
 
             <Menu toggleMenuState={toggleMenuState} isMenuOpen={isMenuOpen} />
           </Controls>
