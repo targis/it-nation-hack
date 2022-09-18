@@ -39,3 +39,4 @@ const Hero = ({ isMenuOpen, toggleMenuState, scrollTo, setActiveLocation, setIsM
 
 export default Hero
 
+
