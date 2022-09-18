@@ -48,6 +48,7 @@ const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) =>
                     <Form />
                 </FormContainer> */}
 
+
                 <ContactsContainer>
                     <ButtonsArea>
                         {contacts && contacts.map(({ label }) => (
@@ -83,6 +84,7 @@ const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) =>
                     <FormSocialLinks justify={'start'} align={'left'} />
                 </ContactsContainer>
                 {/* <FormContainer>
+
 					<ContactForm />
 				</FormContainer> */}
 
