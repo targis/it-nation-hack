@@ -120,11 +120,12 @@ const ContactsList = ({ item: { address, email, tel } }) => {
             </ContactItem>
             <ContactItem>
                 <img src={Call} alt="" />
-                {email}
+                <a href={`tel:${tel}`}>{tel}</a>
             </ContactItem>
             <ContactItem>
                 <img src={Email} alt="" />
-                {tel}
+                <a href={`mailto:${email}?subject=Від%20зацікавленого%20читача&amp;body=Добрий день!%0D%0A%0D%0AВ%20мене%20залишились%20запитання...`}>{email}</a>
+
             </ContactItem>
         </>
 
@@ -223,6 +224,9 @@ const ContactItem = styled.li`
 
     overflow: hidden;
     text-overflow: ellipsis;
+    a {
+        color: #FFFFFF;
+    }
 
     & > img {
         margin-right: 16px;
