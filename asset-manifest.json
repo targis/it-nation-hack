@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/it-nation-hack/static/css/main.f716a50d.css",
-    "main.js": "/it-nation-hack/static/js/main.6bb06419.js",
+    "main.js": "/it-nation-hack/static/js/main.f2894b34.js",
     "static/js/787.b92cbb86.chunk.js": "/it-nation-hack/static/js/787.b92cbb86.chunk.js",
     "static/media/girl_student.png": "/it-nation-hack/static/media/girl_student.500cbc2614cc1acadb2d.png",
     "static/media/8.jpg": "/it-nation-hack/static/media/8.c63133dd3add9ba0ec9b.jpg",
@@ -40,9 +40,9 @@
     "static/media/btn-close-modal.svg": "/it-nation-hack/static/media/btn-close-modal.f5cd045f0233575577e2a145429d59c9.svg",
     "static/media/instagram.svg": "/it-nation-hack/static/media/instagram.029b3d53897efd53a2eba84ab95c90e4.svg",
     "static/media/call.svg": "/it-nation-hack/static/media/call.bd94b49ac1a76a927dd105982606d7f6.svg",
-    "static/media/arrow.svg": "/it-nation-hack/static/media/arrow.edb10dfcbc2a0ae7f0d44f2b835cf46b.svg",
-    "static/media/telegram.svg": "/it-nation-hack/static/media/telegram.7501ab163415a8d9d34eced16a4400a0.svg",
     "static/media/youtube.svg": "/it-nation-hack/static/media/youtube.90fb226f842846ccfcb7a83114adb686.svg",
+    "static/media/arrow.svg": "/it-nation-hack/static/media/arrow.edb10dfcbc2a0ae7f0d44f2b835cf46b.svg",
+    "static/media/telegram.svg": "/it-nation-hack/static/media/telegram.c600c4c96f51c67adf855b5cf9269126.svg",
     "static/media/pointer.svg": "/it-nation-hack/static/media/pointer.51dd00398aefd585e91ace6a09218569.svg",
     "index.html": "/it-nation-hack/index.html",
     "static/media/linkedin.svg": "/it-nation-hack/static/media/linkedin.640f1163bf27a12138cd3d3892a800c6.svg",
@@ -51,11 +51,11 @@
     "static/media/map green box.svg": "/it-nation-hack/static/media/map green box.5945778a68d198799ef4909e10f766fe.svg",
     "static/media/email.svg": "/it-nation-hack/static/media/email.21275709ef4d759a4e259d9ad09e4df8.svg",
     "main.f716a50d.css.map": "/it-nation-hack/static/css/main.f716a50d.css.map",
-    "main.6bb06419.js.map": "/it-nation-hack/static/js/main.6bb06419.js.map",
+    "main.f2894b34.js.map": "/it-nation-hack/static/js/main.f2894b34.js.map",
     "787.b92cbb86.chunk.js.map": "/it-nation-hack/static/js/787.b92cbb86.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f716a50d.css",
-    "static/js/main.6bb06419.js"
+    "static/js/main.f2894b34.js"
   ]
 }
