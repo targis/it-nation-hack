@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import Container from '../components/ui/Container';
 import ContactForm from '../components/ContactForm/ContactForm';
 import Button from '../components/ui/Button';
-import SocialLinks from '../components/SocialLinks';
+import FormSocialLinks from '../components/FormSocialLinks';
 
 import Pointer from '../icons/contacts/pointer.svg';
 import Call from '../icons/contacts/call.svg';
@@ -77,7 +77,7 @@ const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) =>
 
                     </ContactInformation>
 
-                    <SocialLinks />
+                    <FormSocialLinks justify={'start'} align={'left'} />
                 </ContactsContainer>
                 {/* <FormContainer>
 					<ContactForm />
