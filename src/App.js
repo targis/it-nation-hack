@@ -20,6 +20,7 @@ import styled from 'styled-components'
 // import Thankyoupage from './components/Thankyoupage/Thankyoupage'
 
 function App() {
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false)
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isModalFormOpen, setIsModalFormOpen] = useState(false)
@@ -44,7 +45,6 @@ function App() {
     setTheme(theme === 'light' ? 'dark' : 'light')
     sessionStorage.setItem('theme', theme === 'light' ? 'dark' : 'light')
   }
-  const navbarRef = useRef(null)
   const coursesRef = useRef(null)
   const aboutRef = useRef(null)
   const offerRef = useRef(null)
@@ -52,10 +52,6 @@ function App() {
   const contactsRef = useRef(null)
 
   const scrollTo = {
-    top: () =>
-      navbarRef?.current.scrollIntoView({
-        behavior: 'smooth',
-      }),
     courses: () =>
       coursesRef?.current.scrollIntoView({
         behavior: 'smooth',
@@ -84,7 +80,6 @@ function App() {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <Navbar
-        ref={navbarRef}
         toggleMenuState={toggleMenuState}
         isMenuOpen={isMenuOpen}
         handleModal={setIsModalFormOpen}
@@ -111,12 +106,18 @@ function App() {
         <About ref={aboutRef} />
         <Gallery />
         <Partners />
-        <Contacts ref={contactsRef} />
+        <Contacts
+          ref={contactsRef}
+          setIsModalFormOpen={setIsModalFormOpen}
+          setIsFormSubmitted={setIsFormSubmitted}
+        />
         <Footer scrollTo={scrollTo} />
         <ModalWindow
           active={isModalFormOpen}
           setActive={setIsModalFormOpen}
           isModalForm={true}
+          setIsFormSubmitted={setIsFormSubmitted}
+          isFormSubmitted={isFormSubmitted}
         >
           {/* <ContactForm light={true} /> */}
         </ModalWindow>

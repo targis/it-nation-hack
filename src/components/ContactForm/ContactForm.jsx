@@ -9,7 +9,7 @@ import {
 	FormText,
 	Img
 } from "./styled";
-import { Formik } from 'formik'
+import { Formik, FormikHelpers } from 'formik'
 import Input from "./Input";
 import Button from "../ui/Button";
 import Question from '../../icons/form/question.svg';
@@ -40,10 +40,9 @@ const validationSchema = object({
 
 
 
-const ContactForm = ({ formTitle = 'Залишилися питання?', light, setIsFormSubmitted }) => {
+const ContactForm = ({ formTitle = 'Залишилися питання?', light, setIsFormSubmitted, setIsModalFormOpen }) => {
 	const titleLast = formTitle.split(' ').at(-1)
 	const titleFirst = `${formTitle.split(' ').slice(0, -1).join(' ')}`
-
 	return (
 
 		<FormContainer light={light}>
@@ -55,11 +54,19 @@ const ContactForm = ({ formTitle = 'Залишилися питання?', light
 			<Formik
 				initialValues={initialValues}
 				validationSchema={validationSchema}
-				onSubmit={(values, { setSubmitting }) => {
+				onSubmit={(values, { setSubmitting, resetForm }) => {
 					setTimeout(() => {
 						console.log(JSON.stringify(values, null, 2));
 						setSubmitting(false);
-						setIsFormSubmitted(true)
+						console.log(setIsModalFormOpen)
+						if (setIsFormSubmitted) {
+							setIsFormSubmitted(true);
+						}
+						if (setIsModalFormOpen) {
+							setIsModalFormOpen(true)
+						}
+
+						resetForm()
 					}, 1000)
 				}}
 			>
