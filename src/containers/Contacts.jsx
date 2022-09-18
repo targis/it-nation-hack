@@ -13,6 +13,8 @@ import Green from '../imgs/map green box.svg'
 import MapK from '../imgs/mapK.jpg'
 import MapZP from '../imgs/mapZP.jpg'
 
+// import Map from '../components/Map';
+
 
 const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) => {
 
@@ -96,6 +98,7 @@ const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) =>
                 </FormContainer> */}
 
             </ContactsWrapper>
+
         </Container>
 
 
