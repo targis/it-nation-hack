@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/it-nation-hack/static/css/main.f716a50d.css",
-    "main.js": "/it-nation-hack/static/js/main.8e0b6d5b.js",
+    "main.js": "/it-nation-hack/static/js/main.9641c7f7.js",
     "static/js/787.b92cbb86.chunk.js": "/it-nation-hack/static/js/787.b92cbb86.chunk.js",
     "static/media/girl_student.png": "/it-nation-hack/static/media/girl_student.500cbc2614cc1acadb2d.png",
     "static/media/8.jpg": "/it-nation-hack/static/media/8.c63133dd3add9ba0ec9b.jpg",
@@ -32,6 +32,7 @@
     "static/media/powercode_client.svg": "/it-nation-hack/static/media/powercode_client.b70cfa42f15d44244e2d720b624e3dbf.svg",
     "static/media/time-modal.png": "/it-nation-hack/static/media/time-modal.523a1141ed3c630835c0.png",
     "static/media/logo.svg": "/it-nation-hack/static/media/logo.f58158f06edc826ffdf1e85e490fbccd.svg",
+    "static/media/partners.svg": "/it-nation-hack/static/media/partners.aaf941c9df9724a378129b3f195764cd.svg",
     "static/media/ease.svg": "/it-nation-hack/static/media/ease.0cc691f480564cbeb94f4fb276506ae9.svg",
     "static/media/gerb.svg": "/it-nation-hack/static/media/gerb.f4f4c405ec48e62dcdb8d370acbcf3b6.svg",
     "static/media/question.svg": "/it-nation-hack/static/media/question.14ecceb70257999a3aa389d0c7f19ff0.svg",
@@ -50,11 +51,11 @@
     "static/media/map green box.svg": "/it-nation-hack/static/media/map green box.5945778a68d198799ef4909e10f766fe.svg",
     "static/media/email.svg": "/it-nation-hack/static/media/email.21275709ef4d759a4e259d9ad09e4df8.svg",
     "main.f716a50d.css.map": "/it-nation-hack/static/css/main.f716a50d.css.map",
-    "main.8e0b6d5b.js.map": "/it-nation-hack/static/js/main.8e0b6d5b.js.map",
+    "main.9641c7f7.js.map": "/it-nation-hack/static/js/main.9641c7f7.js.map",
     "787.b92cbb86.chunk.js.map": "/it-nation-hack/static/js/787.b92cbb86.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f716a50d.css",
-    "static/js/main.8e0b6d5b.js"
+    "static/js/main.9641c7f7.js"
   ]
 }
