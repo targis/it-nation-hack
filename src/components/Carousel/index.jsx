@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
 import Flex from "../ui/Flex";
 
 import {
@@ -10,7 +11,7 @@ import {
     CarouselTrack
 } from "./styled";
 
-function Carousel({children, width="335px", height="335px"}) {
+function Carousel({children, width="100%", height="100%"}) {
     
     const [activeSlide, setActiveSlide] = useState(0);
     const [transform, setTransform] = useState(0);
@@ -38,7 +39,7 @@ function Carousel({children, width="335px", height="335px"}) {
     }
 
     return (
-        <div style={{margin: '0 0 50px'}}>
+        <Wrapper>
             <Container ref = {containerRef} width = {width} height = {height}>
                 <SlideBtn onClick={prevSlide}>
                     <Arrow />
@@ -48,8 +49,8 @@ function Carousel({children, width="335px", height="335px"}) {
                     {children.map((item, i) => (
                         <ContainerItem 
                             key={"container_item_key" + i}
-                            width={width}
-                            height={height}
+                            // width={width}
+                            // height={height}
                         >
                             {item}
                         </ContainerItem>
@@ -60,7 +61,7 @@ function Carousel({children, width="335px", height="335px"}) {
                     <Arrow />
                 </SlideBtn>
             </Container>
-            <Flex width='335px' align='center' justify='center'>
+            <Flex align='center' justify='center'>
                 {children.map((item, i) => 
                     <SlideItem 
                         key={i} 
@@ -70,8 +71,20 @@ function Carousel({children, width="335px", height="335px"}) {
                 )}
             </Flex>
             
-        </div>
+        </Wrapper>
     )
 }
 
 export default Carousel;
+
+const Wrapper = styled.div`
+    display: none;
+    margin-bottom: 36px;
+
+    @media (max-width: 380px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+    }
+`
