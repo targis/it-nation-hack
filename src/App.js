@@ -118,7 +118,7 @@ function App() {
           setActive={setIsModalFormOpen}
           isModalForm={true}
         >
-          <ContactForm light={true} />
+          {/* <ContactForm light={true} /> */}
         </ModalWindow>
         <ModalWindow
           active={isModalFormVideo}

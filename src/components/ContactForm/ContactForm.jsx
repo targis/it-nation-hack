@@ -39,7 +39,7 @@ const validationSchema = object({
 
 
 
-const ContactForm = ({ formTitle = 'Залишилися питання?', light }) => {
+const ContactForm = ({ formTitle = 'Залишилися питання?', light, setIsFormSubmitted }) => {
 	const titleLast = formTitle.split(' ').at(-1)
 	const titleFirst = `${formTitle.split(' ').slice(0, -1).join(' ')}`
 
@@ -56,8 +56,9 @@ const ContactForm = ({ formTitle = 'Залишилися питання?', light
 				validationSchema={validationSchema}
 				onSubmit={(values, { setSubmitting }) => {
 					setTimeout(() => {
-						alert(JSON.stringify(values, null, 2));
+						console.log(JSON.stringify(values, null, 2));
 						setSubmitting(false);
+						setIsFormSubmitted(true)
 					}, 1000)
 				}}
 			>
