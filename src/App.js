@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
-import { ThemeProvider } from 'styled-components';
-import darkTheme from './themes/darkTheme';
-import lightTheme from './themes/lightTheme';
+import { ThemeProvider } from 'styled-components'
+import darkTheme from './themes/darkTheme'
+import lightTheme from './themes/lightTheme'
 import Hero from './components/Hero'
 import Navbar from './components/Navbar'
 import Offer from './components/Offer'
