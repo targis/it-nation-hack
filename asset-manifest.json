@@ -1,10 +1,11 @@
 {
   "files": {
     "main.css": "/it-nation-hack/static/css/main.f716a50d.css",
-    "main.js": "/it-nation-hack/static/js/main.f2894b34.js",
+    "main.js": "/it-nation-hack/static/js/main.c67f00f9.js",
     "static/js/787.b92cbb86.chunk.js": "/it-nation-hack/static/js/787.b92cbb86.chunk.js",
     "static/media/girl_student.png": "/it-nation-hack/static/media/girl_student.500cbc2614cc1acadb2d.png",
     "static/media/8.jpg": "/it-nation-hack/static/media/8.c63133dd3add9ba0ec9b.jpg",
+    "static/media/mapZP.jpg": "/it-nation-hack/static/media/mapZP.22f3920b356fb4979ce9.jpg",
     "static/media/1.jpg": "/it-nation-hack/static/media/1.7d44e590184ae775b6cf.jpg",
     "static/media/boy-modal.png": "/it-nation-hack/static/media/boy-modal.19e08a275a086bb4488c.png",
     "static/media/4.jpg": "/it-nation-hack/static/media/4.a2ce1668ea671983be17.jpg",
@@ -19,6 +20,7 @@
     "static/media/Rubik-Regular.woff2": "/it-nation-hack/static/media/Rubik-Regular.ae09365610a8d6beeaed.woff2",
     "static/media/Rubik-Light.woff2": "/it-nation-hack/static/media/Rubik-Light.9a51a6ab24a61b7cb4f1.woff2",
     "static/media/9.jpg": "/it-nation-hack/static/media/9.3b8c5794d3a97e368e30.jpg",
+    "static/media/mapK.jpg": "/it-nation-hack/static/media/mapK.718949d3be4731e91f64.jpg",
     "static/media/IBMPlexMono-Bold.woff2": "/it-nation-hack/static/media/IBMPlexMono-Bold.620b7b169c34b271a5f1.woff2",
     "static/media/IBMPlexMono-Medium.woff2": "/it-nation-hack/static/media/IBMPlexMono-Medium.e212c588c0a556ff8916.woff2",
     "static/media/senior.png": "/it-nation-hack/static/media/senior.8a90c78c587d10ea8884.png",
@@ -51,11 +53,11 @@
     "static/media/map green box.svg": "/it-nation-hack/static/media/map green box.5945778a68d198799ef4909e10f766fe.svg",
     "static/media/email.svg": "/it-nation-hack/static/media/email.21275709ef4d759a4e259d9ad09e4df8.svg",
     "main.f716a50d.css.map": "/it-nation-hack/static/css/main.f716a50d.css.map",
-    "main.f2894b34.js.map": "/it-nation-hack/static/js/main.f2894b34.js.map",
+    "main.c67f00f9.js.map": "/it-nation-hack/static/js/main.c67f00f9.js.map",
     "787.b92cbb86.chunk.js.map": "/it-nation-hack/static/js/787.b92cbb86.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f716a50d.css",
-    "static/js/main.f2894b34.js"
+    "static/js/main.c67f00f9.js"
   ]
 }
