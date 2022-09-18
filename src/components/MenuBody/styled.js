@@ -43,7 +43,8 @@ const Button = styled.button`
   line-height: 1.18em;
   letter-spacing: 4px;
   text-transform: uppercase;
-  color: #232f3c;
+  /* color: #232f3c; */
+  color: ${({ theme }) => theme.colors.text };
   transition: all 0.25s ease;
   background: none;
   border: none;

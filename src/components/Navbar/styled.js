@@ -4,13 +4,15 @@ const Header = styled.header`
   display: flex;
   /* margin-top: 22px; */
   padding: 1.375em 0;
-`
+  background-color: ${({ theme }) => theme.colors.bgelement };
+`;
 
 const TelLink = styled.a`
   font-family: Rubik, sans-serif;
   font-size: 1em;
   font-weight: 700;
-  color: var(--font-color);
+  /* color: var(--font-color); */
+  color: ${({ theme }) => theme.colors.text };
   text-decoration: none;
   & :hover {
     color: var(--font-color);
