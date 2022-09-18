@@ -9,74 +9,83 @@ import SocialLinks from '../components/SocialLinks';
 import Pointer from '../icons/contacts/pointer.svg';
 import Call from '../icons/contacts/call.svg';
 import Email from '../icons/contacts/email.svg';
+import Green from '../imgs/map green box.svg'
 
 
-const Contacts = forwardRef((props, ref) => {
-    return (
+const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) => {
+	return (
 
-        <Container ref={ref}>
-            <ContactsWrapper>
+		<Container ref={ref}>
 
-                <FormContainer>
+			<ContactsWrapper>
+
+				<FormContainer>
+					<ContactForm setIsModalFormOpen={setIsModalFormOpen} setIsFormSubmitted={setIsFormSubmitted} />
+					<GreenSnot>
+						<img src={Green} alt="" />
+					</GreenSnot>
+				</FormContainer>
+
+				{/* <FormContainer>
                     <FormHeader>
                         <FormHeaderText>Залишилися <b>питання?</b></FormHeaderText>
                         <FormHeaderIcon src={Question} alt="" />
                     </FormHeader>
                     <FormText>Заповни форму і наш спеціаліст передзвонить тобі, щоб розповісти про деталі курсу і відповісти на питання, що тебе цікавлять.</FormText>
                     <Form />
-                </FormContainer>
+                </FormContainer> */}
 
-                <ContactsContainer>
-                    <ButtonsArea>
-                        <Button
-                            height='40px'
-                            width='120px'
-                            margin='0 10px 0 0'
-                            padding='0'
-                            size='14px'
-                            lheight='114%'
-                        >
-                            Київ
-                        </Button>
-                        <Button
-                            height='40px'
-                            width='120px'
-                            margin='0 10px 0 0'
-                            padding='0'
-                            size='14px'
-                            lheight='114%'
-                            bgcolor='none'
-                            border='1px solid #FFFFFF'
-                        >
-                            Запоріжжя
-                        </Button>
-                    </ButtonsArea>
+				<ContactsContainer>
+					<ButtonsArea>
+						<Button
+							height='40px'
+							width='120px'
+							margin='0 10px 0 0'
+							padding='0'
+							size='14px'
+							lheight='114%'
+						>
+							Київ
+						</Button>
+						<Button
+							height='40px'
+							width='120px'
+							margin='0 10px 0 0'
+							padding='0'
+							size='14px'
+							lheight='114%'
+							bgcolor='none'
+							border='1px solid #FFFFFF'
+						>
+							Запоріжжя
+						</Button>
+					</ButtonsArea>
 
-                    <ContactInformation>
-                        <ContactList>
-                            <ContactItem>
-                                <img src={Pointer} alt="" />
-                                м.Київ, вул. Верхній Вал, 24
-                            </ContactItem>
-                            <ContactItem>
-                                <img src={Call} alt="" />
-                                +38 (073) 126 00 72
-                            </ContactItem>
-                            <ContactItem>
-                                <img src={Email} alt="" />
-                                powercodeacademy@gmail.com
-                            </ContactItem>
-                        </ContactList>
+					<ContactInformation>
+						<ContactList>
+							<ContactItem>
+								<img src={Pointer} alt="" />
+								м.Київ, вул. Верхній Вал, 24
+							</ContactItem>
+							<ContactItem>
+								<img src={Call} alt="" />
+								+38 (073) 126 00 72
+							</ContactItem>
+							<ContactItem>
+								<img src={Email} alt="" />
+								powercodeacademy@gmail.com
+							</ContactItem>
+						</ContactList>
 
-                    </ContactInformation>
+					</ContactInformation>
 
-                    <SocialLinks />
-                </ContactsContainer>
-                <FormContainer>
-                    <ContactForm />
-                </FormContainer>
+					<SocialLinks />
+				</ContactsContainer>
+				{/* <FormContainer>
+					<ContactForm />
+				</FormContainer> */}
 
-                {/* <FormContainer>
+				{/* <FormContainer>
                     <FormHeader>
                         <FormHeaderText>Залишилися <b>питання?</b></FormHeaderText>
                         <img src={Question} alt="" />
@@ -85,14 +94,23 @@ const Contacts = forwardRef((props, ref) => {
                     <Form />
                 </FormContainer> */}
 
-            </ContactsWrapper>
-        </Container>
+			</ContactsWrapper>
+		</Container>
 
 
-    );
+	);
 })
 
 export default Contacts;
+
+const GreenSnot = styled.div`
+    z-index: -1;
+    position: absolute;
+    bottom: 320px;
+    left: 50%;
+    transform: translateX(-50%);
+		top: -20px;
+`;
 
 const ContactsWrapper = styled.section`
     display: flex;
@@ -102,7 +120,8 @@ const ContactsWrapper = styled.section`
     /* height: 495px; */
     width: 100%;
     /* padding: 45px; */
-    margin-bottom: 70px;
+    margin-top: 80px;
+    margin-bottom: 80px;
     /* background-color: yellowgreen; */
     border-radius: 20px;
 
@@ -185,11 +204,16 @@ const FormContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  width: 509px;
+  max-width: 509px;
   padding: 26px 36px;
-
+	padding-top: 0;
   background: #232f3c;
   border-radius: 20px;
+	@media (max-width: 1200px) {
+        position: relative;
+				transform: none;
+				margin: 2em auto;
+    }
 `
 
 // const FormContainer = styled.div`

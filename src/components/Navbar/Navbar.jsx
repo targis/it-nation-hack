@@ -1,4 +1,3 @@
-import { forwardRef } from 'react'
 import SocialLinks from '../SocialLinks'
 import Menu from '../Menu'
 import Button from '../ui/Button'
@@ -11,11 +10,11 @@ import PowercodeLogo from '../../icons/logo.svg'
 import { IoMoonOutline, IoMoonSharp } from 'react-icons/io5';
 import { BsSun } from 'react-icons/bs';
 
-const Navbar = forwardRef(({ isMenuOpen, toggleMenuState, handleModal, theme,
-  toogleTheme }, ref) => {
+const Navbar = ({ isMenuOpen, toggleMenuState, handleModal, theme,
+  toogleTheme }) => {
 
   return (
-    <Header ref={ref}>
+    <Header>
       <Container>
         <Flex width='100%' direction="row" align="center" justify='space-between'>
           <Logo source={PowercodeLogo} to='#' />
@@ -37,7 +36,7 @@ const Navbar = forwardRef(({ isMenuOpen, toggleMenuState, handleModal, theme,
       </Container>
     </Header>
   )
-})
+}
 
 export default Navbar
 

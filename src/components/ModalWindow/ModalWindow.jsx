@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { ModalBackground, ModalContent } from "./styled";
 import styled from "styled-components";
-import Input from "../ui/Input";
-import Button from "../ui/Button";
 import Container from '../ui/Container'
 import Logo from '../../icons/logo.svg';
 import Close from '../../icons/btn-close-modal.svg';
 import Boy from '../../imgs/boy-modal.png'
+import Thankyoupage from '../Thankyoupage'
+import ContactForm from '../ContactForm'
 
-const ModalWindow = ({ active, setActive, children, isModalForm }) => {
+const ModalWindow = ({ active, setActive, children, isModalForm, isFormSubmitted, setIsFormSubmitted }) => {
+
+
+
+  const handleModalClose = () => {
+    setActive(false)
+    setIsFormSubmitted(false)
+  }
+
   return (
     <ModalBackground opacity={active ? 1 : 0}
       pointer={active ? '1' : "none"}
-      onClick={() => setActive(false)}>
+      onClick={handleModalClose}>
       <ModalContent
         transform={active ? "scale(1)" : "scale(0.5)"}
         onClick={(e => e.stopPropagation())}
@@ -25,18 +33,36 @@ const ModalWindow = ({ active, setActive, children, isModalForm }) => {
               <img src={Logo} alt="" />
             </SectionHeadItemLeft>
             <SectionHeadItemRight>
-              <ButtonClose onClick={() => setActive(false)}>
+              <ButtonClose onClick={handleModalClose}>
                 <img src={Close} alt="Close" />
               </ButtonClose>
             </SectionHeadItemRight>
           </SectionHead>
           <SectionBody>
-            {children}
-            {isModalForm && (
-              <SectionImg>
-                <img src={Boy} alt="" />
-              </SectionImg>
+
+            {isFormSubmitted && (<Thankyoupage handleModalClose={handleModalClose} />)}
+
+            {isModalForm && !isFormSubmitted ? (
+              <>
+                <ContactForm light={true} setIsFormSubmitted={setIsFormSubmitted} />
+                <SectionImg>
+                  <img src={Boy} alt="" />
+                </SectionImg>
+              </>
+            ) : (
+              children
             )}
+
+
+
+
+
+
+
+
+
+
+
           </SectionBody>
         </Section>
 
@@ -83,6 +109,9 @@ const SectionBody = styled.div`
     display: flex;
     justify-content: center;
     padding-top: 2em;
+    align-items: center;
+    /* padding-bottom: 2em; */
+    height: 100%;
     @media (max-width: 1140px) {
         display: flex;
         align-items: center;

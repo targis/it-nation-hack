@@ -7,8 +7,9 @@ import {
 	FormHeader,
 	FormHeaderText,
 	FormText,
+	Img
 } from "./styled";
-import { Formik } from 'formik'
+import { Formik, FormikHelpers } from 'formik'
 import Input from "./Input";
 import Button from "../ui/Button";
 import Question from '../../icons/form/question.svg';
@@ -39,25 +40,33 @@ const validationSchema = object({
 
 
 
-const ContactForm = ({ formTitle = 'Залишилися питання?', light }) => {
+const ContactForm = ({ formTitle = 'Залишилися питання?', light, setIsFormSubmitted, setIsModalFormOpen }) => {
 	const titleLast = formTitle.split(' ').at(-1)
 	const titleFirst = `${formTitle.split(' ').slice(0, -1).join(' ')}`
-
 	return (
 
 		<FormContainer light={light}>
 			<FormHeader>
 				<FormHeaderText light={light}>{titleFirst} <b>{titleLast}</b></FormHeaderText>
-				{!light && (<img src={Question} alt="" />)}
+				{!light && (<Img src={Question} alt="" />)}
 			</FormHeader>
 			<FormText light={light}>Заповни форму і наш спеціаліст передзвонить тобі, щоб розповісти про деталі курсу і відповісти на питання, що тебе цікавлять.</FormText>
 			<Formik
 				initialValues={initialValues}
 				validationSchema={validationSchema}
-				onSubmit={(values, { setSubmitting }) => {
+				onSubmit={(values, { setSubmitting, resetForm }) => {
 					setTimeout(() => {
-						alert(JSON.stringify(values, null, 2));
+						console.log(JSON.stringify(values, null, 2));
 						setSubmitting(false);
+						console.log(setIsModalFormOpen)
+						if (setIsFormSubmitted) {
+							setIsFormSubmitted(true);
+						}
+						if (setIsModalFormOpen) {
+							setIsModalFormOpen(true)
+						}
+
+						resetForm()
 					}, 1000)
 				}}
 			>
@@ -97,4 +106,6 @@ const ContactForm = ({ formTitle = 'Залишилися питання?', light
 }
 
 export default ContactForm;
+
+// --------------------------------
 

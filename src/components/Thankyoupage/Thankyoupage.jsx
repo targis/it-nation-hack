@@ -1,38 +1,32 @@
 import React from "react";
 import styled from "styled-components";
-import Logo from '../../icons/logo.svg';
 import Container from '../ui/Container';
-import Close from '../../icons/btn-close-modal.svg';
 import Time from '../../imgs/time-modal.png';
 import Boy from '../../imgs/boy-modal 2.png';
 import Button from "../ui/Button";
 
-const Thankyoupage = () => {
-    return (
-     <Container>
-          <SectionBand>
-               <SectionHead>
-                   <SectionHeadItemLeft><img src={Logo} alt="" /></SectionHeadItemLeft>
-                   <SectionHeadItemRight><a href="#" title="Close"><img src={Close} alt=""/></a></SectionHeadItemRight>
-               </SectionHead>
-               <SectionBody>
-                   <BodyLeft>
-                        <img src={Time} alt="" />
-                    </BodyLeft>
-                    <BodyCenter>
-                        <SectionText>Дякуємо за заявку!</SectionText>
-                        <Aboutsection>Скоро з вами зв'яжеться наш менеджер, чекайте на дзвінок</Aboutsection>
-                        <Button>Повернутися на головну</Button>
-                    </BodyCenter>
-                    <BodyRight>
-                        <img src={Boy} alt="" />
-                    </BodyRight>
-               </SectionBody>
-          </SectionBand>
-     </Container>
-    )
+const Thankyoupage = ({ handleModalClose }) => {
+     return (
+          <Container>
+               <SectionBand>
+                    <SectionBody>
+                         <BodyLeft>
+                              <img src={Time} alt="" />
+                         </BodyLeft>
+                         <BodyCenter>
+                              <SectionText>Дякуємо за заявку!</SectionText>
+                              <Aboutsection>Скоро з вами зв'яжеться наш менеджер, чекайте на дзвінок</Aboutsection>
+                              <ButtonSC onClick={handleModalClose}>Повернутися на головну</ButtonSC>
+                         </BodyCenter>
+                         <BodyRight>
+                              <img src={Boy} alt="" />
+                         </BodyRight>
+                    </SectionBody>
+               </SectionBand>
+          </Container>
+     )
 }
-  
+
 export default Thankyoupage;
 
 const BodyRight = styled.div`
@@ -41,17 +35,24 @@ const BodyRight = styled.div`
      & > img {
         height: 260px;
     }
+    @media (max-width: 1200px) {
+          display: none;
+     }
 `;
 const BodyCenter = styled.div`
      display: flex;
      flex-direction: column;
      align-items: center;
      text-align: center;
-     width: 380px;
+     max-width: 380px;
      z-index: 2;
      padding: 10px 5px;
      border-radius: 20px;
-     backdrop-filter: blur(30px);
+     /* backdrop-filter: blur(30px); */
+     @media (max-width: 1200px) {
+          width: 100%;
+          height: 100%;
+     }
 `;
 
 const BodyLeft = styled.div`
@@ -60,6 +61,11 @@ const BodyLeft = styled.div`
      & > img {
         height: 260px;
     }
+    @media (max-width: 1200px) {
+     filter: blur(30px);
+          left: 50%;
+          transform: translateX(-50%);
+     }
 `;
 
 const SectionBody = styled.div`
@@ -94,8 +100,12 @@ const SectionText = styled.h1`
      letter-spacing: 1px;
      text-transform: uppercase;
      color: #232F3C; 
+     @media (max-width: 576px) {
+          font-size: 2.5em
+      }
 `;
 const SectionHeadItemLeft = styled.div`
+
 `;
 const SectionHeadItemRight = styled.div`
      position: absolute;
@@ -107,3 +117,11 @@ const SectionBand = styled.div`
      margin: 0;
      width: 100%;
 `;
+
+
+const ButtonSC = styled(Button)`
+     @media (max-width: 576px) {
+     font-size: 14px;
+     }
+
+`

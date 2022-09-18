@@ -91,7 +91,7 @@ const AboutSectionParagraph = styled.p`
     letter-spacing: 1px;
     color: #232F3C;
     margin-bottom: 26px;
-    white-space: nowrap;
+    /* white-space: nowrap; */
 `;
 
 const AboutSectionText = styled.span`
