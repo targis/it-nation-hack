@@ -45,7 +45,6 @@ function App() {
     setTheme(theme === 'light' ? 'dark' : 'light')
     sessionStorage.setItem('theme', theme === 'light' ? 'dark' : 'light')
   }
-  const navbarRef = useRef(null)
   const coursesRef = useRef(null)
   const aboutRef = useRef(null)
   const offerRef = useRef(null)
@@ -53,10 +52,6 @@ function App() {
   const contactsRef = useRef(null)
 
   const scrollTo = {
-    top: () =>
-      navbarRef?.current.scrollIntoView({
-        behavior: 'smooth',
-      }),
     courses: () =>
       coursesRef?.current.scrollIntoView({
         behavior: 'smooth',
@@ -85,7 +80,6 @@ function App() {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <Navbar
-        ref={navbarRef}
         toggleMenuState={toggleMenuState}
         isMenuOpen={isMenuOpen}
         handleModal={setIsModalFormOpen}
