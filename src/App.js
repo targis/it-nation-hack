@@ -20,6 +20,7 @@ import styled from 'styled-components'
 // import Thankyoupage from './components/Thankyoupage/Thankyoupage'
 
 function App() {
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false)
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isModalFormOpen, setIsModalFormOpen] = useState(false)
@@ -111,12 +112,18 @@ function App() {
         <About ref={aboutRef} />
         <Gallery />
         <Partners />
-        <Contacts ref={contactsRef} />
+        <Contacts
+          ref={contactsRef}
+          setIsModalFormOpen={setIsModalFormOpen}
+          setIsFormSubmitted={setIsFormSubmitted}
+        />
         <Footer scrollTo={scrollTo} />
         <ModalWindow
           active={isModalFormOpen}
           setActive={setIsModalFormOpen}
           isModalForm={true}
+          setIsFormSubmitted={setIsFormSubmitted}
+          isFormSubmitted={isFormSubmitted}
         >
           {/* <ContactForm light={true} /> */}
         </ModalWindow>

@@ -12,7 +12,7 @@ import Email from '../icons/contacts/email.svg';
 import Green from '../imgs/map green box.svg'
 
 
-const Contacts = forwardRef((props, ref) => {
+const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) => {
 	return (
 
 		<Container ref={ref}>
@@ -20,7 +20,7 @@ const Contacts = forwardRef((props, ref) => {
 			<ContactsWrapper>
 
 				<FormContainer>
-					<ContactForm />
+					<ContactForm setIsModalFormOpen={setIsModalFormOpen} setIsFormSubmitted={setIsFormSubmitted} />
 					<GreenSnot>
 						<img src={Green} alt="" />
 					</GreenSnot>
