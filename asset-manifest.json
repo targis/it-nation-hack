@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/it-nation-hack/static/css/main.f716a50d.css",
-    "main.js": "/it-nation-hack/static/js/main.59685198.js",
+    "main.js": "/it-nation-hack/static/js/main.15d1cb99.js",
     "static/js/787.b92cbb86.chunk.js": "/it-nation-hack/static/js/787.b92cbb86.chunk.js",
     "static/media/girl_student.png": "/it-nation-hack/static/media/girl_student.500cbc2614cc1acadb2d.png",
     "static/media/8.jpg": "/it-nation-hack/static/media/8.c63133dd3add9ba0ec9b.jpg",
@@ -53,11 +53,11 @@
     "static/media/map green box.svg": "/it-nation-hack/static/media/map green box.5945778a68d198799ef4909e10f766fe.svg",
     "static/media/email.svg": "/it-nation-hack/static/media/email.21275709ef4d759a4e259d9ad09e4df8.svg",
     "main.f716a50d.css.map": "/it-nation-hack/static/css/main.f716a50d.css.map",
-    "main.59685198.js.map": "/it-nation-hack/static/js/main.59685198.js.map",
+    "main.15d1cb99.js.map": "/it-nation-hack/static/js/main.15d1cb99.js.map",
     "787.b92cbb86.chunk.js.map": "/it-nation-hack/static/js/787.b92cbb86.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.f716a50d.css",
-    "static/js/main.59685198.js"
+    "static/js/main.15d1cb99.js"
   ]
 }
