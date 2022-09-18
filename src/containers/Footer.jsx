@@ -74,5 +74,10 @@ const Button = styled.button`
     width: 48px;
     background-color: #FFFFFF;
     border-radius: 50%;
-   
+    
+    &:hover {
+        box-shadow: 3px 3px 5px
+                    
+                    #EF5B63;
+    }
 `;
