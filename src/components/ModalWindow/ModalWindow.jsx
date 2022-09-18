@@ -8,9 +8,9 @@ import Boy from '../../imgs/boy-modal.png'
 import Thankyoupage from '../Thankyoupage'
 import ContactForm from '../ContactForm'
 
-const ModalWindow = ({ active, setActive, children, isModalForm }) => {
+const ModalWindow = ({ active, setActive, children, isModalForm, isFormSubmitted, setIsFormSubmitted }) => {
 
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false)
+
 
   const handleModalClose = () => {
     setActive(false)

@@ -20,6 +20,7 @@ import styled from 'styled-components'
 // import Thankyoupage from './components/Thankyoupage/Thankyoupage'
 
 function App() {
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false)
   const [isVideoPlaying, setIsVideoPlaying] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isModalFormOpen, setIsModalFormOpen] = useState(false)
@@ -28,6 +29,7 @@ function App() {
   const toggleMenuState = () => {
     setIsMenuOpen(!isMenuOpen)
   }
+
   const isFixedBody = isModalFormOpen || isModalFormVideo
 
   const [theme, setTheme] = useState('light')
@@ -38,13 +40,26 @@ function App() {
     if (currentTheme) {
       setTheme(currentTheme)
     }
+
+    const listener = (event) => {
+      if (event.code === 'Escape') {
+        console.log('Escape key was pressed. Run your function.')
+
+        event.preventDefault()
+        setIsModalVideoOpen(false)
+        setIsVideoPlaying(false)
+      }
+    }
+    document.addEventListener('keydown', listener)
+    return () => {
+      document.removeEventListener('keydown', listener)
+    }
   }, [])
 
   const toogleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light')
     sessionStorage.setItem('theme', theme === 'light' ? 'dark' : 'light')
   }
-  const navbarRef = useRef(null)
   const coursesRef = useRef(null)
   const aboutRef = useRef(null)
   const offerRef = useRef(null)
@@ -52,10 +67,6 @@ function App() {
   const contactsRef = useRef(null)
 
   const scrollTo = {
-    top: () =>
-      navbarRef?.current.scrollIntoView({
-        behavior: 'smooth',
-      }),
     courses: () =>
       coursesRef?.current.scrollIntoView({
         behavior: 'smooth',
@@ -82,9 +93,11 @@ function App() {
   const [activeLocation, setActiveLocation] = useState(null)
 
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider
+      theme={theme === 'light' ? lightTheme : darkTheme}
+      onKeyPress={() => console.log('sads')}
+    >
       <Navbar
-        ref={navbarRef}
         toggleMenuState={toggleMenuState}
         isMenuOpen={isMenuOpen}
         handleModal={setIsModalFormOpen}
@@ -111,12 +124,18 @@ function App() {
         <About ref={aboutRef} />
         <Gallery />
         <Partners />
-        <Contacts ref={contactsRef} />
+        <Contacts
+          ref={contactsRef}
+          setIsModalFormOpen={setIsModalFormOpen}
+          setIsFormSubmitted={setIsFormSubmitted}
+        />
         <Footer scrollTo={scrollTo} />
         <ModalWindow
           active={isModalFormOpen}
           setActive={setIsModalFormOpen}
           isModalForm={true}
+          setIsFormSubmitted={setIsFormSubmitted}
+          isFormSubmitted={isFormSubmitted}
         >
           {/* <ContactForm light={true} /> */}
         </ModalWindow>
