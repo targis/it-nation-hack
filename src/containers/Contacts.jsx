@@ -73,7 +73,7 @@ const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) =>
 							</ContactItem>
 							<ContactItem>
 								<img src={Email} alt="" />
-								powercodeacademy@gmail.com
+								<a href="mailto:powercodeacademy@gmail.com?subject=Від%20зацікавленого%20читача&amp;body=Добрий день!%0D%0A%0D%0AВ%20мене%20залишились%20запитання...">powercodeacademy@gmail.com</a>
 							</ContactItem>
 						</ContactList>
 
@@ -193,6 +193,9 @@ const ContactItem = styled.li`
     @media (max-width: 768px) {
         font-size: 16px;
         margin-bottom: 10px;
+    }
+    & > a {
+        color: #FFFFFF;
     }
 `;
 
