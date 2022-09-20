@@ -58,7 +58,7 @@ const ContactForm = ({ formTitle = 'Залишилися питання?', light
 					setTimeout(() => {
 						console.log(JSON.stringify(values, null, 2));
 						setSubmitting(false);
-						console.log(setIsModalFormOpen)
+
 						if (setIsFormSubmitted) {
 							setIsFormSubmitted(true);
 						}
