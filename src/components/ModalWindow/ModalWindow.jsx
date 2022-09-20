@@ -14,7 +14,9 @@ const ModalWindow = ({ active, setActive, children, isModalForm, isFormSubmitted
 
   const handleModalClose = () => {
     setActive(false)
-    setIsFormSubmitted(false)
+    if (setIsFormSubmitted) {
+      setIsFormSubmitted(false)
+    }
   }
 
   return (

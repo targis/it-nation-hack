@@ -10,6 +10,10 @@ import Pointer from '../icons/contacts/pointer.svg';
 import Call from '../icons/contacts/call.svg';
 import Email from '../icons/contacts/email.svg';
 import Green from '../imgs/map green box.svg'
+import MapK from '../imgs/mapK.jpg'
+import MapZP from '../imgs/mapZP.jpg'
+
+// import Map from '../components/Map';
 
 
 const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) => {
@@ -51,6 +55,7 @@ const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) =>
                     <ButtonsArea>
                         {contacts && contacts.map(({ label }) => (
                             <ButtonTab
+                                key={label}
                                 height='40px'
                                 width='120px'
                                 margin='0 10px 0 0'
@@ -95,6 +100,7 @@ const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) =>
                 </FormContainer> */}
 
             </ContactsWrapper>
+
         </Container>
 
 
@@ -114,11 +120,12 @@ const ContactsList = ({ item: { address, email, tel } }) => {
             </ContactItem>
             <ContactItem>
                 <img src={Call} alt="" />
-                {email}
+                <a href={`tel:${tel}`}>{tel}</a>
             </ContactItem>
             <ContactItem>
                 <img src={Email} alt="" />
-                {tel}
+                <a href={`mailto:${email}?subject=Від%20зацікавленого%20читача&amp;body=Добрий день!%0D%0A%0D%0AВ%20мене%20залишились%20запитання...`}>{email}</a>
+
             </ContactItem>
         </>
 
@@ -217,6 +224,9 @@ const ContactItem = styled.li`
 
     overflow: hidden;
     text-overflow: ellipsis;
+    a {
+        color: #FFFFFF;
+    }
 
     & > img {
         margin-right: 16px;
