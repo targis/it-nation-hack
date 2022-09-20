@@ -2,7 +2,7 @@ const darkTheme = {
     padding: '0 80px',
     colors: {
         bgcolor: 'rgb(32, 45, 54)',
-        text: '#fff',
+        text: '#FFFFFF',
         bgelement: 'rgb(43, 55, 67)',
         placeholder: '#fff',
     },

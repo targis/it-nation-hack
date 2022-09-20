@@ -39,15 +39,16 @@ const FooterContainer = styled.footer`
 
     background: #F5F6F9;
     border-radius: 20px;
-    margin-top: 15%;
-    @media (max-width: 747px) {
-        margin-top: 20%;
+    margin: 110px 0 70px;
+
+    @media (max-width: 1024px) {
+        margin: 85px 0 55px;
     }
-    @media (max-width: 505px) {
-        margin-top: 25%;
+    @media (max-width: 768px) {
+        margin: 60px 0 40px;
     }
-    @media (max-width: 350px) {
-        margin-top: 35%;
+    @media (max-width: 360px) {
+        margin: 30px 0 30px;
     }
 `;
 

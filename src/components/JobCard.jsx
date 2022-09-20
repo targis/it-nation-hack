@@ -42,7 +42,6 @@ const CardWrapper = styled.article`
     border: ${({color}) => `1px solid ${color}` || '1px solid black'};
     overflow: hidden;
     transition: all .3s linear;
-
     :hover {
         transform: scale(105%);
         box-shadow: 0px 0px 5px 4px rgba(0, 0, 0, 0.2);

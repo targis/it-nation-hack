@@ -29,6 +29,7 @@ function App() {
   const toggleMenuState = () => {
     setIsMenuOpen(!isMenuOpen)
   }
+
   const isFixedBody = isModalFormOpen || isModalFormVideo
 
   const [theme, setTheme] = useState('light')
@@ -38,6 +39,20 @@ function App() {
 
     if (currentTheme) {
       setTheme(currentTheme)
+    }
+
+    const listener = (event) => {
+      if (event.code === 'Escape') {
+        console.log('Escape key was pressed. Run your function.')
+
+        event.preventDefault()
+        setIsModalVideoOpen(false)
+        setIsVideoPlaying(false)
+      }
+    }
+    document.addEventListener('keydown', listener)
+    return () => {
+      document.removeEventListener('keydown', listener)
     }
   }, [])
 
@@ -78,7 +93,10 @@ function App() {
   const [activeLocation, setActiveLocation] = useState(null)
 
   return (
-    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+    <ThemeProvider
+      theme={theme === 'light' ? lightTheme : darkTheme}
+      onKeyPress={() => console.log('sads')}
+    >
       <Navbar
         toggleMenuState={toggleMenuState}
         isMenuOpen={isMenuOpen}
@@ -138,4 +156,5 @@ export default App
 const Wrapper = styled.div`
   position: ${({ fixed }) => (fixed ? 'fixed' : 'static')};
   overflow: ${({ fixed }) => (fixed ? 'hidden' : 'auto')};
+  background-color: ${({ theme }) => theme.colors.bgcolor}
 `

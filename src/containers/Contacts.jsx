@@ -1,32 +1,47 @@
-import React, { forwardRef } from 'react';
+import React, { forwardRef, useState } from 'react';
 import styled from 'styled-components';
 
 import Container from '../components/ui/Container';
 import ContactForm from '../components/ContactForm/ContactForm';
 import Button from '../components/ui/Button';
-import SocialLinks from '../components/SocialLinks';
+import FormSocialLinks from '../components/FormSocialLinks';
 
 import Pointer from '../icons/contacts/pointer.svg';
 import Call from '../icons/contacts/call.svg';
 import Email from '../icons/contacts/email.svg';
 import Green from '../imgs/map green box.svg'
+import MapK from '../imgs/mapK.jpg'
+import MapZP from '../imgs/mapZP.jpg'
+
+// import Map from '../components/Map';
 
 
 const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) => {
-	return (
 
-		<Container ref={ref}>
+    const contacts = [
+        {
+            label: 'Київ', address: 'м.Київ, вул. Верхній Вал, 24', email: 'powercodeacademy@gmail.com', tel: '+38 (073) 126 00 72'
+        },
+        {
+            label: 'Запоріжжя', address: 'Запоріжжя, проспект Соборний, 160', email: 'powercodeacademy@gmail.com', tel: '+38 (099) 705 14 18'
+        },
+    ]
 
-			<ContactsWrapper>
+    const [activeTab, setActiveTab] = useState('Київ')
+    return (
 
-				<FormContainer>
-					<ContactForm setIsModalFormOpen={setIsModalFormOpen} setIsFormSubmitted={setIsFormSubmitted} />
-					<GreenSnot>
-						<img src={Green} alt="" />
-					</GreenSnot>
-				</FormContainer>
+        <Container ref={ref}>
 
-				{/* <FormContainer>
+            <ContactsWrapper>
+
+                <FormContainer>
+                    <ContactForm setIsModalFormOpen={setIsModalFormOpen} setIsFormSubmitted={setIsFormSubmitted} />
+                    <GreenSnot>
+                        <img src={Green} alt="" />
+                    </GreenSnot>
+                </FormContainer>
+
+                {/* <FormContainer>
                     <FormHeader>
                         <FormHeaderText>Залишилися <b>питання?</b></FormHeaderText>
                         <FormHeaderIcon src={Question} alt="" />
@@ -35,57 +50,46 @@ const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) =>
                     <Form />
                 </FormContainer> */}
 
-				<ContactsContainer>
-					<ButtonsArea>
-						<Button
-							height='40px'
-							width='120px'
-							margin='0 10px 0 0'
-							padding='0'
-							size='14px'
-							lheight='114%'
-						>
-							Київ
-						</Button>
-						<Button
-							height='40px'
-							width='120px'
-							margin='0 10px 0 0'
-							padding='0'
-							size='14px'
-							lheight='114%'
-							bgcolor='none'
-							border='1px solid #FFFFFF'
-						>
-							Запоріжжя
-						</Button>
-					</ButtonsArea>
+                <ContactsContainer>
+                    <ButtonsArea>
+                        {contacts && contacts.map(({ label }) => (
+                            <ButtonTab
+                                key={label}
+                                height='40px'
+                                width='120px'
+                                margin='0 10px 0 0'
+                                padding='0'
+                                size='14px'
+                                lheight='114%'
+                                onClick={() => setActiveTab(label)}
+                                isActive={label === activeTab}
+                            >
+                                {label}
+                            </ButtonTab>
+                        ))}
 
-					<ContactInformation>
-						<ContactList>
-							<ContactItem>
-								<img src={Pointer} alt="" />
-								м.Київ, вул. Верхній Вал, 24
-							</ContactItem>
-							<ContactItem>
-								<img src={Call} alt="" />
-								+38 (073) 126 00 72
-							</ContactItem>
-							<ContactItem>
-								<img src={Email} alt="" />
-								<a href="mailto:powercodeacademy@gmail.com?subject=Від%20зацікавленого%20читача&amp;body=Добрий день!%0D%0A%0D%0AВ%20мене%20залишились%20запитання...">powercodeacademy@gmail.com</a>
-							</ContactItem>
-						</ContactList>
+                    </ButtonsArea>
 
-					</ContactInformation>
+                    <ContactInformation>
 
-					<SocialLinks />
-				</ContactsContainer>
-				{/* <FormContainer>
+
+                        {contacts && contacts.map((item, i) => {
+                            return item.label === activeTab
+                                ? (<ContactsList key={i} item={item} />)
+                                : null
+                        })}
+
+
+                    </ContactInformation>
+
+                    <FormSocialLinks justify={'start'} align={'left'} />
+                </ContactsContainer>
+                {/* <FormContainer>
+
 					<ContactForm />
 				</FormContainer> */}
 
-				{/* <FormContainer>
+                {/* <FormContainer>
                     <FormHeader>
                         <FormHeaderText>Залишилися <b>питання?</b></FormHeaderText>
                         <img src={Question} alt="" />
@@ -94,14 +98,48 @@ const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) =>
                     <Form />
                 </FormContainer> */}
 
-			</ContactsWrapper>
-		</Container>
+            </ContactsWrapper>
+
+        </Container>
 
 
-	);
+    );
 })
 
 export default Contacts;
+
+
+
+const ContactsList = ({ item: { address, email, tel } }) => {
+    return (
+        <>
+            <ContactItem>
+                <img src={Pointer} alt="" />
+                {address}
+            </ContactItem>
+            <ContactItem>
+                <img src={Call} alt="" />
+                <a href={`tel:${tel}`}>{tel}</a>
+            </ContactItem>
+            <ContactItem>
+                <img src={Email} alt="" />
+                <a href={`mailto:${email}?subject=Від%20зацікавленого%20читача&amp;body=Добрий день!%0D%0A%0D%0AВ%20мене%20залишились%20запитання...`}>{email}</a>
+
+            </ContactItem>
+        </>
+
+    )
+}
+
+
+
+const ButtonTab = styled(Button)`
+    background: ${({ isActive }) => isActive ? '#EF5B63' : 'none'};
+    border: ${({ isActive }) => isActive ? 'none' : '1px solid #fff'};
+
+`
+
+
 
 const GreenSnot = styled.div`
     z-index: -1;
@@ -185,6 +223,9 @@ const ContactItem = styled.li`
 
     overflow: hidden;
     text-overflow: ellipsis;
+    a {
+        color: #FFFFFF;
+    }
 
     & > img {
         margin-right: 16px;

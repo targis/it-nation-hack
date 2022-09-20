@@ -186,7 +186,8 @@ const ButtonsArea = styled.div`
 
 const CourseButton = styled(Button)`
     height: 40px;
-    width: 120px;
+    width: 100%;
+    max-width: 120px;
     margin: 0 10px 0 0;
     padding: 0;
     font-size: 14px;

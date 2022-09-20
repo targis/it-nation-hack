@@ -1,3 +1,5 @@
+import styled from 'styled-components'
+
 import SocialLinks from '../SocialLinks'
 import Menu from '../Menu'
 import Button from '../ui/Button'
@@ -26,7 +28,15 @@ const Navbar = ({ isMenuOpen, toggleMenuState, handleModal, theme,
             </Flex>
 
             <Button display={'inline-block'} hiddenSm={true} size={'14px'} lheight={'1'} padding={'14px 21px'} onClick={handleModal}>Записатися</Button>
-            {theme === 'light' ? <IoMoonOutline onClick={() => toogleTheme()} /> : <BsSun onClick={() => toogleTheme()} />}
+
+            {theme === 'light' 
+              ? <ThemeIcon>
+                <IoMoonOutline onClick={() => toogleTheme()} />
+              </ThemeIcon> 
+              : <ThemeIcon>
+                <BsSun onClick={() => toogleTheme()} />
+              </ThemeIcon> 
+              }
 
             <Menu toggleMenuState={toggleMenuState} isMenuOpen={isMenuOpen} />
           </Controls>
@@ -38,7 +48,12 @@ const Navbar = ({ isMenuOpen, toggleMenuState, handleModal, theme,
   )
 }
 
-export default Navbar
+export default Navbar;
+
+const ThemeIcon = styled.span`
+  font-size: 1.5rem;
+  color: ${({ theme }) => theme.colors.text };
+`;
 
 
 
