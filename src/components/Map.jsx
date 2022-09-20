@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from 'react';
 import styled from 'styled-components';
 
@@ -43,26 +42,4 @@ const MapPointer = styled.img.attrs({
     transform: translate(-50%, calc(-50% - 24px));
     z-index: 2;
 `;
-=======
-import React from 'react'
-import { MapContainer, TileLayer, useMap, Marker } from 'react-leaflet'
 
-
-const Map = ({ coords }) => {
-  return (
-    <MapContainer center={[50.401699, 30.2525114]} zoom={13} scrollWheelZoom={false}>
-
-      <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-      />
-      <Marker position={[51.505, -0.09]}>
-
-      </Marker>
-    </MapContainer>
-  )
-}
-
-export default Map
-
->>>>>>> 1f7957f8f44214ab73b56e47fe543e71a348b608
