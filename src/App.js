@@ -8,6 +8,7 @@ import Offer from './components/Offer'
 import Jobs from './containers/Jobs'
 import Partners from './containers/Partners'
 import Contacts from './containers/Contacts'
+import ContactsWithMap from './containers/ContactsWithMap';
 import About from './components/About'
 import Courses from './containers/Courses'
 import Gallery from './containers/Gallery'
@@ -124,11 +125,12 @@ function App() {
         <About ref={aboutRef} />
         <Gallery />
         <Partners />
-        <Contacts
+        {/* <Contacts
           ref={contactsRef}
           setIsModalFormOpen={setIsModalFormOpen}
           setIsFormSubmitted={setIsFormSubmitted}
-        />
+        /> */}
+        <ContactsWithMap />
         <Footer scrollTo={scrollTo} />
         <ModalWindow
           active={isModalFormOpen}
