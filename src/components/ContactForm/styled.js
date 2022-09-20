@@ -4,12 +4,14 @@ const Form = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;
+  /* background-color: ${({ theme }) => theme.colors.bgcolor }; */
 `
 
 const FormContainer = styled.div`
   width: 100%;
   max-width: 509px;
   padding: 26px 36px;
+  /* background: ${({ light }) => (light ? 'none' : '#232f3c')}; */
   background: ${({ light }) => (light ? 'none' : '#232f3c')};
   border-radius: 20px;
   @media (max-width: 576px) {
@@ -63,8 +65,8 @@ const FormHeaderText = styled.h4`
   letter-spacing: 4px;
   text-transform: uppercase;
 
-  color: #ffffff;
   color: ${({ light }) => (light ? '#333' : '#fff')};
+  /* color: ${({ theme }) => theme.colors.text }; */
   & > b {
     font-weight: 700;
   }
@@ -82,6 +84,7 @@ const FormText = styled.p`
   line-height: 150%;
 
   color: ${({ light }) => (light ? '#333' : '#fff')};
+  /* color: ${({ theme }) => theme.colors.text }; */
 `
 
 const InputSC = styled.input`

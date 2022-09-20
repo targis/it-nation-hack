@@ -156,4 +156,5 @@ export default App
 const Wrapper = styled.div`
   position: ${({ fixed }) => (fixed ? 'fixed' : 'static')};
   overflow: ${({ fixed }) => (fixed ? 'hidden' : 'auto')};
+  background-color: ${({ theme }) => theme.colors.bgcolor}
 `

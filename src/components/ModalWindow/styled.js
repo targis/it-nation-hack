@@ -20,6 +20,7 @@ const ModalContent = styled.div`
   /* border-radius: 12px; */
   /* background-color: white; */
   background-color: ${({ isVideo }) => (isVideo ? 'transparent' : '#fff')};
+  /* background-color: ${({ theme }) => theme.colors.text }; */
   transition: all 0.25s ease;
   position: relative;
   overflow: auto;

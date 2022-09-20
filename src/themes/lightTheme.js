@@ -1,7 +1,7 @@
 const lightTheme = {
     padding: '0 80px',
     colors: {
-        bgcolor: 'rgb(250, 250 ,250)',
+        bgcolor: 'none',
         text: '#000',
         bgelement: 'rgb(255, 255, 255)',
         placeholder: 'rgba(139, 139, 139, .8)',

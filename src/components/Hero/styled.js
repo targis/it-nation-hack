@@ -42,7 +42,8 @@ const Description = styled.p`
   font-weight: 400;
   font-size: 26px;
   line-height: 1.6;
-  color: #333333;
+  /* color: #333333; */
+  color: ${({ theme }) => theme.colors.text };;
   margin-bottom: 0.69em;
   @media (max-width: 576px) {
     font-size: 18px;
@@ -58,7 +59,8 @@ const Header = styled.h1`
   line-height: 1.2em;
   letter-spacing: 5px;
   text-transform: uppercase;
-  color: var(--font-color);
+  /* color: var(--font-color); */
+  color: ${({ theme }) => theme.colors.text };
   @media (max-width: 1200px) {
     font-size: 60px;
   }
@@ -91,7 +93,8 @@ const ButtonSecondary = styled(Button)`
   line-height: 18px;
   text-align: center;
   text-transform: uppercase;
-  color: #333333;
+  /* color: #333333; */
+  color: ${({ theme }) => theme.colors.text };;
   background: none;
   cursor: pointer;
   &::after {
