@@ -22,6 +22,10 @@ const Li = styled.li`
   margin: 0;
   padding: 0;
   margin-right: 1.44em;
+  :hover {
+    scale: 120%;
+    transition: all .1s linear ;
+  }
   img {
     width: ${({ size }) => (size ? size : '100%')};
     height: auto;
@@ -29,6 +33,7 @@ const Li = styled.li`
   & :last-child {
     margin-right: 0;
   }
+  
 `
 
 export { Ul, Li }

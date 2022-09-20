@@ -115,7 +115,8 @@ const Photo = styled.img`
     object-fit: cover;
     
     border-radius: 10px;
-    grid-area: ${({ area }) => area || ''};   
+    grid-area: ${({ area }) => area || ''}; 
+    transition: all 0.3s ease;  
 
     @media (max-width: 1024px) {
         aspect-ratio: 1;

@@ -50,7 +50,6 @@ const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) =>
                     <Form />
                 </FormContainer> */}
 
-
                 <ContactsContainer>
                     <ButtonsArea>
                         {contacts && contacts.map(({ label }) => (
@@ -235,6 +234,9 @@ const ContactItem = styled.li`
     @media (max-width: 768px) {
         font-size: 16px;
         margin-bottom: 10px;
+    }
+    & > a {
+        color: #FFFFFF;
     }
 `;
 
