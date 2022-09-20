@@ -7,8 +7,6 @@ import Youtube from '../icons/form/youtube.svg';
 import Telegram from '../icons/form/telegram.svg';
 import Instagram from '../icons/form/instagram.svg';
 
-
-
 const FormSocialLinks = ({ ...props }) => {
 
   const socialNetworks = [
@@ -37,15 +35,14 @@ const FormSocialLinks = ({ ...props }) => {
           href={network?.link}
           target='_blank'
         >
-          <SocialIcon src={network?.icon} />
+          {/* {network?.icon} */}
+          <SocialIcon src={network?.icon} alt=''/>
         </a>
       ))}
     </SocialLinks>
   );
 
 }
-
-
 
 export default FormSocialLinks;
 
@@ -57,7 +54,6 @@ const SocialLinks = styled.div`
 
     height: ${({ height }) => height || 'auto'};
     width: ${({ width }) => width || 'auto'};
-
 
     :last-child {
         margin-right: 0;

@@ -21,9 +21,6 @@ const Button = styled.button`
   text-transform: uppercase;
   transition: all .3s linear; 
   :hover {
-    /* background-color: #F5F6F9;
-    border: none;
-    color: #FFFFFF; */
     transform: scale(102%);
     box-shadow: 0px 0px 5px 4px rgba(230, 28, 58, 0.2);
   }
