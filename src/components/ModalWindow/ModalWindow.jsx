@@ -20,7 +20,7 @@ const ModalWindow = ({ active, setActive, children, isModalForm, isFormSubmitted
   }
 
   return (
-    <ModalBackground opacity={active}
+    <ModalBackground active={active}
       pointer={active ? '1' : "none"}
       onClick={handleModalClose}>
       <ModalContent
