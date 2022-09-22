@@ -44,7 +44,7 @@ function App() {
 
     const listener = (event) => {
       if (event.code === 'Escape') {
-        console.log('Escape key was pressed. Run your function.')
+        // console.log('Escape key was pressed. Close video modal.')
 
         event.preventDefault()
         setIsModalVideoOpen(false)
