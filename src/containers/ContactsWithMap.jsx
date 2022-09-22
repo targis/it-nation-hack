@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Container from '../components/ui/Container';
 import Btn from '../components/ui/Button';
-import Map from '../components/Map';
+import GoogleMap from '../components/GoogleMap';
 import SocialNetworks from '../components/SocialNetworks/SocialNetworks';
 
 import Pointer from '../icons/contacts/pointer.svg';
@@ -14,19 +14,19 @@ const ContactsWithMap = () => {
 
     const locations = [
         {
-            id: 1, 
+            id: 1,
             name: 'Київ',
-            address: 'м.Київ, вул. Верхній Вал, 24', 
-            url: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.6800290258197!2d30.51074751569838!3d50.46568277947748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce6afceddaf1%3A0xd6c58aa71be8b450!2z0YPQuy4g0JLQtdGA0YXQvdC40Lkg0JLQsNC7LCAyNCwg0JrQuNC10LIsIDA0MDcx!5e0!3m2!1sru!2sua!4v1663601794533!5m2!1sru!2sua', 
-            phone: '+38 (073) 126 00 72', 
+            address: 'м.Київ, вул. Верхній Вал, 24',
+            url: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2539.6800290258197!2d30.51074751569838!3d50.46568277947748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce6afceddaf1%3A0xd6c58aa71be8b450!2z0YPQuy4g0JLQtdGA0YXQvdC40Lkg0JLQsNC7LCAyNCwg0JrQuNC10LIsIDA0MDcx!5e0!3m2!1sru!2sua!4v1663601794533!5m2!1sru!2sua',
+            phone: '+38 (073) 126 00 72',
             email: 'powercodeacademy@gmail.com'
         },
         {
-            id: 2, 
+            id: 2,
             name: 'Запоріжжя',
-            address: 'Запоріжжя, проспект Соборний, 160', 
-            url: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2678.0770231530173!2d35.139587515603154!3d47.83810117920067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc674bb0bb1157%3A0xb7ce2ffc8d83798c!2z0L_RgNC-0YHQvy4g0KHQvtCx0L7RgNC90YvQuSwgMTYwLCDQl9Cw0L_QvtGA0L7QttGM0LUsINCX0LDQv9C-0YDQvtC20YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDY5MDAw!5e0!3m2!1sru!2sua!4v1663608156432!5m2!1sru!2sua', 
-            phone: '+38 (099) 705 14 18', 
+            address: 'Запоріжжя, проспект Соборний, 160',
+            url: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2678.0770231530173!2d35.139587515603154!3d47.83810117920067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dc674bb0bb1157%3A0xb7ce2ffc8d83798c!2z0L_RgNC-0YHQvy4g0KHQvtCx0L7RgNC90YvQuSwgMTYwLCDQl9Cw0L_QvtGA0L7QttGM0LUsINCX0LDQv9C-0YDQvtC20YHQutCw0Y8g0L7QsdC70LDRgdGC0YwsIDY5MDAw!5e0!3m2!1sru!2sua!4v1663608156432!5m2!1sru!2sua',
+            phone: '+38 (099) 705 14 18',
             email: 'powercodeacademy@gmail.com'
         }
     ]
@@ -34,15 +34,15 @@ const ContactsWithMap = () => {
     const [location, setLocation] = useState(locations[0]);
 
     const contacts = [
-        {id: 1, icon: Pointer, text: location.address},
-        {id: 2, icon: Call, text: location.phone},
-        {id: 3, icon: Email, text: location.email}
+        { id: 1, icon: Pointer, text: location.address },
+        { id: 2, icon: Call, text: location.phone },
+        { id: 3, icon: Email, text: location.email }
     ]
 
     return (
         <Container>
             <ContactsContainer>
-                <Map location={location}/>
+                <GoogleMap location={location} />
 
 
 
@@ -69,7 +69,7 @@ const ContactsWithMap = () => {
                         ))}
                     </ContactList>
 
-                    <SocialNetworks color='red'/>
+                    <SocialNetworks color='red' />
                 </ContactInformation>
             </ContactsContainer>
         </Container>

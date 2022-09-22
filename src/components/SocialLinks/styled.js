@@ -5,8 +5,8 @@ const Ul = styled.ul`
   /* height: 100%; */
   align-items: center;
   list-style-type: none;
-  margin: 0;
   padding: 0;
+  margin: ${({ margin }) => (margin ? margin : '0')};
   justify-self: ${({ self }) => self || 'auto'};
   display: ${({ visibleXs }) => (visibleXs ? 'none' : null)};
   margin-bottom: ${({ mb }) => (mb ? mb : null)};
@@ -24,7 +24,7 @@ const Li = styled.li`
   margin-right: 1.44em;
   :hover {
     scale: 120%;
-    transition: all .1s linear ;
+    transition: all 0.1s linear;
   }
   img {
     width: ${({ size }) => (size ? size : '100%')};
@@ -33,7 +33,6 @@ const Li = styled.li`
   & :last-child {
     margin-right: 0;
   }
-  
 `
 
 export { Ul, Li }

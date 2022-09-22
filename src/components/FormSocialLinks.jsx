@@ -34,9 +34,10 @@ const FormSocialLinks = ({ ...props }) => {
           key={network?.name}
           href={network?.link}
           target='_blank'
+          rel="noreferrer"
         >
           {/* {network?.icon} */}
-          <SocialIcon src={network?.icon} alt=''/>
+          <SocialIcon src={network?.icon} alt='' />
         </a>
       ))}
     </SocialLinks>
@@ -50,14 +51,17 @@ const SocialLinks = styled.div`
     display: flex;
     justify-content: ${({ justify }) => justify || 'center'};
     align-items: ${({ align }) => align || 'center'};
-
+    margin: ${({ margin }) => margin ? margin : '0'};
 
     height: ${({ height }) => height || 'auto'};
     width: ${({ width }) => width || 'auto'};
-
+    @media (max-width: 1170px) {
+      display: block;
+      text-align: center;
+    }
     :last-child {
         margin-right: 0;
-    }
+    }    
 `;
 
 const SocialIcon = styled.img`

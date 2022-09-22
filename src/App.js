@@ -8,13 +8,13 @@ import Offer from './components/Offer'
 import Jobs from './containers/Jobs'
 import Partners from './containers/Partners'
 import Contacts from './containers/Contacts'
-import ContactsWithMap from './containers/ContactsWithMap';
+// import ContactsWithMap from './containers/ContactsWithMap'
 import About from './components/About'
 import Courses from './containers/Courses'
 import Gallery from './containers/Gallery'
 import Footer from './containers/Footer'
 import ModalWindow from './components/ModalWindow'
-import ContactForm from './components/ContactForm'
+// import ContactForm from './components/ContactForm'
 import Video from './containers/Video'
 import styled from 'styled-components'
 
@@ -125,12 +125,12 @@ function App() {
         <About ref={aboutRef} />
         <Gallery />
         <Partners />
-        {/* <Contacts
+        <Contacts
           ref={contactsRef}
           setIsModalFormOpen={setIsModalFormOpen}
           setIsFormSubmitted={setIsFormSubmitted}
-        /> */}
-        <ContactsWithMap />
+        />
+        {/* <ContactsWithMap /> */}
         <Footer scrollTo={scrollTo} />
         <ModalWindow
           active={isModalFormOpen}
@@ -158,5 +158,5 @@ export default App
 const Wrapper = styled.div`
   position: ${({ fixed }) => (fixed ? 'fixed' : 'static')};
   overflow: ${({ fixed }) => (fixed ? 'hidden' : 'auto')};
-  background-color: ${({ theme }) => theme.colors.bgcolor}
+  background-color: ${({ theme }) => theme.colors.bgcolor};
 `

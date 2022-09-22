@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 import MapPin from '../icons/contacts/map_pin.svg';
 
-const Map = ({location, ...props}) => {
+const GoogleMap = ({ location, ...props }) => {
     return (
         <>
-            <MapContainer 
-                src={location?.url} 
+            <MapContainer
+                src={location?.url}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -19,7 +19,7 @@ const Map = ({location, ...props}) => {
     );
 }
 
-export default Map;
+export default GoogleMap;
 
 const MapContainer = styled.iframe`
     position: absolute;

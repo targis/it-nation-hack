@@ -1,33 +1,38 @@
 import React, { forwardRef, useState } from 'react';
 import styled from 'styled-components';
-
 import Container from '../components/ui/Container';
-import ContactForm from '../components/ContactForm/ContactForm';
+import ContactForm from '../components/ContactForm';
 import Button from '../components/ui/Button';
 import FormSocialLinks from '../components/FormSocialLinks';
-
 import Pointer from '../icons/contacts/pointer.svg';
 import Call from '../icons/contacts/call.svg';
 import Email from '../icons/contacts/email.svg';
 import Green from '../imgs/map green box.svg'
-import MapK from '../imgs/mapK.jpg'
-import MapZP from '../imgs/mapZP.jpg'
-
-// import Map from '../components/Map';
+import Map from '../components/Map';
+import PowercodeMarker from '../icons/powercode-marker.svg'
 
 
 const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) => {
 
+    const [activeTab, setActiveTab] = useState('Київ')
+
     const contacts = [
         {
-            label: 'Київ', address: 'м.Київ, вул. Верхній Вал, 24', email: 'powercodeacademy@gmail.com', tel: '+38 (073) 126 00 72'
+            label: 'Київ', address: 'м.Київ, вул. Верхній Вал, 24', email: 'powercodeacademy@gmail.com', tel: '+38 (073) 126 00 72', coords: [50.465, 30.512],
         },
         {
-            label: 'Запоріжжя', address: 'Запоріжжя, проспект Соборний, 160', email: 'powercodeacademy@gmail.com', tel: '+38 (099) 705 14 18'
+            label: 'Запоріжжя', address: 'Запоріжжя, проспект Соборний, 160', email: 'powercodeacademy@gmail.com', tel: '+38 (099) 705 14 18', coords: [47.838, 35.1419]
         },
     ]
 
-    const [activeTab, setActiveTab] = useState('Київ')
+    const [coordinates, setCoordinates] = useState([50.465, 30.512])
+
+    const handleClick = (label) => {
+        setActiveTab(label)
+        const { coords } = contacts.find(item => item.label === label)
+        setCoordinates(coords)
+    }
+
     return (
 
         <Container ref={ref}>
@@ -41,27 +46,18 @@ const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) =>
                     </GreenSnot>
                 </FormContainer>
 
-                {/* <FormContainer>
-                    <FormHeader>
-                        <FormHeaderText>Залишилися <b>питання?</b></FormHeaderText>
-                        <FormHeaderIcon src={Question} alt="" />
-                    </FormHeader>
-                    <FormText>Заповни форму і наш спеціаліст передзвонить тобі, щоб розповісти про деталі курсу і відповісти на питання, що тебе цікавлять.</FormText>
-                    <Form />
-                </FormContainer> */}
-
                 <ContactsContainer>
                     <ButtonsArea>
                         {contacts && contacts.map(({ label }) => (
                             <ButtonTab
                                 key={label}
-                                height='40px'
-                                width='120px'
-                                margin='0 10px 0 0'
-                                padding='0'
-                                size='14px'
-                                lheight='114%'
-                                onClick={() => setActiveTab(label)}
+                                height={'40px'}
+                                width={'120px'}
+                                margin={'0 10px 0 0'}
+                                padding={'0'}
+                                size={'14px'}
+                                lheight={'114%'}
+                                onClick={() => handleClick(label)}
                                 isActive={label === activeTab}
                             >
                                 {label}
@@ -82,21 +78,14 @@ const Contacts = forwardRef(({ setIsModalFormOpen, setIsFormSubmitted }, ref) =>
 
                     </ContactInformation>
 
-                    <FormSocialLinks justify={'start'} align={'left'} />
+                    <FormSocialLinks justify={'start'} align={'left'} margin={'3em 0'} />
                 </ContactsContainer>
-                {/* <FormContainer>
 
-					<ContactForm />
-				</FormContainer> */}
+                <MapWrapper>
+                    <Map coords={coordinates} />
+                    <MapPlaceholder />
+                </MapWrapper>
 
-                {/* <FormContainer>
-                    <FormHeader>
-                        <FormHeaderText>Залишилися <b>питання?</b></FormHeaderText>
-                        <img src={Question} alt="" />
-                    </FormHeader>
-                    <FormText>Заповни форму і наш спеціаліст передзвонить тобі, щоб розповісти про деталі курсу і відповісти на питання, що тебе цікавлять.</FormText>
-                    <Form />
-                </FormContainer> */}
 
             </ContactsWrapper>
 
@@ -112,26 +101,52 @@ export default Contacts;
 
 const ContactsList = ({ item: { address, email, tel } }) => {
     return (
-        <>
+        <ul>
             <ContactItem>
                 <img src={Pointer} alt="" />
                 {address}
             </ContactItem>
             <ContactItem>
                 <img src={Call} alt="" />
-                <a href={`tel:${tel}`}>{tel}</a>
+                <Link href={`tel:${tel}`}>{tel}</Link>
             </ContactItem>
             <ContactItem>
                 <img src={Email} alt="" />
-                <a href={`mailto:${email}?subject=Від%20зацікавленого%20читача&amp;body=Добрий день!%0D%0A%0D%0AВ%20мене%20залишились%20запитання...`}>{email}</a>
+                <Link href={`mailto:${email}?subject=Від%20зацікавленого%20читача&amp;body=Добрий день!%0D%0A%0D%0AВ%20мене%20залишились%20запитання...`}>{email}</Link>
 
             </ContactItem>
-        </>
+        </ul>
 
     )
 }
 
 
+const Link = styled.a`
+    word-break: break-all;
+`
+
+const MapWrapper = styled.div`
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 495px;
+    overflow: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+`
+
+const MapPlaceholder = styled.div`
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 495px;
+    width: 100%;
+    background-color: #232F3C;
+    z-index: -2;
+    border-radius: 20px;
+    overflow: hidden;
+`
 
 const ButtonTab = styled(Button)`
     background: ${({ isActive }) => isActive ? '#EF5B63' : 'none'};
@@ -139,45 +154,42 @@ const ButtonTab = styled(Button)`
 
 `
 
-
-
 const GreenSnot = styled.div`
     z-index: -1;
     position: absolute;
     bottom: 320px;
     left: 50%;
     transform: translateX(-50%);
-		top: -20px;
+	top: -20px;
 `;
 
 const ContactsWrapper = styled.section`
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
-    /* height: 495px; */
+    height: 495px;
     width: 100%;
-    /* padding: 45px; */
     margin-top: 80px;
     margin-bottom: 80px;
-    /* background-color: yellowgreen; */
     border-radius: 20px;
-
     @media (max-width: 1170px) {
         height: auto;
     }
 `;
 
 const ContactsContainer = styled.div`
+position: relative;
     display: flex;
     flex-direction: column;
     height: 495px;
     width: 100%;
     padding: 45px;
     /* max-width: 450px;   */
-    background: #232F3C;
+    /* background: #232F3C; */
     border-radius: 20px;
-
+    z-index: 999;
     @media (max-width: 1170px) {
         /* height: 296px; */
         padding: 26px 20px;
@@ -194,16 +206,15 @@ const ButtonsArea = styled.div`
     }
 `;
 
-const ContactInformation = styled.address`
+const ContactInformation = styled.div`
     /* height: 100%; */
     flex: 1 1 auto;
+    z-index: 999;
     @media (max-width: 1170px) {
         flex: 0 1 auto;
     }
 `;
-const ContactList = styled.ul`
-    
-`
+
 const ContactItem = styled.li`
     display: flex;
     align-items: center;
@@ -253,25 +264,13 @@ const FormContainer = styled.div`
 	padding-top: 0;
   background: #232f3c;
   border-radius: 20px;
-	@media (max-width: 1200px) {
+	@media (max-width: 1170px) {
         position: relative;
 				transform: none;
 				margin: 2em auto;
     }
 `
 
-// const FormContainer = styled.div`
-//     position: absolute;
-//     top: 50%;
-//     right: 0;
-//     transform: translate(-32px, -50%);
-
-//     width: 509px;
-//     padding: 26px 36px;
-
-//     background: #232F3C;
-//     border-radius: 20px;
-// `;
 
 const FormHeaderIcon = styled.img`
     
@@ -281,38 +280,3 @@ const FormHeaderIcon = styled.img`
     }
 `
 
-const FormHeaderText = styled.h4`
-    font-family: 'Rubik';
-    font-weight: 300;
-    font-size: calc(24px + 20 * (100vw / 1760));
-    line-height: 132%;
-
-//     margin-bottom: 16px;
-// `;
-
-// const FormHeaderText = styled.h4`
-//     font-family: 'Rubik';
-//     font-weight: 300;
-//     font-size: 44px;
-//     line-height: 132%;
-
-//     letter-spacing: 4px;
-//     text-transform: uppercase;
-
-//     color: #FFFFFF;
-
-//     & > b {
-//         font-weight: 700;
-//     }
-// `;
-
-// const FormText = styled.p`
-//     margin-bottom: 26px;
-
-//     font-family: 'IBM Plex Mono';
-//     font-weight: 400;
-//     font-size: 16px;
-//     line-height: 150%;
-
-//     color: #FFFFFF;
-// `;
